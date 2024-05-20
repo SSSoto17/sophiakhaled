@@ -1,15 +1,65 @@
-:root {
-  /* COLOUR */
-  --brand-a: #fff;
-  --brand-b: #fff;
-  --accent-a: #fff;
-  --accent-b: #fff;
-  --neutral-a: #fff;
-  --neutral-b: #fff;
+/* IMPORTS */
 
-  /* FONT */
-  --display: ;
-  --heading: ;
-  --body-copy: ;
-  --scribble: ;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Waiting+for+the+Sunrise&display=swap");
+
+/* COLOUR */
+
+:root {
+  /* BRAND */
+  --lavender: #e2d9e5;
+  --thistle: #d8bfe0;
+
+  /* NEUTRALS */
+  --white-smoke: #f5f3f2;
+  --magnolia: #eae7ed;
+  --raisin-black: #2b2433;
+
+  /* ACCENTS */
+  --baby-blue: #99c8e2;
+  --blue-green: #1498c4;
+  --blue-violet: #854cd0;
+  --mantis: #5ebc4e;
+  --cyclamen: #eb74a3;
+
+  /* BASIC */
+  --background-color: var(--magnolia);
+  --main-color: var(--raisin-black);
+  --box-color: var(--thistle);
+  --stroke-color: var(--thistle);
 }
+
+/* FONTS */
+
+:root {
+  --main-font: "Manrope", sans-serif;
+  --scribble-font: "Waiting for the Sunrise", cursive;
+}
+
+/*  TEXT SIZES */
+@media (min-width: 320px) {
+  :root {
+    --display: 3rem;
+    --h1: 1.5rem;
+    --h2: 1.25rem;
+    --h3: 1rem;
+  }
+}
+@media (min-width: 630px) {
+  :root {
+    --display: 4.5rem;
+    --h1: 2rem;
+    --h2: 1.5rem;
+    --h3: 1.25rem;
+  }
+}
+@media (min-width: 1168px) {
+  :root {
+    --display: 5.5rem;
+    --h1: 3rem;
+    --h2: 2rem;
+    --h3: 1.5rem;
+  }
+}
+
+/* SPACING */

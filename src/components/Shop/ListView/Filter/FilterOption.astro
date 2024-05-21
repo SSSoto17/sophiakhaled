@@ -1,14 +1,11 @@
 ---
- 
-import Active from "/svg/icon_Checked.svg"
-import Default from "/svg/icon_Unchecked.svg"
 
 const { option } = Astro.props
 
 ---
 
-<div class="container">
-    <img src="/svg/icon_Unchecked.svg" alt="" class="icon">
+<div class="container option">
+    <div class="icon"></div>
     <p class="filter">{option}</p>
 </div>
 
@@ -16,13 +13,36 @@ const { option } = Astro.props
 
     .container {
         display: flex;
+        align-items: center;
         gap: var(--x-small);
         cursor: pointer;
         max-width: 220px;
     }
 
     .icon {
-        width: 1.5rem;
+        --size: 2rem;
+        width: var(--size);
+        height: var(--size);
+        background-image: url("/svg/icon_Unchecked.svg");
+        background-repeat: none;
+        background-size: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .icon.active {
+        background-image: url("/svg/icon_Checked.svg");
     }
 
 </style>
+
+<script>
+    const options = document.querySelectorAll(".container.option");
+    var i;
+
+    for (i = 0; i < options.length; i++) {
+        options[i].addEventListener("click", function() {
+            const icon = this.querySelector(".icon");
+            icon.classList.toggle("active");
+        })
+    }
+</script>

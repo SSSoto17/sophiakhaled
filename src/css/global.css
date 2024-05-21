@@ -3,8 +3,11 @@
 
 * {
   color: var(--main-color);
-  background-color: var(--background-color);
   font-family: var(--main-font);
+}
+
+body {
+  background-color: var(--background-color);
 }
 
 /* main {

@@ -40,25 +40,44 @@
 @media (min-width: 320px) {
   :root {
     --display: 3rem;
-    --h1: 1.5rem;
-    --h2: 1.25rem;
-    --h3: 1rem;
+    --h1-size: 1.5rem;
+    --h1-line: 2rem;
+    --h2-size: 1.25rem;
+    --h2-line: 1.5rem;
+    --h3-size: 1rem;
+    --h3-line: 1.25rem;
+
+    --body-size: 0.75rem;
+    --body-line: 1rem;
+    --lead-body-size: 1rem;
+    --lead-body-size: 1.25rem;
   }
 }
 @media (min-width: 630px) {
   :root {
     --display: 4.5rem;
-    --h1: 2rem;
-    --h2: 1.5rem;
-    --h3: 1.25rem;
+    --h1-size: 2rem;
+    --h1-line: 3rem;
+    --h2-size: 1.5rem;
+    --h2-line: 2rem;
+    --h3-size: 1.25rem;
+    --h3-line: 1.5rem;
+
+    --body-size: 1rem;
+    --body-line: 1.5rem;
+    --lead-body-size: 1.25rem;
+    --lead-body-size: 1.5rem;
   }
 }
 @media (min-width: 1168px) {
   :root {
     --display: 5.5rem;
-    --h1: 3rem;
-    --h2: 2rem;
-    --h3: 1.5rem;
+    --h1-size: 3rem;
+    --h1-line: 4rem;
+    --h2-size: 2rem;
+    --h2-line: 3rem;
+    --h3-size: 1.5rem;
+    --h3-line: 2.5rem;
   }
 }
 

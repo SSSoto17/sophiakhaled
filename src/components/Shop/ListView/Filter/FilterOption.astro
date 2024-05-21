@@ -1,3 +1,26 @@
 ---
  
+import Active from "/svg/icon_Checked.svg"
+import Default from "/svg/icon_Unchecked.svg"
+
+const { state } = Astro.props
+
 ---
+
+<div class="container">
+    <img src="/svg/icon_Checked.svg" alt="" class="icon">
+    <p class="filter">Option</p>
+</div>
+
+<style>
+
+    .container {
+        display: flex;
+        gap: var(--x-small);
+    }
+
+    .icon {
+        width: 1.5rem;
+    }
+
+</style>

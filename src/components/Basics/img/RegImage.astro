@@ -2,7 +2,11 @@
 
 import { Image } from "astro:assets";
 
+const { src, variant, alt } = Astro.props
+
 
 ---
+
+<Image src={src} class={variant} alt={alt} />
 
 <!-- For regular images; these will be nested inside other image components -->

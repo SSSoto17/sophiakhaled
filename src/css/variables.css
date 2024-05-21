@@ -117,7 +117,7 @@
 
 :root {
   /* CONTENT */
-  --content-min: 10px;
+  --content-min: 100px;
   --content-max: 448px;
 
   /* MARGIN */

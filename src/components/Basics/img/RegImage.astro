@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 
 const { src, variant, alt } = Astro.props;
-import PlaceholderImage from "../../../img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.jpeg";
+import PlaceholderImage from "../../../img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG";
 ---
 
 <!-- For regular images; these will be nested inside other image components -->
@@ -11,6 +11,8 @@ import PlaceholderImage from "../../../img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1
 <style>
   .regular {
     background-color: var(--lavender);
+    aspect-ratio: 1/1.5;
+    max-width: 400px;
   }
 
   .tape {

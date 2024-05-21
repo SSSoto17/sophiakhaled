@@ -39,6 +39,7 @@
 /*  TEXT SIZES */
 @media (min-width: 320px) {
   :root {
+    /* HEADINGS */
     --display: 3rem;
     --h1-size: 1.5rem;
     --h1-line: 2rem;
@@ -47,14 +48,24 @@
     --h3-size: 1rem;
     --h3-line: 1.25rem;
 
+    /* BODY */
     --body-size: 0.75rem;
     --body-line: 1rem;
     --lead-body-size: 1rem;
     --lead-body-size: 1.25rem;
+
+    /* LABELS */
+    --filter-label-size: 1rem;
+    --filter-label-line: 1.25rem;
+    --item-label-size: 1.25rem;
+    --item-label-size: 1.5rem;
+    --polaroid-label-size: 1rem;
+    --polaroid-label-size: 1.5rem;
   }
 }
 @media (min-width: 630px) {
   :root {
+    /* HEADINGS */
     --display: 4.5rem;
     --h1-size: 2rem;
     --h1-line: 3rem;
@@ -63,14 +74,24 @@
     --h3-size: 1.25rem;
     --h3-line: 1.5rem;
 
+    /* BODY */
     --body-size: 1rem;
     --body-line: 1.5rem;
     --lead-body-size: 1.25rem;
     --lead-body-size: 1.5rem;
+
+    /* LABELS */
+    --filter-label-size: 1.25rem;
+    --filter-label-line: 1.5rem;
+    --item-label-size: 1.5rem;
+    --item-label-line: 2rem;
+    --polaroid-label-size: 1.5rem;
+    --polaroid-label-line: 2rem;
   }
 }
 @media (min-width: 1168px) {
   :root {
+    /* HEADINGS */
     --display: 5.5rem;
     --h1-size: 3rem;
     --h1-line: 4rem;
@@ -78,6 +99,14 @@
     --h2-line: 3rem;
     --h3-size: 1.5rem;
     --h3-line: 2.5rem;
+
+    /* LABELS */
+    --filter-label-size: 1.25rem;
+    --filter-label-line: 2rem;
+    --item-label-size: 1.5rem;
+    --item-label-size: 3rem;
+    --polaroid-label-size: 1.5rem;
+    --polaroid-label-size: 3rem;
   }
 }
 

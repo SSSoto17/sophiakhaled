@@ -65,3 +65,9 @@ p.lead {
   font-weight: 600;
   line-height: var(--lead-body-line);
 }
+
+p.filter {
+  font-family: var(--scribble-font);
+  font-size: var(--filter-label-size);
+  line-height: var(--filter-label-line);
+}

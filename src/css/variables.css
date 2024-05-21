@@ -111,3 +111,46 @@
 }
 
 /* SPACING */
+
+@media (min-width: 320px) {
+  :root {
+    /* MARGIN */
+    --none: 0;
+    --side: 1rem;
+    --top_btm: 1.5rem;
+
+    /* GAP */
+    --x-small: 0.25rem;
+    --small: 0.25rem;
+    --medium: 1rem;
+    --large: 1rem;
+  }
+}
+
+@media (min-width: 630px) {
+  :root {
+    /* MARGIN */
+    --side: 1.5rem;
+    --top_btm: 2rem;
+
+    /* GAP */
+    --x-small: 0.5rem;
+    --small: 0.5rem;
+    --medium: 1.5rem;
+    --large: 2rem;
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    /* MARGIN */
+    --side: 2rem;
+    --top_btm: 3rem;
+
+    /* GAP */
+    --x-small: 0.5rem;
+    --small: 1rem;
+    --medium: 2rem;
+    --large: 3rem;
+  }
+}

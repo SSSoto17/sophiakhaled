@@ -1,15 +1,12 @@
 ---
 import { Image } from "astro:assets";
 
-<<<<<<< HEAD
 const { src, variant, alt } = Astro.props;
 import PlaceholderImage from "../../../img/regular/flagermus.png";
 import Tape from "../../../img/regular/Tape.png";
 ---
 =======
 
-const { src, variant, alt } = Astro.props
->>>>>>> master
 
 <!-- For regular images; these will be nested inside other image components -->
 <Image src={PlaceholderImage} class={variant} alt={alt} />
@@ -17,7 +14,7 @@ const { src, variant, alt } = Astro.props
 <!-- <Image src={Tape} class="container" alt={alt} />
 <Image src={Tape} class="container2" alt={alt} /> -->
 
-<<<<<<< HEAD
+
 <style>
   .square {
     background-color: transparent;
@@ -34,11 +31,6 @@ const { src, variant, alt } = Astro.props
     max-width: 380px;
     filter: opacity(75%);
   }
-=======
-<!-- <Image src={src} class={variant} alt={alt} /> -->
-
-<Image src={src} alt="" />
->>>>>>> master
 
   .tape {
     background-color: var(--lavender);

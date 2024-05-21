@@ -14,10 +14,22 @@ li {
   list-style-type: none;
 }
 
-/* main {
+/* LAYOUT */
+
+main {
   display: grid;
-  grid-template-columns: minmax(2rem, 1fr) 1120px minmax(2rem, 1fr);
-} */
+  grid-template-columns:
+    minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
+    minmax(var(--side), 1fr);
+}
+
+main > * {
+  grid-column: 2;
+}
+
+.break_main {
+  grid-column: 1 / 4;
+}
 
 /* TEXT STYLES */
 

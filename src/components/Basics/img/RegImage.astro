@@ -1,12 +1,24 @@
 ---
-
 import { Image } from "astro:assets";
 
-const { src, variant, alt } = Astro.props
-
-
+const { src, variant, alt } = Astro.props;
+import PlaceholderImage from "../../../img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.jpeg";
 ---
 
-<Image src={src} class={variant} alt={alt} />
-
 <!-- For regular images; these will be nested inside other image components -->
+<Image src={PlaceholderImage} class={variant} alt={alt} />
+
+<style>
+  .regular {
+    background-color: var(--lavender);
+  }
+
+  .tape {
+    background-color: var(--lavender);
+  }
+
+  .opacity {
+    background-color: var(--lavender);
+    filter: opacity(75%);
+  }
+</style>

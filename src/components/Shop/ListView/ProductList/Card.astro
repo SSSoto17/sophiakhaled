@@ -1,3 +1,24 @@
 ---
-
+import RegImage from "../../../Basics/img/RegImage.astro";
+const { headline, price, variant } = Astro.props;
 ---
+
+<div class="container">
+  <RegImage class="square" alt="" />
+
+  <div class={variant}>
+    <h3>{headline}</h3>
+    <p>{price}</p>
+  </div>
+</div>
+
+<style>
+    .container{
+        max-width: fit-content;
+    }
+
+  .collection {
+    text-align: center;
+  }
+
+</style>

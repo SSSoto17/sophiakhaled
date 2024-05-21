@@ -21,25 +21,38 @@ const cat = [
 
 
 ---
-
-<FilterMobileBar />
-<div class="container">
+<div class="break_main">
+    <div class="filter_bar">
+        <FilterMobileBar />
+    </div>    
+<div class="options">
     {cat.map(cat=>{
         return <FilterCatList heading={cat.name} options={cat.options} />
     })}
     <ArrowButton />
 </div>
+</div>
+
 
 <style>
 
-.container {
+    .options {
+        display: none;
         padding: var(--side);
         border-bottom: 1px solid var(--stroke-color);
         filter: var(--dropshadow);
     }
 
+    .active {
+        display: block;
+    }
+
     @media (min-width: 960px) {
-        .container {
+        .break_main {
+            grid-column: 2;
+        }
+        .options {
+            display: block;
         min-width: 283px;
         max-width: 352px;
         border-bottom: none;
@@ -50,6 +63,18 @@ const cat = [
     }
 
 </style>
+
+<script>
+
+    const filter = document.querySelector(".filter_bar");
+    const options = document.querySelector(".options");
+
+    filter.addEventListener("click", () =>{
+        console.log("click");
+        options.classList.toggle("active");
+    })
+
+</script>
 
 
 

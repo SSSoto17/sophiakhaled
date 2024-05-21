@@ -2,6 +2,7 @@
 
 import FilterMobileBar from "../Filter/FilterMobileBar.astro"
 import FilterCatList from "../Filter/FilterCatList.astro"
+import ArrowButton from "../../../Basics/buttons/ArrowButton.astro"
 
 const cat = [
     {
@@ -9,7 +10,7 @@ const cat = [
         options: [
             "Tops", "Bottoms", "Dresses", "Accessories"
         ]
-    },
+    },              
     {
         name: "Collection",
         options: [
@@ -22,3 +23,33 @@ const cat = [
 ---
 
 <FilterMobileBar />
+<div class="container">
+    {cat.map(cat=>{
+        return <FilterCatList heading={cat.name} options={cat.options} />
+    })}
+    <ArrowButton />
+</div>
+
+<style>
+
+.container {
+        padding: var(--side);
+        border-bottom: 1px solid var(--stroke-color);
+        filter: var(--dropshadow);
+    }
+
+    @media (min-width: 960px) {
+        .container {
+        min-width: 283px;
+        max-width: 352px;
+        border-bottom: none;
+        border-right: 1px solid var(--stroke-color);
+        padding: 0 var(--small) 0 0;
+        filter: none;
+        }
+    }
+
+</style>
+
+
+

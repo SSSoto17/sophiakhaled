@@ -1,31 +1,10 @@
 ---
 
-import FilterCatList from "./FilterCatList.astro"
-
-const cat = [
-    {
-        name: "Category",
-        options: [
-            "Tops", "Bottoms", "Dresses", "Accessories"
-        ]
-    },
-    {
-        name: "Collection",
-        options: [
-            "Middleschool u r dead to me...", "If i dont see the prince, im going to die..."
-        ]
-    }
-]
 
 ---
 
 <div class="container">
     <img src="/svg/icon_Filter.svg" alt="">
-</div>
-<div class="options">
-    {cat.map(cat=>{
-        return <FilterCatList heading={cat.name} options={cat.options} />
-    })}
 </div>
 
 <style>
@@ -41,12 +20,6 @@ const cat = [
         filter: var(--dropshadow);
         cursor: pointer;
     }
-    
-    .options {
-        padding: var(--side);
-        border: 1px solid var(--stroke-color);
-        filter: var(--dropshadow);
-    }
 
     img {
         --size: 2rem;
@@ -56,7 +29,7 @@ const cat = [
     }
 
     @media(min-width: 960px) {
-        .container, .options {
+        .container {
             display: none;
         }
     }

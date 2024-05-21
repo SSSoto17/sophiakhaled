@@ -7,21 +7,18 @@ import Tape from "../../../img/regular/Tape.png";
 ---
 
 <!-- For regular images; these will be nested inside other image components -->
-<Image src={PlaceholderImage} class={variant} alt={alt} class="regular"/>
+<Image src={PlaceholderImage} class={variant} alt={alt} />
 
-<!-- <div>
-  <Image src={Tape} class="tape container" alt={alt} />
-  <Image src={Tape} class="tape container2" alt={alt} />
-</div> -->
+<!-- <Image src={Tape} class="container" alt={alt} />
+<Image src={Tape} class="container2" alt={alt} /> -->
 
 <style>
-  div {
-    position: relative;
+  .square {
+    background-color: transparent;
+    aspect-ratio: 1/1; /* ??? */
+    max-width: 380px;
+    max-height: auto;
   }
-
-/*   .square{
-    aspect-ratio: 1/1;
-  } */
   .regular {
     background-color: var(--lavender);
     max-width: 380px;
@@ -36,19 +33,19 @@ import Tape from "../../../img/regular/Tape.png";
     background-color: var(--lavender);
     max-width: 380px;
   }
-  .tape.container {
+  /* .container {
     background-color: transparent;
     position: absolute;
     top: 6%;
     left: 52%;
     max-width: 30%;
   }
-  .tape.container2 {
+ .container2 {
     background-color: transparent;
     position: absolute;
     aspect-ratio: 1/1;
-    top: 65%;
+    top: 55%;
     left: -10%;
     max-width: 30%;
-  }
+  } */
 </style>

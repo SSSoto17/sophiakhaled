@@ -6,3 +6,8 @@
   background-color: var(--background-color);
   font-family: var(--main-font);
 }
+
+/* main {
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) 1120px minmax(2rem, 1fr);
+} */

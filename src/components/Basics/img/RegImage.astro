@@ -2,25 +2,44 @@
 import { Image } from "astro:assets";
 
 const { src, variant, alt } = Astro.props;
-import PlaceholderImage from "../../../img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG";
+import PlaceholderImage from "../../../img/regular/flagermus.png";
+import Tape from "../../../img/regular/Tape.png";
 ---
 
 <!-- For regular images; these will be nested inside other image components -->
 <Image src={PlaceholderImage} class={variant} alt={alt} />
+<Image src={Tape} class="tape container" alt={alt} />
+<Image src={Tape} class="tape container2" alt={alt} />
 
 <style>
   .regular {
     background-color: var(--lavender);
-    aspect-ratio: 1/1.5;
-    max-width: 400px;
+    aspect-ratio: 1/;
+    max-width: 380px;
   }
-
-  .tape {
-    background-color: var(--lavender);
-  }
-
   .opacity {
     background-color: var(--lavender);
+    aspect-ratio: 1/;
+    max-width: 380px;
     filter: opacity(75%);
+  }
+  .tape {
+    background-color: var(--lavender);
+    aspect-ratio: 1/;
+    max-width: 380px;
+  }
+  .tape.container {
+    background-color: transparent;
+    position: absolute;
+    top: 6%;
+    left: 52%;
+    max-width: 30%;
+  }
+  .tape.container2 {
+    background-color: transparent;
+    position: absolute;
+    top: 65%;
+    left: -10%;
+    max-width: 30%;
   }
 </style>

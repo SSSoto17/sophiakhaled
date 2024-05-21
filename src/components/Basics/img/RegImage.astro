@@ -7,25 +7,29 @@ import Tape from "../../../img/regular/Tape.png";
 ---
 
 <!-- For regular images; these will be nested inside other image components -->
-<Image src={PlaceholderImage} class={variant} alt={alt} />
-<Image src={Tape} class="tape container" alt={alt} />
-<Image src={Tape} class="tape container2" alt={alt} />
+<Image src={PlaceholderImage} class={variant} alt={alt} class="regular"/>
+
+<div>
+  <Image src={Tape} class="tape container" alt={alt} />
+  <Image src={Tape} class="tape container2" alt={alt} />
+</div>
 
 <style>
+  div {
+    position: relative;
+  }
   .regular {
     background-color: var(--lavender);
-    aspect-ratio: 1/;
     max-width: 380px;
   }
   .opacity {
     background-color: var(--lavender);
-    aspect-ratio: 1/;
     max-width: 380px;
     filter: opacity(75%);
   }
+
   .tape {
     background-color: var(--lavender);
-    aspect-ratio: 1/;
     max-width: 380px;
   }
   .tape.container {
@@ -38,6 +42,7 @@ import Tape from "../../../img/regular/Tape.png";
   .tape.container2 {
     background-color: transparent;
     position: absolute;
+    aspect-ratio: 1/1;
     top: 65%;
     left: -10%;
     max-width: 30%;

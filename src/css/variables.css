@@ -40,7 +40,7 @@
 }
 
 /*  TEXT SIZES */
-@media (min-width: 320px) {
+@media (min-width: 0px) {
   :root {
     /* HEADINGS */
     --display: 3rem;
@@ -115,7 +115,7 @@
 
 /* SPACING */
 
-@media (min-width: 320px) {
+@media (min-width: 0px) {
   :root {
     /* MARGIN */
     --none: 0;

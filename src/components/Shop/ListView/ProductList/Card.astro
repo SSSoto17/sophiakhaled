@@ -4,7 +4,7 @@ const { headline, price, variant } = Astro.props;
 ---
 
 <div class="container">
-  <RegImage class="square" alt="" />
+  <RegImage variant="regular" alt="" />
 
   <div class={variant}>
     <h3>{headline}</h3>
@@ -13,7 +13,8 @@ const { headline, price, variant } = Astro.props;
 </div>
 
 <style>
-  .container {
+ 
+  div.container {
     max-width: fit-content;
   }
 

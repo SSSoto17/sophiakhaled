@@ -5,45 +5,47 @@ const { src, variant, alt } = Astro.props;
 import PlaceholderImage from "../../../img/regular/flagermus.png";
 import Tape from "../../../img/regular/Tape.png";
 ---
-=======
-
 
 <!-- For regular images; these will be nested inside other image components -->
-<Image src={PlaceholderImage} class={variant} alt={alt} />
+<div>
+  <Image src={PlaceholderImage} class={variant} alt={alt} />
+</div>
 
-<!-- <Image src={Tape} class="container" alt={alt} />
-<Image src={Tape} class="container2" alt={alt} /> -->
-
+<!-- <div>
+  <Image src={Tape} class="container" alt={alt} />
+  <Image src={Tape} class="container2" alt={alt} />
+</div> -->
 
 <style>
-  .square {
+  div {
+    width: 380px;
+    /* aspect-ratio: 1 / 2; */
+  }
+  /*  .square {
+    aspect-ratio: 1/1;} /* ??? */
+
+  /* --------- Variants -------------- */
+  .transparentBG {
     background-color: transparent;
-    aspect-ratio: 1/1; /* ??? */
-    max-width: 380px;
-    max-height: auto;
   }
   .regular {
     background-color: var(--lavender);
-    max-width: 380px;
   }
   .opacity {
     background-color: var(--lavender);
-    max-width: 380px;
     filter: opacity(75%);
   }
-
-  .tape {
+  /*   .tape {
     background-color: var(--lavender);
-    max-width: 380px;
-  }
-  /* .container {
+  } */
+/*   .container {
     background-color: transparent;
     position: absolute;
     top: 6%;
     left: 52%;
     max-width: 30%;
   }
- .container2 {
+  .container2 {
     background-color: transparent;
     position: absolute;
     aspect-ratio: 1/1;

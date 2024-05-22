@@ -1,12 +1,26 @@
 ---
 import RegImage from "../img/RegImage.astro";
+
+const images = [
+  {
+    imgA:"/src/img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG",
+    imgB:"/src/img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG",
+    imgC:"/src/img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG"
+  },
+
+  {
+    imgA:"/src/img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG",
+    imgB:"/src/img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG",
+    imgC:"/src/img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG"
+  }
+]
 ---
 
-<div>
-  <RegImage src="" variant="" alt="" />
-  <RegImage src="" variant="" alt="" />
-  <RegImage src="" variant="" alt="" />
-</div>
+
+<div> {images.map(image=>{
+  return <RegImage imgA={image.imgA} imgB={image.imgB} imgC={image.imgC} />
+})}
+  <div/>
 
 <style>
   div {

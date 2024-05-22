@@ -1,29 +1,27 @@
 ---
+import "../css/global.css";
 
-import "../css/global.css"
-
-import Header from "../components/Navigation/Header.astro"
-import Footer from "../components/Navigation/Footer.astro"
-
+import Header from "../components/Navigation/Header.astro";
+import Footer from "../components/Navigation/Footer.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Sophia Khaled</title>
-	</head>
-	<body>
-        <header>
-            <Header />
-        </header>
-		<main>
-			<slot />
-		</main>        
-        <footer>
-            <Footer />
-        </footer>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Sophia Khaled</title>
+  </head>
+  <body>
+    <header>
+      <Header />
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <Footer />
+    </footer>
+  </body>
 </html>

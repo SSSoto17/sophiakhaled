@@ -4,7 +4,7 @@ const { headline, price, variant } = Astro.props;
 ---
 
 <div class="container">
-  <RegImage variant="regular" alt="" />
+  <RegImage variant="withbackground" alt="" />
 
   <div class={variant}>
     <h3>{headline}</h3>
@@ -17,8 +17,7 @@ const { headline, price, variant } = Astro.props;
   div.container {
     max-width: fit-content;
   }
-
-  .collection {
+  .text_center {
     text-align: center;
   }
 </style>

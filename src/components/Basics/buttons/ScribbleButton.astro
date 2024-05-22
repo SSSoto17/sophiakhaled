@@ -1,5 +1,50 @@
 ---
 
-
+const {label} = Astro.props
 
 ---
+<div class="container">
+    <img src="/svg/scribble_sparkle.svg" alt="" class="sparkle">
+    <div class="btn">
+        <img src="/svg/scribble.svg" alt="" class="scribble">
+        <p class="button">{label}</p>
+    </div>
+</div>
+
+<style>
+
+    .container {
+        position: relative;
+        aspect-ratio: 1.5/1;
+        max-width: 283px;
+    }
+
+    .btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    img {
+        position: absolute;
+        height: 100%;
+    }
+
+    img.sparkle {
+        width: 100%;
+        opacity: 0;
+    }
+
+    img.scribble {
+        width: 65%;
+        cursor: pointer;
+    }
+
+    .container:hover img.sparkle {
+        opacity: 1;
+    }
+
+
+</style>

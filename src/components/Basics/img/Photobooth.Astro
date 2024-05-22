@@ -1,44 +1,31 @@
 ---
-import RegImage from "../img/RegImage.astro";
 
-import imgA from "../../../img/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG";
+import PlaceholderImage from "../../../img/regular/model.jpeg";
 
-const images = [
-  {
-    imgA: "/src/img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG",
-    imgB: "/src/img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG",
-    imgC: "/src/img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG",
-  },
+import RegImage from "./RegImage.astro"
 
-/{
-    imgA: "/src/img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG",
-    imgB: "/src/img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG",
-    imgC: "/src/img/regular/7967A9EB-2BD9-41E7-ADA9-1D7D1690C969.JPEG",
-  },
-];
 ---
 
-<div>
-  {
-    images.map((image) => {
-      return (
-        <>
-          <RegImage src={image.imgA} alt="" />
-          {/*  <RegImage src={image.imgB} alt="" />
-          <RegImage src={image.imgC} alt=""/> */}
-        </>
-      );
-    })
-  }
-
-  <style>
-    div {
-      background-color: var(--white-smok);
-      width: fit-content;
-      padding: 1%;
-      display: flex;
-      flex-direction: column;
-      gap: var(--small);
-    }
-  </style>
+<div class="container">
+    <div class="single">
+        <RegImage src={PlaceholderImage} variant="default" alt="" />
+    </div>
 </div>
+
+
+
+<style>
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--x-small);
+        max-width: 283px;
+        background-color: var(--white-smoke);
+    }
+
+    .single {
+        height: 200px;
+    }
+
+</style>

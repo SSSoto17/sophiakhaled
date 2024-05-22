@@ -51,11 +51,17 @@
   --h3-size: 1rem;
   --h3-line: 1.25rem;
 
+  /* SUBHEADINGS */
+  --sub-size: 1rem;
+  --sub-line: 1.5rem;
+  --sub-scribble-size: 1.25rem;
+  --sub-scribble-line: 2rem;
+
   /* BODY */
   --body-size: 0.75rem;
   --body-line: 1rem;
   --lead-body-size: 1rem;
-  --lead-body-size: 1.25rem;
+  --lead-body-line: 1.25rem;
 
   /* LABELS */
   --filter-label-size: 1rem;
@@ -77,11 +83,17 @@
     --h3-size: 1.25rem;
     --h3-line: 1.5rem;
 
+    /* SUBHEADINGS */
+    --sub-size: 1.25rem;
+    --sub-line: 2rem;
+    --sub-scribble-size: 1.5rem;
+    --sub-scribble-line: 2.5rem;
+
     /* BODY */
     --body-size: 1rem;
     --body-line: 1.5rem;
     --lead-body-size: 1.25rem;
-    --lead-body-size: 1.5rem;
+    --lead-body-line: 1.5rem;
 
     /* LABELS */
     --filter-label-size: 1.25rem;
@@ -102,6 +114,12 @@
     --h2-line: 3rem;
     --h3-size: 1.5rem;
     --h3-line: 2.5rem;
+
+    /* SUBHEADINGS */
+    --sub-size: 1.5rem;
+    --sub-line: 2.5rem;
+    --sub-scribble-size: 2rem;
+    --sub-scribble-line: 3rem;
 
     /* LABELS */
     --filter-label-size: 1.25rem;

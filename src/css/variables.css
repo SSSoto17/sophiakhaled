@@ -63,6 +63,12 @@
   --lead-body-size: 1rem;
   --lead-body-line: 1.25rem;
 
+  /* BUTTONS */
+  --btn-size: 1rem;
+  --btn-line: 1.5rem;
+  --btn-scribble-size: 1.25rem;
+  --btn-scribble-line: 2rem;
+
   /* LABELS */
   --filter-label-size: 1rem;
   --filter-label-line: 1.25rem;
@@ -94,6 +100,12 @@
     --body-line: 1.5rem;
     --lead-body-size: 1.25rem;
     --lead-body-line: 1.5rem;
+
+    /* BUTTONS */
+    --btn-size: 1.5rem;
+    --btn-line: 2rem;
+    --btn-scribble-size: 2rem;
+    --btn-scribble-line: 2.5rem;
 
     /* LABELS */
     --filter-label-size: 1.25rem;

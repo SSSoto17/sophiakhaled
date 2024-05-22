@@ -7,27 +7,33 @@ const { src, variant, alt } = Astro.props;
 
 ---
 
-<!-- For regular images; these will be nested inside other image components -->
-<div class="container with_background">
-  <Image src={src} class={variant} alt={alt} />
+<div class=`${variant} container`>
+  <Image src={src} alt={alt} />
   <Image src={Tape} class="tape a" alt={alt} />
   <Image src={Tape} class="tape b" alt={alt} />
 </div>
 
 <style>
   .container {
-    width: 300px;
+    max-width: var(--content-min);
     position: relative;
   }
 
-  /* --------- Variants -------------- */
-  .with_background {
-    background-color: var(--lavender);
+  /* VARIANTS */
+
+  .taped .tape {
+    display: block;
   }
 
-  .opacity{
+  .inactive {
     opacity: 0.75;
   }
+
+  .default .tape, .inactive .tape {
+    display: none;
+  }
+
+  /* TAPE */
 
   .tape {
     aspect-ratio: 1 / 1;

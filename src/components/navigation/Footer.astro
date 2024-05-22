@@ -1,5 +1,144 @@
+ ---
 ---
+<article>
+    <div id="footerflex">
+        <div id="flexbox1">
+            <p class="Caps"><strong>STUDIO & SHOWROOM</strong></p>
+            <p class="fontsize_1rem">Sølvgade 102, Basement <br>1307 Copenhagen, Denmark</p>
+            <p class="fontsize_1rem">sophiakahledteam@gmail.com</p>
+        </div>
+        <div id="flexbox2">
+            <div class="flexbox_row">
+                <img src="../../../public/icon_tiktok.svg" alt="">
+                <img src="../../../icon_instagram.svg" alt="">
+            </div>
+            <p id="copyright">© Sophia Khaled, Copenhagen 2024</p>
+            <div id="formel" class="flexbox_row">
+                <a href="RETURN & REFUND">RETURN & REFUND</a>
+                <a href="PRIVACY POLICY">PRIVACY POLICY</a>
+                <a href="TERMS & CONDITIONS">TERMS & CONDITIONS</a>
+            </div>
+        </div>
+    </div>
+</article>
+<style>
+      #flexbox1{
+        display: flex;
+        flex-direction: column;
+        gap:0.5rem
 
----
+    }
+    #flexbox2{
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+        justify-items:end;
+    }
 
-<h1>Footer</h1>
+    .caps{
+        font-family: var(--h3);
+    }
+    #copyright{
+        font-size: var(--footer_copyright);
+    }
+
+    .fontsize_rem{
+        font-size: var(--body_paragraph)
+    }
+
+    #footerflex{
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        justify-content: space-between;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        flex-wrap: wrap;
+        gap:1rem;
+    }
+
+
+    .flexbox_row{
+        display: flex;
+        flex-direction: row;
+        gap:1rem;
+        font-size: 0.5rem;
+        justify-content: end;
+    }
+
+    img{
+        width: 1.5rem;
+    }
+
+    @media (min-width: 320px) {
+        #flexbox1{
+            display: none;
+        }
+
+        #flexbox2{
+            justify-content: center;
+            align-items: center;
+        }
+
+          #footerflex{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+
+          }
+
+        }
+
+    @media (min-width: 630px) {
+        #flexbox1{
+            display: block;
+        }
+
+        #footerflex{
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+
+          }
+         #flexbox2{
+            justify-content: end;
+            align-items: end;
+        }
+
+        }
+    @media (min-width: 1168px){
+
+
+}
+
+</style>
+
+<script>
+    const copyright = document.getElementById('copyright');
+    const flexbox2 = document.getElementById('flexbox2');
+    const footerflex = document.getElementById('footerflex')
+    const formel = document.getElementById('formel')
+    // Function to move copyright into flexbox2
+
+    function moveCopyright(){
+        if(window.innerWidth > 1000){
+        footerflex.insertBefore(copyright, flexbox2);
+    }
+    else if(window.innerWidth < 1000) {
+        
+    }
+    }
+
+    function moveCopyRightBack(){
+        if(window.innerWidth < 1000){
+        
+     flexbox2.insertBefore(copyright, formel);
+     }
+     }
+
+    // Call moveCopyright on window resize and on page load
+    window.addEventListener('resize', moveCopyright);
+        window.addEventListener('DOMContentLoaded', moveCopyright);
+         window.addEventListener('resize', moveCopyRightBack);
+        window.addEventListener('DOMContentLoaded', moveCopyRightBack);
+</script> 

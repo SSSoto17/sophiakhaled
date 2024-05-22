@@ -2,4 +2,117 @@
 
 ---
 
-<h1>Header</h1>
+<nav>
+    <div class="burgermenu">
+        <div class="menu-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <ul id="global_nav">
+        <li><a href="#shop">SHOP</a></li>
+        <li class="dropdown"><a href="#collections">COLLECTIONS</a>
+            <ul class="dropdown-content">
+                <li><a href="#collection1">Collection 1</a></li>
+                <li><a href="#collection2">Collection 2</a></li>
+            </ul>
+        </li>
+        <li class="logo-container">
+            <a href="/index">
+                <img class="logo" src="../../../public/Logo.svg" alt="Logo">
+            </a>
+        </li>
+        <li><a href="#about">ABOUT</a></li>
+        <li class="icon_flex">
+            <img src="../../../public/user_icon.svg" alt="User Icon">
+            <img src="../../../public/heart_icon.svg" alt="Heart Icon">
+            <img src="../../../public/bag_icon.svg" alt="Bag Icon">
+        </li>
+    </ul>
+</nav>
+
+
+<style>
+    .dropdown-content {
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    background-color: rgb(239, 229, 229);
+    z-index: 1;
+    left: 0;
+}
+ul li {
+    position: relative; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content li {
+    width: 100%;
+}
+    ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: var(--h3);
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+.icon_flex{
+    display:flex;
+    flex-direction: row;
+    gap:0.5rem
+}
+.icon_flex img{
+    scale: 0.9;
+
+}
+    .logo{
+        justify-self: center;
+
+    }
+    ul img{
+        max-width: 100%; /
+        max-height: 100%; /
+    }
+
+    a{
+        text-decoration: none;
+    }
+    .burgermenu {
+    display: inline-flex;
+    flex-direction: column;
+    gap:1rem
+  
+  }
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    z-index: 99;
+  }
+
+    .line {
+    background-color: rgb(0, 0, 0);
+    width: 32px;
+    height: 1.2px;
+    border-radius: 2px;
+  }
+
+
+
+    @media (min-width: 630px){
+        .burgermenu{
+            display: none;
+        }
+        #global_nav{
+            display: block;
+        }  
+
+    }
+
+  
+</style>

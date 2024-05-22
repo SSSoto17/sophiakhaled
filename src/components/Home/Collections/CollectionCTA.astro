@@ -1,0 +1,35 @@
+---
+
+import ArrowButton from "../../Basics/buttons/ScribbleButton.astro"
+
+const { ColNo, ColName } = Astro.props
+
+---
+
+<div class="container">
+    <div>
+        <div class="heading">
+        <h1 class="subheading_scribble">{ColNo}</h1>
+        <h2 class="heading_2">{ColName}</h2>
+    </div>
+    <ArrowButton />
+    </div>
+    <img src="/src/img/illustrations/ballerina.png" alt="">
+</div>
+
+<style>
+    .container {
+        min-width: 288px;
+        max-width: 488px;
+        display: flex;
+        justify-content: space-between;
+        gap: var(--medium);
+        padding: var(--none) var(--side);
+        border: 1px solid black;
+    }
+
+    img {
+        width: auto;
+        max-height: 156px;
+    }
+</style>

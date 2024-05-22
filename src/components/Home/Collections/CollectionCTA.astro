@@ -2,7 +2,7 @@
 
 import ArrowButton from "../../Basics/buttons/ScribbleButton.astro"
 
-const { ColNo, ColName } = Astro.props
+const { ColNo, ColName, ColSrc } = Astro.props
 
 ---
 
@@ -14,7 +14,7 @@ const { ColNo, ColName } = Astro.props
     </div>
     <ArrowButton />
     </div>
-    <img src="/src/img/illustrations/ballerina.png" alt="">
+    <img src={ColSrc} alt="">
 </div>
 
 <style>
@@ -25,7 +25,6 @@ const { ColNo, ColName } = Astro.props
         justify-content: space-between;
         gap: var(--medium);
         padding: var(--none) var(--side);
-        border: 1px solid black;
     }
 
     img {

@@ -1,16 +1,24 @@
 ---
 
-import PlaceholderImage from "../../../img/regular/model.jpeg";
-
 import RegImage from "./RegImage.astro"
+
+const { Img01, Img02, Img03 } = Astro.props
 
 ---
 
 <div class="container">
     <div class="single">
-        <RegImage src={PlaceholderImage} variant="default" alt="" />
+        <RegImage src={Img01} alt="" variant="default" />
     </div>
-</div>
+    <div class="single">
+        <RegImage src={Img02} alt="" variant="default" />
+    </div>
+    <div class="single">
+        <RegImage src={Img03} alt="" variant="default" />
+    </div>
+    </div>
+
+    
 
 
 
@@ -20,12 +28,14 @@ import RegImage from "./RegImage.astro"
         display: flex;
         flex-direction: column;
         gap: var(--x-small);
-        max-width: 283px;
-        background-color: var(--white-smoke);
+        padding: var(--none) var(--xx-small);
+        width: 183px;
+        background-color: var(--white-smpke);
     }
 
     .single {
-        height: 200px;
+        aspect-ratio: 1 / 1.25;
+        overflow: hidden;
     }
 
 </style>

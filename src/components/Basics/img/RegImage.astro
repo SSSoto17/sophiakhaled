@@ -1,14 +1,15 @@
 ---
 import { Image } from "astro:assets";
 
-const { src, variant, alt } = Astro.props;
-import PlaceholderImage from "../../../img/regular/flagermus.png";
 import Tape from "../../../img/regular/Tape.png";
+
+const { src, variant, alt } = Astro.props;
+
 ---
 
 <!-- For regular images; these will be nested inside other image components -->
 <div class="container with_background">
-  <Image src={PlaceholderImage} class={variant} alt={alt} />
+  <Image src={src} class={variant} alt={alt} />
   <Image src={Tape} class="tape a" alt={alt} />
   <Image src={Tape} class="tape b" alt={alt} />
 </div>

@@ -64,6 +64,23 @@ main > * {
   line-height: var(--h3-line);
 }
 
+<<<<<<< HEAD
+=======
+.subheading {
+  font-size: var(--sub-size);
+  font-weight: 400;
+  line-height: var(--sub-line);
+  letter-spacing: 0.05;
+}
+
+.subheading_scribble {
+  font-family: var(--scribble-font);
+  font-size: var(--sub-scribble-size);
+  line-height: var(--sub-scribble-line);
+  letter-spacing: 0.05;
+}
+
+>>>>>>> master
 .caps {
   text-transform: uppercase;
 }

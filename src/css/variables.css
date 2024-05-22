@@ -25,8 +25,11 @@
   /* BASIC */
   --background-color: var(--magnolia);
   --main-color: var(--raisin-black);
-  --box-color: var(--thistle);
+  --box-color: var(--lavender);
   --stroke-color: var(--thistle);
+
+  /* EFFECTS */
+  --dropshadow: drop-shadow(-4px 4px 2px rgba(43, 36, 51, 0.15));
 }
 
 /* FONTS */
@@ -37,35 +40,148 @@
 }
 
 /*  TEXT SIZES */
-@media (min-width: 320px) {
-  :root {
-    --display: 3rem;
-    --h1: 1.5rem;
-    --h2: 1.25rem;
-    --h3: 1rem;
-    --body_parapgraph: 1rem;
-    --footer_copyright: 0.8rem;
-  }
+
+:root {
+  /* HEADINGS */
+  --display: 3rem;
+  --h1-size: 1.5rem;
+  --h1-line: 2rem;
+  --h2-size: 1.25rem;
+  --h2-line: 1.5rem;
+  --h3-size: 1rem;
+  --h3-line: 1.25rem;
+
+  /* SUBHEADINGS */
+  --sub-size: 1rem;
+  --sub-line: 1.5rem;
+  --sub-scribble-size: 1.25rem;
+  --sub-scribble-line: 2rem;
+
+  /* BODY */
+  --body-size: 0.75rem;
+  --body-line: 1rem;
+  --lead-body-size: 1rem;
+  --lead-body-line: 1.25rem;
+
+  /* LABELS */
+  --filter-label-size: 1rem;
+  --filter-label-line: 1.25rem;
+  --item-label-size: 1.25rem;
+  --item-label-size: 1.5rem;
+  --polaroid-label-size: 1rem;
+  --polaroid-label-size: 1.5rem;
 }
+
 @media (min-width: 630px) {
   :root {
+    /* HEADINGS */
     --display: 4.5rem;
-    --h1: 2rem;
-    --h2: 1.5rem;
-    --h3: 1.25rem;
-    --body_parapgraph: 1rem;
-    --footer_copyright: 0.8rem;
+    --h1-size: 2rem;
+    --h1-line: 3rem;
+    --h2-size: 1.5rem;
+    --h2-line: 2rem;
+    --h3-size: 1.25rem;
+    --h3-line: 1.5rem;
+
+    /* SUBHEADINGS */
+    --sub-size: 1.25rem;
+    --sub-line: 2rem;
+    --sub-scribble-size: 1.5rem;
+    --sub-scribble-line: 2.5rem;
+
+    /* BODY */
+    --body-size: 1rem;
+    --body-line: 1.5rem;
+    --lead-body-size: 1.25rem;
+    --lead-body-line: 1.5rem;
+
+    /* LABELS */
+    --filter-label-size: 1.25rem;
+    --filter-label-line: 1.5rem;
+    --item-label-size: 1.5rem;
+    --item-label-line: 2rem;
+    --polaroid-label-size: 1.5rem;
+    --polaroid-label-line: 2rem;
   }
 }
 @media (min-width: 1168px) {
   :root {
+    /* HEADINGS */
     --display: 5.5rem;
-    --h1: 3rem;
-    --h2: 2rem;
-    --h3: 1.5rem;
-    --body_parapgraph: 1rem;
-    --footer_copyright: 0.8rem;
+    --h1-size: 3rem;
+    --h1-line: 4rem;
+    --h2-size: 2rem;
+    --h2-line: 3rem;
+    --h3-size: 1.5rem;
+    --h3-line: 2.5rem;
+
+    /* SUBHEADINGS */
+    --sub-size: 1.5rem;
+    --sub-line: 2.5rem;
+    --sub-scribble-size: 2rem;
+    --sub-scribble-line: 3rem;
+
+    /* LABELS */
+    --filter-label-size: 1.25rem;
+    --filter-label-line: 2rem;
+    --item-label-size: 1.5rem;
+    --item-label-size: 3rem;
+    --polaroid-label-size: 1.5rem;
+    --polaroid-label-size: 3rem;
   }
 }
 
 /* SPACING */
+
+:root {
+  /* CONTENT */
+  --content-min: 100px;
+  --content-max: 448px;
+
+  /* MARGIN */
+  --none: 0;
+  --side: 1rem;
+  --top_btm: 1.5rem;
+
+  /* GAP */
+  --x-small: 0.25rem;
+  --small: 0.25rem;
+  --medium: 1rem;
+  --large: 1rem;
+}
+
+@media (min-width: 630px) {
+  :root {
+    /* CONTENT */
+    --content-min: 598px;
+    --content-max: 928px;
+
+    /* MARGIN */
+    --side: 1.5rem;
+    --top_btm: 2rem;
+
+    /* GAP */
+    --x-small: 0.5rem;
+    --small: 0.5rem;
+    --medium: 1.5rem;
+    --large: 2rem;
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    /* CONTENT */
+    --content-min: 912px;
+    --content-max: 1120px;
+
+    /* MARGIN */
+    --side: 2rem;
+    --top_btm: 3rem;
+
+    /* GAP */
+    --x-small: 0.5rem;
+    --small: 1rem;
+    --medium: 2rem;
+    --large: 3rem;
+  }
+}

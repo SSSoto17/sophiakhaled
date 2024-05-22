@@ -64,8 +64,6 @@ main > * {
   line-height: var(--h3-line);
 }
 
-<<<<<<< HEAD
-=======
 .subheading {
   font-size: var(--sub-size);
   font-weight: 400;
@@ -80,7 +78,6 @@ main > * {
   letter-spacing: 0.05;
 }
 
->>>>>>> master
 .caps {
   text-transform: uppercase;
 }

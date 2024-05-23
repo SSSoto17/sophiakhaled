@@ -1,12 +1,14 @@
 ---
 import RegImage from "../../Basics/img/RegImage.astro";
-/* import Pil from "../../../img/illustrations/arrow.svg"; */
+import Pil from "../../../img/illustrations/arrow.svg";
 
 const { label, variant } = Astro.props;
 ---
 
 <div class={variant}>
-  <RegImage src="../../../img/illustrations/arrow.svg" alt="" />
+  <div class="rotate">
+    <RegImage src={Pil} variant="default" alt="" />
+  </div>
   <p class="item">{label}</p>
 </div>
 
@@ -18,12 +20,16 @@ const { label, variant } = Astro.props;
   .above {
     flex-direction: column;
   }
+  div.rotate {
+    rotate: 180deg;
+  }
 
   .below {
     flex-direction: column-reverse;
   }
 
   .below img {
+    /*  align-items: center; */
     rotate: 180deg;
   }
 </style>

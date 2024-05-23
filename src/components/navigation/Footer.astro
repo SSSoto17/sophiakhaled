@@ -1,142 +1,129 @@
  ---
 ---
-<article>
-    <div id="footerflex">
-        <div id="flexbox1">
-            <p class="Caps"><strong>STUDIO & SHOWROOM</strong></p>
-            <p class="fontsize_1rem">Sølvgade 102, Basement <br>1307 Copenhagen, Denmark</p>
-            <p class="fontsize_1rem">sophiakahledteam@gmail.com</p>
+<footer>
+    <div class="container">
+        <div>
+            <h1 class="heading_3 caps">Studio & Showroom</h1>
+            <div>
+                <p>Sølvgade 102, Basement</p>
+                <p>1307 Copenhagen, Denmark</p>
+            </div>
+            <p>sophiakahledteam@gmail.com</p>
         </div>
-        <div id="flexbox2">
-            <div class="flexbox_row">
-                <img src="../../../public/icon_tiktok.svg" alt="">
-                <img src="../../../icon_instagram.svg" alt="">
-            </div>
-            <p id="copyright">© Sophia Khaled, Copenhagen 2024</p>
-            <div id="formel" class="flexbox_row">
-                <a href="RETURN & REFUND">RETURN & REFUND</a>
-                <a href="PRIVACY POLICY">PRIVACY POLICY</a>
-                <a href="TERMS & CONDITIONS">TERMS & CONDITIONS</a>
-            </div>
+        <p class="copyright">© Sophia Khaled, Copenhagen 2024</p>
+        <div>
+            <ul class="socials">
+                <a href="https://www.instagram.com/sophia_khaled/"><li><img src="/icons/icon_IG.svg" alt=""></li></a>
+                <a href=""><li><img src="/icons/icon_TikTok.svg" alt=""></li></a>
+            </ul>
+            <p class="copyright">© Sophia Khaled, Copenhagen 2024</p>
+            <ul class="legal">
+                <a href=""><li>Return & Refund</li></a>
+                <a href=""><li>Privacy Policy</li></a>
+                <a href=""><li>Terms & Conditions</li></a>
+            </ul>
         </div>
     </div>
-</article>
+</footer>
+
 <style>
-      #flexbox1{
+
+footer {
+        display: grid;
+        grid-template-columns:
+    minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
+    minmax(var(--side), 1fr);
+        height: 120px;
+        padding: var(--small) var(--none);
+    }
+
+    footer > * {
+        grid-column: 2;
+    }
+
+    .container {
         display: flex;
-        flex-direction: column;
-        gap:0.5rem
-
-    }
-    #flexbox2{
-        display: flex;
-        flex-direction: column;
-        gap:1rem;
-        justify-items:end;
-    }
-
-    .caps{
-        font-family: var(--h3);
-    }
-    #copyright{
-        font-size: var(--footer_copyright);
-        margin:0;
-        padding:0;
-    }
-
-    .fontsize_rem{
-        font-size: var(--body_paragraph)
-    }
-
-    #footerflex{
-        display: flex;
-        flex-direction: row;
         align-items: end;
-        justify-content: space-between;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-        flex-wrap: wrap;
-        gap:1rem;
+        justify-content: center;
     }
 
+    .container > * {
+        max-width: var(--content-max);
+    }
 
-    .flexbox_row{
+    .container > div:first-child {
+        display: none;
+    }
+
+    ul.socials, ul.legal {
         display: flex;
-        flex-direction: row;
-        gap:1rem;
-        font-size: 0.5rem;
-        justify-content: end;
+        gap: var(--medium);
     }
 
-    img{
-        width: 1.5rem;
+    ul.socials {        
+        justify-content: center;
+        align-items: center;
+        padding: var(--medium) var(--none);
     }
 
-    @media (min-width: 320px) {
-        #flexbox1{
-            display: none;
-        }
+    ul.socials img {
+        --size: 2rem;
+        width: var(--size);
+        height: var(--size);
+    }
 
-        #flexbox2{
-            justify-content: center;
-            align-items: center;
-        }
+    ul.legal {
+        text-decoration: underline;
+        font-size: .5rem;
+        line-height: 1rem;
+    }
 
-          #footerflex{
-            display: flex;
-            flex-direction: column;
-            align-content: center;
+    p.copyright {
+        font-size: .75rem;
+        line-height: .75rem;
+        letter-spacing: .05rem;
+        text-align: right;
+    }
 
-          }
-
-        }
+    .container > p.copyright {
+        display: none;
+    }
 
     @media (min-width: 630px) {
-        #flexbox1{
-            display: block;
+        .container {
+            justify-content: space-between;
         }
 
-        #footerflex{
-            display: flex;
-            flex-direction: row;
-            align-content: center;
+        .container > div:first-child {
+        display: block;
+        }
 
-          }
-         #flexbox2{
+        ul.socials {
             justify-content: end;
-            align-items: end;
         }
 
-        }
-    @media (min-width: 1168px){
-
-
-}
-
-</style>
-
-<script>
-    const copyright = document.getElementById('copyright');
-    const flexbox2 = document.getElementById('flexbox2');
-    const footerflex = document.getElementById('footerflex')
-    const formel = document.getElementById('formel')
-    // Function to move copyright into flexbox2
-
-    function moveCopyright(){
-        if(window.innerWidth > 1000){
-            footerflex.insertBefore(copyright, flexbox2);
-        }
+        ul.socials img {
+        --size: 1.5rem;
+    }
     }
 
-    function moveCopyRightBack(){
-        if(window.innerWidth < 1000){
-            flexbox2.insertBefore(copyright, formel);
-        }
-     }
+    @media (min-width: 960px) {
+        .container > p.copyright {
+        display: block;
+        text-align: center;
+    }
 
-    // Call moveCopyright on window resize and on page load
-    window.addEventListener('resize', moveCopyright);
-        window.addEventListener('DOMContentLoaded', moveCopyright);
-         window.addEventListener('resize', moveCopyRightBack);
-        window.addEventListener('DOMContentLoaded', moveCopyRightBack);
-</script> 
+    .container > div:last-child p.copyright {
+        display: none;
+    }
+
+    ul.socials, ul.legal {
+        gap: var(--x-small);
+    }
+
+    ul.socials {
+        padding: var(--small) var(--none);
+    }
+    }
+
+</style>

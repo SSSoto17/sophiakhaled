@@ -18,6 +18,11 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+}
+
 /* LAYOUT */
 
 main {
@@ -99,7 +104,7 @@ p {
   letter-spacing: 0.05;
 }
 
-p:not(:last-child) {
+p:not(:last-of-type) {
   margin-bottom: var(--body-line);
 }
 

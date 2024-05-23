@@ -1,50 +1,50 @@
 ---
-const {variant, label} =Astro.props
+const { label, variant, link} =Astro.props
 
 ---
-<article>
-    <div class="flex-container">
-        <div class="button-font">
-            <p class="button">{label}</p>
-        </div>
+
+<a href={link}>
+    <button>
+        <p class="button">{label}</p>
+        <div class="icon side"></div>
         <img class={variant} src="/buttons/btn_arrow.svg" alt="">
-    </div>
-</article>
+    </button>
+</a>
 
 <style>
-    .flex-container{
-        display: inline-flex;
-        flex-direction: row;
-        gap: 10px;
-        border-bottom: 1.8px solid black;
-        padding-bottom: 3px;
+
+    button {
+        display: flex;
+        justify-content: center;
+        gap: var(--medium);
+        padding: var(--x-small);
         cursor: pointer;
+        border-bottom: 1px solid var(--main-color);
     }
 
-    .flex-container:hover .side{
-        transform:translateX(10px);
+    img {
+        --size: var(--medium);
+        width: var(--size);
+        height: var(--size);
+        
+    }
+    button, img {
+        transition: all .15s ease-in-out;
+    }
+    .down {
+        transform: rotate(90deg);
     }
 
-    .flex-container:hover .up{
-        transform: rotate(90deg) translateX(5px);
-    }
-    .up{
-        transform:rotate(90deg);
-         width: 1.8rem;
-         position: relative;
-         transition: transform 0.6s;
-         margin-bottom: 5px;
+    button:hover {
+        opacity: .5;
     }
 
-    .side{
-        width:1.8rem;
-        position: relative;
-        transition: transform 0.6s ;
-    }
-    .button-font{
-        font-size: var(--h3);
+    button:hover img {
+        transform: translateX(4px);
     }
 
+    button:hover img.down {
+        transform: rotate(90deg) translateX(4px);
+    }
 
-   
 </style>

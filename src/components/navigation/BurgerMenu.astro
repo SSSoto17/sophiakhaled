@@ -1,0 +1,134 @@
+---
+---
+
+<article>
+    <a href="/"><img class="logo" src="/Logo.svg" alt="Logo"></a>
+    <ul class="icons">
+        <li><img src="/icons/icon_Bag.svg" alt="Shopping Basket"></li>
+        <li>
+            <div class="icon" id="menu-btn">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </li>
+    </ul>
+    <ul class="nav">
+        <li class="caps"><a href="/about">About</a></li>
+        <li class="caps"><a href="/shop">Shop</a></li>
+        <li class="collections caps">
+            Collections
+            <ul class="dropdown">
+                <li><a href="/collections/middleschool-u-r-dead-to-me">Collection 01</a></li>
+                <li><a href="/collections/if-i-dont-see-the-prince-im-going-to-die">Collection 02</a></li>
+            </ul>
+        </li>
+    </ul>
+</article>  
+
+<style>
+
+    article, ul.icons {
+        display: flex;
+        align-items: center;
+        gap: var(--small);
+        z-index: 20;
+    }
+    article {
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+        position: relative;
+    }
+
+   
+
+    /* BURGER MENU ICON */
+
+    .icon {
+        --size: 1.5rem;
+        width: var(--size);
+        height: var(--size);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+        transition: opacity .15s ease-in-out;
+    }
+
+    .icon > * {
+        width: 100%;
+        height: 4px;
+        background-color: var(--main-color);
+        border-radius: 10px;
+    }
+
+    .icon:hover {
+        opacity: .5;
+    }
+
+    /* MENU */
+
+    ul.nav {
+        display: none;
+        position: absolute;
+        top: 1.25rem;
+        right: -1.5rem;
+        width: 200px;
+        padding: var(--side);
+        background-color: var(--box-color);
+        filter: var(--dropshadow);
+        z-index: 10;
+    }
+
+    ul.nav.active {
+        display: block;
+    }
+
+    ul.icons img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    ul.nav li {
+        padding: var(--x-small);
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.5rem;
+        letter-spacing: .1rem;
+        cursor: pointer;
+    }
+
+    ul.nav li:not(:last-child) {
+        border-bottom: 1px solid var(--stroke-color);
+    }
+
+    ul.dropdown {
+        padding: var(--xx-small);
+        display: none;
+    }
+
+    ul.dropdown.active {
+        display: block;
+    }
+
+    ul.dropdown li {
+        text-transform:none;
+    }
+</style>
+
+    
+<script>
+    const icon = document.querySelector("nav .icon");
+    const menu = document.querySelector("nav ul.nav");
+    const dropdownTrigger = document.querySelector("nav li.collections");
+    const dropdown = document.querySelector("nav ul.dropdown");
+
+    icon.addEventListener("click", ()=>{
+        menu.classList.toggle("active");
+    })
+
+    dropdownTrigger.addEventListener("click", ()=>{
+        dropdown.classList.toggle("active");
+    })
+</script>

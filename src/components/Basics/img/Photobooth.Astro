@@ -1,1 +1,37 @@
+---
 
+import { Image } from "astro:assets";
+
+const { Img01, Img02, Img03 } = Astro.props
+
+---
+
+<div class="container">
+    <div class="single">
+        <Image src={Img01} alt="" />
+    </div>
+    <div class="single">
+        <Image src={Img02} alt="" />
+    </div>
+    <div class="single">
+        <Image src={Img03} alt="" />
+    </div>
+    </div>
+    
+<style>
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--x-small);
+        padding: var(--none) var(--xx-small);
+        width: 183px;
+        background-color: var(--white-smpke);
+    }
+
+    .single {
+        aspect-ratio: 1 / 1.25;
+        overflow: hidden;
+    }
+
+</style>

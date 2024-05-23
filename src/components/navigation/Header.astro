@@ -2,8 +2,121 @@
 import GlobalNav from "../Basics/nav/GlobalNav.astro"
 import BurgerMenu from "../Basics/nav/BurgerMenu.astro"
 ---
+<nav>
+    <article class="mobile">
+        <BurgerMenu/>
+    </article>
+    <article class="desktop">
+        <ul>
+            <li class="caps"><a href="/shop">Shop</a></li>
+            <li class="dropdown_trigger caps">Collections
+                <ul class="dropdown">
+                    <li><a href="/collections/middleschool-u-r-dead-to-me">Collection 01</a></li>
+                    <li><a href="/collections/if-i-dont-see-the-prince-im-going-to-die">Collection 02</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a href="/"><img src="/Logo.svg" alt="" class="logo"></a>
+        <ul>
+            <li class="caps"><a href="/about">About</a></li>
+            <li class="caps basket"><img src="/icons/icon_Bag.svg" alt=""><a href="">Basket</a></li>
+        </ul>
+        
+    </article>
+</nav>
 
-<article>
-    <BurgerMenu/>
-    <GlobalNav/>
-</article>
+<style>
+
+    nav {
+        display: grid;
+  grid-template-columns:
+    minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
+    minmax(var(--side), 1fr);
+    height: 120px;
+    }
+
+    nav > * {
+        grid-column: 2;
+    }
+
+    article.desktop {
+        display: none;        
+    }
+
+    img.logo {
+        width: 220px;   
+    }
+
+    @media (min-width: 960px) {
+        article.mobile {
+            display: none;
+        }
+
+        article.desktop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        ul {
+        display: flex;
+        width: 283px;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--small);
+    }    
+
+    li {
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.5rem;
+        letter-spacing: .1rem;
+        cursor: pointer;
+        transition: opacity .15s ease-in-out;
+    }
+
+    li.basket {
+        display: flex;
+        align-items: center;
+        gap: var(--xx-small);
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+
+    .basket img {
+        height: 2rem;
+    }
+
+    ul.dropdown {
+        display: block;
+        opacity: 0;
+        text-transform: none;
+        position: absolute;
+        top: 80px;
+        left: 100px;
+        background-color: var(--box-color);
+        filter: var(--dropshadow);
+        padding: var(--small);
+        width: 224px;
+        transition: opacity .15s ease-in-out;
+    }
+
+    ul.dropdown li {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1.5rem;
+        letter-spacing: .1rem;
+        padding: var(--x-small);
+    }
+
+    ul.dropdown li:not(:last-child) {
+        border-bottom: 1px solid var(--stroke-color);
+    }
+
+    li.dropdown_trigger:hover ul.dropdown {
+        opacity: 1;
+    }
+    }
+
+</style>

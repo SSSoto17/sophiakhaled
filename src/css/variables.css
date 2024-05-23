@@ -73,9 +73,9 @@
   --filter-label-size: 1rem;
   --filter-label-line: 1.25rem;
   --item-label-size: 1.25rem;
-  --item-label-size: 1.5rem;
+  --item-label-line: 1.5rem;
   --polaroid-label-size: 1rem;
-  --polaroid-label-size: 1.5rem;
+  --polaroid-label-line: 1.5rem;
 }
 
 @media (min-width: 630px) {
@@ -137,9 +137,9 @@
     --filter-label-size: 1.25rem;
     --filter-label-line: 2rem;
     --item-label-size: 1.5rem;
-    --item-label-size: 3rem;
+    --item-label-line: 3rem;
     --polaroid-label-size: 1.5rem;
-    --polaroid-label-size: 3rem;
+    --polaroid-label-line: 3rem;
   }
 }
 

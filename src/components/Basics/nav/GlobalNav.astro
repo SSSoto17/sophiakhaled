@@ -1,0 +1,93 @@
+---
+import "../../../css/global.css";
+---
+
+<nav>
+    <div class="global-menu" id="burger-menu-content">
+            <ul>
+                <li><a href="/shop/webshop">Shop</a></li>
+                <li class="collections-menu">
+                    <div>Collections</div>
+                    <ul class="dropdown-content">
+                        <li><a href="/collections/collection_a">Collection 1</a></li>
+                        <li><a href="/collections/collection_b">Collection 2</a></li>
+                    </ul>
+                </li>
+                <li class="flex-logo hide_when_littlescreen">
+                    <a href="/"><img class="logo" src="../../../public/Logo.svg" alt="Logo"></a>
+                </li>
+                <li><a href="/about">About</a></li>
+                <li class="hide_when_littlescreen">
+                    <div class="flex_icons">
+                        <div>Basket</div>
+                        <img class="icons" src="../../../public/bag_icon.svg" alt="Bag Icon">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+    .global-menu > ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style: none;
+        align-items: center;
+        height: 120px;
+        
+
+    }
+
+    a{
+    text-decoration: none
+
+    }
+
+    ul{
+    font-size: var(--h3-size);
+    line-height: var(--h3-line);
+    }
+    ul.dropdown-content{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        font-size: 1rem;
+        top:25px;
+    }
+    .dropdown-content li{
+        display: none;
+   
+    }
+    .collections-menu{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    .collections-menu:hover .dropdown-content li {
+        display: block;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex_icons{
+        display: flex;
+        flex-direction: row;
+        align-items: center;    
+    }
+
+    @media (min-width: 630px){
+        .global-menu{
+            display: block;
+        }
+
+    }
+    @media (max-width: 630px){
+        .global-menu{
+            display: none;
+        }   
+
+    }
+</style>

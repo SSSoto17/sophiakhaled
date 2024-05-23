@@ -6,9 +6,9 @@ const { label, variant } = Astro.props;
 ---
 
 <div class={variant}>
-  <div class="rotate">
-    <RegImage src={Pil} variant="default" alt="" />
-  </div>
+  <div class="rotate" >
+  <RegImage src={Pil} variant="default" alt="" />
+</div>
   <p class="item">{label}</p>
 </div>
 
@@ -20,7 +20,7 @@ const { label, variant } = Astro.props;
   .above {
     flex-direction: column;
   }
-  div.rotate {
+  .above .rotate {
     rotate: 180deg;
   }
 
@@ -28,8 +28,4 @@ const { label, variant } = Astro.props;
     flex-direction: column-reverse;
   }
 
-  .below img {
-    /*  align-items: center; */
-    rotate: 180deg;
-  }
 </style>

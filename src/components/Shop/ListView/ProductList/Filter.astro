@@ -1,3 +1,80 @@
 ---
 
+import FilterMobileBar from "../Filter/FilterMobileBar.astro"
+import FilterCatList from "../Filter/FilterCatList.astro"
+import ArrowButton from "../../../Basics/buttons/ArrowButton.astro"
+
+const cat = [
+    {
+        name: "Category",
+        options: [
+            "Tops", "Bottoms", "Dresses", "Accessories"
+        ]
+    },              
+    {
+        name: "Collection",
+        options: [
+            "Middleschool u r dead to me...", "If i dont see the prince, im going to die..."
+        ]
+    }
+]
+
+
 ---
+<div class="break_main">
+    <div class="filter_bar">
+        <FilterMobileBar />
+    </div>    
+<div class="options">
+    {cat.map(cat=>{
+        return <FilterCatList heading={cat.name} options={cat.options} />
+    })}
+    <ArrowButton />
+</div>
+</div>
+
+
+<style>
+
+    .options {
+        display: none;
+        padding: var(--side);
+        border-bottom: 1px solid var(--stroke-color);
+        filter: var(--dropshadow);
+    }
+
+    .active {
+        display: block;
+    }
+
+    @media (min-width: 960px) {
+        .break_main {
+            grid-column: 2;
+        }
+        .options {
+            display: block;
+        min-width: 283px;
+        max-width: 352px;
+        border-bottom: none;
+        border-right: 1px solid var(--stroke-color);
+        padding: 0 var(--small) 0 0;
+        filter: none;
+        }
+    }
+
+</style>
+
+<script>
+
+    const filter = document.querySelector(".filter_bar");
+    const options = document.querySelector(".options");
+
+    filter.addEventListener("click", () =>{
+        console.log("click");
+        options.classList.toggle("active");
+    })
+
+</script>
+
+
+

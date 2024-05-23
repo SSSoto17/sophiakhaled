@@ -1,3 +1,37 @@
 ---
 
+
 ---
+
+<div class="container">
+    <img src="/svg/icon_Filter.svg" alt="">
+</div>
+
+<style>
+
+    .container {
+        width: 100%;
+        height: 3rem;
+        background-color: var(--box-color);
+        border: 1px solid var(--stroke-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: var(--dropshadow);
+        cursor: pointer;
+    }
+
+    img {
+        --size: 2rem;
+        width: var(--size);
+        height: var(--size);
+        background-color: none;
+    }
+
+    @media(min-width: 960px) {
+        .container {
+            display: none;
+        }
+    }
+
+</style>

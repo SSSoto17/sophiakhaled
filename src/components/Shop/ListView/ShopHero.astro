@@ -1,17 +1,26 @@
 ---
-import RegImage from "../../Basics/img/RegImage.astro";
+import { Image } from "astro:assets";
 
 import HeroIllustration from "../../../img/illustrations/ballerina.png"
 ---
 
 <div class="container">
   <h1 class="heading_1 caps">Shop</h1>
-  <RegImage src={HeroIllustration} variant="default" alt="" />
+  <Image src={HeroIllustration} alt="" />
 </div>
 
 <style>
   .container {
-    display: flex;
-    
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
   }
+
+  img {
+    width: auto;
+    height: 100%;
+  }
+
+  @media (min-width: 960px) {.container {display: flex}}
 </style>

@@ -1,3 +1,40 @@
 ---
 
+import FilterOption from "./FilterOption.astro"
+
+const { heading, options } = Astro.props
+
 ---
+
+<div class="container">
+    <h2 class="heading_3">{heading}</h2>
+    <ul>
+        {options.map(option=>{
+            return <li><FilterOption option={option} /></li>
+        })}
+    </ul>
+</div>
+
+
+
+<style>
+
+    .container {
+        max-width: 448px;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--small);
+        padding: var(--small) 0 var(--medium);
+    }
+
+    @media (min-width: 960px) {
+        ul {
+            flex-direction: column;
+        }
+    }
+
+</style>

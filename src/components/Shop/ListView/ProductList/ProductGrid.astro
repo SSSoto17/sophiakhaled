@@ -1,3 +1,33 @@
 ---
 
+import Card from "./Card.astro";
+
 ---
+
+<div class="container">
+    <Card name="Item" price="200.00" />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+</div>
+
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+        gap: var(--medium);
+        width: 100%;
+        padding: var(--top_btm) var(--side);
+    }
+
+    @media (min-width: 960px) {
+        .container {
+            display: grid;
+            padding: var(--none);
+        }
+    }
+</style>
+

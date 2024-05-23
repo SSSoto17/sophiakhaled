@@ -1,22 +1,35 @@
 ---
-import RegImage from "../../../Basics/img/RegImage.astro";
-const { headline, price, variant, Default } = Astro.props;
+
+import { Image } from "astro:assets";
+
+const { name, price } = Astro.props;
+
+import Placeholder from "../../../../img/regular/flagermus.png"
 ---
 
-<div class="container">
-  <RegImage variant={Default} alt="" />
-
-  <div class={variant}>
-    <h3>{headline}</h3>
-    <p>{price}</p>
+<div class="card">
+  <Image src={Placeholder} alt="" />
+  <div class="product_info">
+    <h3>{name}</h3>
+    <p>€{price}</p>
   </div>
 </div>
 
 <style>
-  div.container {
-    max-width: fit-content;
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium);
+    aspect-ratio: 1/1.25;
   }
-  .text_center {
-    text-align: center;
+
+  img {
+    background-color: var(--box-color);
+  }
+
+  .product_info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--x-small);
   }
 </style>

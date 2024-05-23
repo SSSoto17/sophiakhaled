@@ -1,4 +1,17 @@
 ---
+import RegImage from "../../Basics/img/RegImage.astro";
 
+const { label } = Astro.props;
 ---
 
+<div>
+  <RegImage />
+  <p class="">{label}</p>
+</div>
+
+<div>
+  <p class="">{label}</p>
+  <RegImage variant=""/>
+</div>
+
+<style></style>

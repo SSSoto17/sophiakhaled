@@ -13,12 +13,17 @@ const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/p
 
 ---
 
-<div class="container">
-    {products.map(item=>{
-        return <Card data={item} />
-    })}
-    <ArrowButton label="Load more" variant="down" />
-</div>
+<section>
+    <div class="container">
+        {products.map(item=>{
+            return <Card data={item} />
+        })}
+    </div>    
+    <div class="btn_container">
+        <ArrowButton label="Load more" variant="down" link="" />
+    </div>
+</section>
+
 
 <style>
     .container {
@@ -29,11 +34,18 @@ const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/p
         padding: var(--top_btm) var(--side);
     }
 
+    .btn_container {
+        display: flex;
+        justify-content: center;
+        padding: var(--small);
+    }
+
     @media (min-width: 960px) {
         .container {
-            display: grid;
             padding: var(--none);
         }
+
+
     }
 </style>
 

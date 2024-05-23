@@ -1,11 +1,13 @@
 ---
 
 import Card from "./Card.astro";
+import ArrowButton from "../../../Basics/buttons/ArrowButton.astro";
 
-const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products",{
+const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products?select=*",{
     method: "GET",
     headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqZWNrb2RlbGpoemFtaHdsaHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1MDI3ODIsImV4cCI6MjAzMTA3ODc4Mn0.qKKBr9i_Jy2NzTfbu_jinScWs6PmGaBMoeK-1WHbmcU"
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqZWNrb2RlbGpoemFtaHdsaHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1MDI3ODIsImV4cCI6MjAzMTA3ODc4Mn0.qKKBr9i_Jy2NzTfbu_jinScWs6PmGaBMoeK-1WHbmcU",
+        Range: "0-11"
     }
 }).then((res) => res.json());
 
@@ -15,6 +17,7 @@ const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/p
     {products.map(item=>{
         return <Card data={item} />
     })}
+    <ArrowButton label="Load more" variant="down" />
 </div>
 
 <style>

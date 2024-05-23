@@ -1,26 +1,35 @@
 ---
-import { Image } from "astro:assets";
 
-import HeroIllustration from "../../../img/illustrations/ballerina.png"
 ---
 
 <div class="container">
   <h1 class="heading_1 caps">Shop</h1>
-  <Image src={HeroIllustration} alt="" />
+  <img src="/illustrations/ball_of_yarn.svg" alt="">
+  
+  
 </div>
 
 <style>
   .container {
+    /* position: relative; */
     display: none;
-    justify-content: space-between;
+    /* gap: var(--x-small); */
     align-items: center;
     height: 200px;
   }
 
-  img {
-    width: auto;
-    height: 100%;
+  h1 {
+    /* position: absolute; */
+    /* left: 100px; */
   }
 
-  @media (min-width: 960px) {.container {display: flex}}
+  img {
+    /* aspect-ratio: 1920 / 1080; */
+    width: auto;
+    height: 78%;
+    /* position: absolute; */
+    /* top: var(--large); */
+  }
+
+  @media (min-width: 960px) {.container {display: flex;}}
 </style>

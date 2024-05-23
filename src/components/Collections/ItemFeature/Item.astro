@@ -1,3 +1,13 @@
 ---
+import { Image } from "astro:assets";
+import ItemName from "./ItemName.astro";
 
+import Flagermus from "../../../img/regular/flagermus.png"
+
+const {alt} = Astro.props;
 ---
+
+<div>
+    <ItemName />
+    <Image src={Flagermus} alt={alt}/>
+</div>

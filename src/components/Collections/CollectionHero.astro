@@ -1,23 +1,35 @@
 ---
+import { Image } from "astro:assets";
+
 import Polaroid from "../Basics/img/Polaroid.astro";
-import Img2 from "/svg/stroke.svg";
+import Img from "../../img/regular/flagermus.png";
+import Stroke from "/svg/stroke.svg";
 
 const { src } = Astro.props;
 ---
 
-<div>
+<div class="container">
   <div>
     <h1 class="subheading">Collection 01</h1>
     <h2 class="heading_1">Middleschool u r dead to me...</h2>
   </div>
   <!-- <Polaroid src={src} variant="" alt=""/> -->
-  <img src="../../img/regular/Img.png" alt="" />
-  <img src="/svg/stroke.svg" alt="stroke" />
+  <Image src={Img} alt="Polaroid" />
+  <img class="stroke" src="/svg/stroke.svg" alt="stroke" />
 </div>
 
-
 <style>
-  img {
-    max-width: 200px;
+  .container {
+   /*  background-image: "../../img/regular/bgCollection.png"; */
+    position: relative;
+     background-color: aqua;
+     z-index: -2;
+  }
+  .stroke {
+    max-width: 240px;
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    z-index: -1;
   }
 </style>

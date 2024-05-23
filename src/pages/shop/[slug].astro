@@ -1,0 +1,27 @@
+---
+
+import MainLayout from "../../layouts/MainLayout.astro"
+
+export async function getStaticPaths() {
+  const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products",{
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqZWNrb2RlbGpoemFtaHdsaHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1MDI3ODIsImV4cCI6MjAzMTA3ODc4Mn0.qKKBr9i_Jy2NzTfbu_jinScWs6PmGaBMoeK-1WHbmcU"
+    }
+  }).then((res) => res.json());
+
+  return products.map((item) => {
+    return {
+      params: { slug: item.slug },
+      props: { item },
+    };
+  });
+}
+
+const { item } = Astro.props
+
+---
+
+<MainLayout>
+	<h1>Sophia Khaled</h1>
+</MainLayout>

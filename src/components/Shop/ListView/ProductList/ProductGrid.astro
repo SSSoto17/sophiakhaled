@@ -2,16 +2,19 @@
 
 import Card from "./Card.astro";
 
+const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products",{
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqZWNrb2RlbGpoemFtaHdsaHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1MDI3ODIsImV4cCI6MjAzMTA3ODc4Mn0.qKKBr9i_Jy2NzTfbu_jinScWs6PmGaBMoeK-1WHbmcU"
+    }
+}).then((res) => res.json());
+
 ---
 
 <div class="container">
-    <Card name="Item" price="200.00" />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
+    {products.map(item=>{
+        return <Card data={item} />
+    })}
 </div>
 
 <style>

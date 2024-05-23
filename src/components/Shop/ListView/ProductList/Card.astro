@@ -2,29 +2,32 @@
 
 import { Image } from "astro:assets";
 
-const { name, price } = Astro.props;
+const { data } = Astro.props;
 
-import Placeholder from "../../../../img/regular/flagermus.png"
 ---
-
-<div class="card">
-  <Image src={Placeholder} alt="" />
-  <div class="product_info">
-    <h3>{name}</h3>
-    <p>€{price}</p>
-  </div>
-</div>
+<a href={`/shop/${data.slug}`}>
+  <article class="card">
+      <Image src={data.image} alt="" inferSize />
+    <header>
+      <h1 class="heading_3 caps">{data.name}</h1>
+      <p>€{data.price}</p>
+    </header>
+  </article>
+</a>
 
 <style>
   .card {
-    display: flex;
+    display: grid;
     flex-direction: column;
     gap: var(--medium);
-    aspect-ratio: 1/1.25;
+    
   }
 
   img {
     background-color: var(--box-color);
+    aspect-ratio: 1/1.25;
+    object-fit: scale-down;
+    object-position: ;
   }
 
   .product_info {

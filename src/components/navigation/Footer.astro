@@ -1,5 +1,129 @@
+ ---
 ---
+<footer>
+    <div class="container">
+        <div>
+            <h1 class="heading_3 caps">Studio & Showroom</h1>
+            <div>
+                <p>Sølvgade 102, Basement</p>
+                <p>1307 Copenhagen, Denmark</p>
+            </div>
+            <p>sophiakahledteam@gmail.com</p>
+        </div>
+        <p class="copyright">© Sophia Khaled, Copenhagen 2024</p>
+        <div>
+            <ul class="socials">
+                <a href="https://www.instagram.com/sophia_khaled/"><li><img src="/icons/icon_IG.svg" alt=""></li></a>
+                <a href=""><li><img src="/icons/icon_TikTok.svg" alt=""></li></a>
+            </ul>
+            <p class="copyright">© Sophia Khaled, Copenhagen 2024</p>
+            <ul class="legal">
+                <a href=""><li>Return & Refund</li></a>
+                <a href=""><li>Privacy Policy</li></a>
+                <a href=""><li>Terms & Conditions</li></a>
+            </ul>
+        </div>
+    </div>
+</footer>
 
----
+<style>
 
-<h1>Footer</h1>
+footer {
+        display: grid;
+        grid-template-columns:
+    minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
+    minmax(var(--side), 1fr);
+        height: 120px;
+        padding: var(--small) var(--none);
+    }
+
+    footer > * {
+        grid-column: 2;
+    }
+
+    .container {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+    }
+
+    .container > * {
+        max-width: var(--content-max);
+    }
+
+    .container > div:first-child {
+        display: none;
+    }
+
+    ul.socials, ul.legal {
+        display: flex;
+        gap: var(--medium);
+    }
+
+    ul.socials {        
+        justify-content: center;
+        align-items: center;
+        padding: var(--medium) var(--none);
+    }
+
+    ul.socials img {
+        --size: 2rem;
+        width: var(--size);
+        height: var(--size);
+    }
+
+    ul.legal {
+        text-decoration: underline;
+        font-size: .5rem;
+        line-height: 1rem;
+    }
+
+    p.copyright {
+        font-size: .75rem;
+        line-height: .75rem;
+        letter-spacing: .05rem;
+        text-align: right;
+    }
+
+    .container > p.copyright {
+        display: none;
+    }
+
+    @media (min-width: 630px) {
+        .container {
+            justify-content: space-between;
+        }
+
+        .container > div:first-child {
+        display: block;
+        }
+
+        ul.socials {
+            justify-content: end;
+        }
+
+        ul.socials img {
+        --size: 1.5rem;
+    }
+    }
+
+    @media (min-width: 960px) {
+        .container > p.copyright {
+        display: block;
+        text-align: center;
+    }
+
+    .container > div:last-child p.copyright {
+        display: none;
+    }
+
+    ul.socials, ul.legal {
+        gap: var(--x-small);
+    }
+
+    ul.socials {
+        padding: var(--small) var(--none);
+    }
+    }
+
+</style>

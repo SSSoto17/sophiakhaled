@@ -63,13 +63,19 @@
   --lead-body-size: 1rem;
   --lead-body-line: 1.25rem;
 
+  /* BUTTONS */
+  --btn-size: 1rem;
+  --btn-line: 1.5rem;
+  --btn-scribble-size: 1.25rem;
+  --btn-scribble-line: 2rem;
+
   /* LABELS */
   --filter-label-size: 1rem;
   --filter-label-line: 1.25rem;
   --item-label-size: 1.25rem;
-  --item-label-size: 1.5rem;
+  --item-label-line: 1.5rem;
   --polaroid-label-size: 1rem;
-  --polaroid-label-size: 1.5rem;
+  --polaroid-label-line: 1.5rem;
 }
 
 @media (min-width: 630px) {
@@ -95,6 +101,12 @@
     --lead-body-size: 1.25rem;
     --lead-body-line: 1.5rem;
 
+    /* BUTTONS */
+    --btn-size: 1.5rem;
+    --btn-line: 2rem;
+    --btn-scribble-size: 2rem;
+    --btn-scribble-line: 2.5rem;
+
     /* LABELS */
     --filter-label-size: 1.25rem;
     --filter-label-line: 1.5rem;
@@ -113,7 +125,7 @@
     --h2-size: 2rem;
     --h2-line: 3rem;
     --h3-size: 1.5rem;
-    --h3-line: 2.5rem;
+    --h3-line: 2rem;
 
     /* SUBHEADINGS */
     --sub-size: 1.5rem;
@@ -125,9 +137,9 @@
     --filter-label-size: 1.25rem;
     --filter-label-line: 2rem;
     --item-label-size: 1.5rem;
-    --item-label-size: 3rem;
+    --item-label-line: 3rem;
     --polaroid-label-size: 1.5rem;
-    --polaroid-label-size: 3rem;
+    --polaroid-label-line: 3rem;
   }
 }
 

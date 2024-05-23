@@ -1,5 +1,50 @@
 ---
-
-
+const { label, variant, link} =Astro.props
 
 ---
+
+<a href={link}>
+    <button>
+        <p class="button">{label}</p>
+        <div class="icon side"></div>
+        <img class={variant} src="/buttons/btn_arrow.svg" alt="">
+    </button>
+</a>
+
+<style>
+
+    button {
+        display: flex;
+        justify-content: center;
+        gap: var(--medium);
+        padding: var(--x-small);
+        cursor: pointer;
+        border-bottom: 1px solid var(--main-color);
+    }
+
+    img {
+        --size: var(--medium);
+        width: var(--size);
+        height: var(--size);
+        
+    }
+    button, img {
+        transition: all .15s ease-in-out;
+    }
+    .down {
+        transform: rotate(90deg);
+    }
+
+    button:hover {
+        opacity: .5;
+    }
+
+    button:hover img {
+        transform: translateX(4px);
+    }
+
+    button:hover img.down {
+        transform: rotate(90deg) translateX(4px);
+    }
+
+</style>

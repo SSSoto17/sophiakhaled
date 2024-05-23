@@ -3,3 +3,43 @@
 
 
 ---
+
+<article>
+    <a href="">
+        <div class="grid_scribble_btn">
+            <div class="scribble_text">
+                <slot/>
+            </div>
+            <img class="scribble_img" src="../../../../public/scribble_btn.svg" alt="">
+        </div>
+    </a>
+
+</article>
+
+<style>
+    .grid_scribble_btn{
+        display:grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+
+       .grid_scribble_btn:hover{
+        display:grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+    a{
+        text-decoration: none;
+    }
+    .scribble_img{
+        width:15%;
+        grid-area: 1/1;
+    }
+    .scribble_text{
+        grid-area: 1/1;
+    }
+
+
+</style>

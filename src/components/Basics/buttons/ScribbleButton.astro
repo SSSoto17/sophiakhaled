@@ -1,44 +1,49 @@
 ---
 
-
+const {label} = Astro.props
 
 ---
-
-<article>
-    <a href="">
-        <div class="grid_scribble_btn">
-            <div class="scribble_text">
-                <slot/>
-            </div>
-            <img class="scribble_img" src="../../../../public/scribble_btn.svg" alt="">
-        </div>
-    </a>
-
-</article>
+<div class="container">
+    <img src="/svg/scribble_sparkle.svg" alt="" class="sparkle">
+    <div class="btn">
+        <img src="/svg/scribble.svg" alt="" class="scribble">
+        <p class="button">{label}</p>
+    </div>
+</div>
 
 <style>
-    .grid_scribble_btn{
-        display:grid;
-        grid-template-columns: 1fr;
-        align-items: center;
-        justify-items: center;
+
+    .container {
+        position: relative;
+        aspect-ratio: 1.5/1;
+        max-width: 283px;
     }
 
-       .grid_scribble_btn:hover{
-        display:grid;
-        grid-template-columns: 1fr;
+    .btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
         align-items: center;
-        justify-items: center;
+        height: 100%;
     }
-    a{
-        text-decoration: none;
+
+    img {
+        position: absolute;
+        height: 100%;
     }
-    .scribble_img{
-        width:15%;
-        grid-area: 1/1;
+
+    img.sparkle {
+        width: 100%;
+        opacity: 0;
     }
-    .scribble_text{
-        grid-area: 1/1;
+
+    img.scribble {
+        width: 65%;
+        cursor: pointer;
+    }
+
+    .container:hover img.sparkle {
+        opacity: 1;
     }
 
 

@@ -1,17 +1,13 @@
 ---
 import RegImage from "../../Basics/img/RegImage.astro";
+/* import Pil from "../../../img/illustrations/arrow.svg"; */
 
 const { label } = Astro.props;
 ---
 
 <div>
-  <RegImage />
-  <p class="">{label}</p>
-</div>
-
-<div>
-  <p class="">{label}</p>
-  <RegImage variant=""/>
+  <RegImage src="../../../img/illustrations/arrow.svg" alt="" />
+  <p class="item">{label}</p>
 </div>
 
 <style></style>

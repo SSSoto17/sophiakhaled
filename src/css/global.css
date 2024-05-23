@@ -104,3 +104,14 @@ p.filter {
   font-size: var(--filter-label-size);
   line-height: var(--filter-label-line);
 }
+
+p.button {
+  font-size: var(--btn-size);
+  font-weight: 300;
+  line-height: var(--btn-line);
+}
+
+p.button_scribble {
+  font-size: var(--btn-scribble-size);
+  line-height: var(--btn-scribble-line);
+}

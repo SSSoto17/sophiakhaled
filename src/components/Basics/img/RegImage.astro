@@ -1,15 +1,53 @@
 ---
-
 import { Image } from "astro:assets";
 
+import Tape from "../../../img/regular/Tape.png";
 
-const { src, variant, alt } = Astro.props
-
+const { src, variant, alt } = Astro.props;
 
 ---
 
-<!-- <Image src={src} class={variant} alt={alt} /> -->
+<div class=`${variant} container`>
+  <Image src={src} alt={alt} />
+  <Image src={Tape} class="tape a" alt={alt} />
+  <Image src={Tape} class="tape b" alt={alt} />
+</div>
 
-<Image src={src} alt="" />
+<style>
+  .container {
+    max-width: var(--content-min);
+    position: relative;
+  }
 
-<!-- For regular images; these will be nested inside other image components -->
+  /* VARIANTS */
+
+  .taped .tape {
+    display: block;
+  }
+
+  .inactive {
+    opacity: 0.75;
+  }
+
+  .default .tape, .inactive .tape {
+    display: none;
+  }
+
+  /* TAPE */
+
+  .tape {
+    aspect-ratio: 1 / 1;
+    width: 150px;
+    position: absolute;
+  }
+
+  .tape.a {
+    top: -45px;
+    right: -35px;
+  }
+
+  .tape.b {
+    bottom: -45px;
+    left: -35px;
+  }
+</style>

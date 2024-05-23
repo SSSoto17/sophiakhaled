@@ -63,6 +63,12 @@
   --lead-body-size: 1rem;
   --lead-body-line: 1.25rem;
 
+  /* BUTTONS */
+  --btn-size: 1rem;
+  --btn-line: 1.5rem;
+  --btn-scribble-size: 1.25rem;
+  --btn-scribble-line: 2rem;
+
   /* LABELS */
   --filter-label-size: 1rem;
   --filter-label-line: 1.25rem;
@@ -94,6 +100,12 @@
     --body-line: 1.5rem;
     --lead-body-size: 1.25rem;
     --lead-body-line: 1.5rem;
+
+    /* BUTTONS */
+    --btn-size: 1.5rem;
+    --btn-line: 2rem;
+    --btn-scribble-size: 2rem;
+    --btn-scribble-line: 2.5rem;
 
     /* LABELS */
     --filter-label-size: 1.25rem;
@@ -144,6 +156,7 @@
   --top_btm: 1.5rem;
 
   /* GAP */
+  --xx-small: 0.15rem;
   --x-small: 0.25rem;
   --small: 0.25rem;
   --medium: 1rem;
@@ -161,6 +174,7 @@
     --top_btm: 2rem;
 
     /* GAP */
+    --xx-small: 0.25rem;
     --x-small: 0.5rem;
     --small: 0.5rem;
     --medium: 1.5rem;
@@ -179,6 +193,8 @@
     --top_btm: 3rem;
 
     /* GAP */
+
+    --xx-small: 0.25rem;
     --x-small: 0.5rem;
     --small: 1rem;
     --medium: 2rem;

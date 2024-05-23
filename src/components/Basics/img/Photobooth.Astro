@@ -1,6 +1,6 @@
 ---
 
-import RegImage from "./RegImage.astro"
+import { Image } from "astro:assets";
 
 const { Img01, Img02, Img03 } = Astro.props
 
@@ -8,20 +8,16 @@ const { Img01, Img02, Img03 } = Astro.props
 
 <div class="container">
     <div class="single">
-        <RegImage src={Img01} alt="" variant="default" />
+        <Image src={Img01} alt="" />
     </div>
     <div class="single">
-        <RegImage src={Img02} alt="" variant="default" />
+        <Image src={Img02} alt="" />
     </div>
     <div class="single">
-        <RegImage src={Img03} alt="" variant="default" />
+        <Image src={Img03} alt="" />
     </div>
     </div>
-
     
-
-
-
 <style>
 
     .container {

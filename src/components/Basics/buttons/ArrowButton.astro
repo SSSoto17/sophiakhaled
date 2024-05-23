@@ -1,13 +1,13 @@
 ---
-const {varient} =Astro.props
+const {variant, label} =Astro.props
 
 ---
 <article>
     <div class="flex-container">
         <div class="button-font">
-            <slot />
+            <p class="button">{label}</p>
         </div>
-        <img class={varient} src="../../../../public/Arrow.svg" alt="">
+        <img class={variant} src="/buttons/btn_arrow.svg" alt="">
     </div>
 </article>
 
@@ -18,6 +18,7 @@ const {varient} =Astro.props
         gap: 10px;
         border-bottom: 1.8px solid black;
         padding-bottom: 3px;
+        cursor: pointer;
     }
 
     .flex-container:hover .side{

@@ -2,12 +2,14 @@
 import Item from "../components/Collections/ItemFeature/Item.astro";
 import ItemName from "../components/Collections/ItemFeature/ItemName.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+
+import Img from "../img/regular/flagermus.png";
 ---
 
 <MainLayout>
   <h1>Sophia Khaled</h1>
 
-  <ItemName label="Item name" variant="below" />
+  <ItemName label="Item name" direction="below" alt="" />
 
-  <Item/>
+  <Item src={Img} variant="a" direction="below" label="Black Bat Bag" alt="" />
 </MainLayout>

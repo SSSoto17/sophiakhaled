@@ -1,13 +1,10 @@
 ---
-import RegImage from "../../Basics/img/RegImage.astro";
-import Pil from "/svg/arrow.svg";
-
-const { label, variant } = Astro.props;
+const { label, direction } = Astro.props;
 ---
 
-<div class={variant}>
+<div class={direction}>
   <div class="rotate">
-    <RegImage src={Pil} variant="default" alt="" />
+    <img src="/svg/arrow.svg" alt="">
   </div>
   <p class="item">{label}</p>
 </div>

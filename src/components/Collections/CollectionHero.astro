@@ -1,22 +1,23 @@
 ---
-import Polaroid from "../Basics/img/Polaroid.astro"
+import Polaroid from "../Basics/img/Polaroid.astro";
 import Img2 from "/svg/stroke.svg";
 
-const {src} = Astro.props;
+const { src } = Astro.props;
 ---
 
 <div>
-    <div>
-        <h1 class="subheading">Collection 01</h1>
-        <h2 class="heading_1">Middleschool u r dead to me...</h2>
-    </div>
-    <!-- <Polaroid src={src} variant="" alt=""/> -->
-    <img src={Polaroid} alt="">
-    <img src={Img2} alt="stroke">
+  <div>
+    <h1 class="subheading">Collection 01</h1>
+    <h2 class="heading_1">Middleschool u r dead to me...</h2>
+  </div>
+  <!-- <Polaroid src={src} variant="" alt=""/> -->
+  <img src="../../img/regular/Img.png" alt="" />
+  <img src="/svg/stroke.svg" alt="stroke" />
 </div>
 
+
 <style>
-    img{
-        max-width: 200px;
-    }
+  img {
+    max-width: 200px;
+  }
 </style>

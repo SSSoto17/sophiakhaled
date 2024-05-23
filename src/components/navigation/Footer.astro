@@ -40,6 +40,8 @@
     }
     #copyright{
         font-size: var(--footer_copyright);
+        margin:0;
+        padding:0;
     }
 
     .fontsize_rem{
@@ -122,18 +124,14 @@
 
     function moveCopyright(){
         if(window.innerWidth > 1000){
-        footerflex.insertBefore(copyright, flexbox2);
-    }
-    else if(window.innerWidth < 1000) {
-        
-    }
+            footerflex.insertBefore(copyright, flexbox2);
+        }
     }
 
     function moveCopyRightBack(){
         if(window.innerWidth < 1000){
-        
-     flexbox2.insertBefore(copyright, formel);
-     }
+            flexbox2.insertBefore(copyright, formel);
+        }
      }
 
     // Call moveCopyright on window resize and on page load

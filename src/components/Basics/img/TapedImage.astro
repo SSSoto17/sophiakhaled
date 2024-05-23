@@ -3,14 +3,14 @@ import { Image } from "astro:assets";
 
 import Tape from "../../../img/regular/Tape.png";
 
-const { src, variant, alt } = Astro.props;
+const { src, alt } = Astro.props;
 
 ---
 
-<div class=`${variant} container`>
+<div class="container">
   <Image src={src} alt={alt} />
-  <Image src={Tape} class="tape a" alt={alt} />
-  <Image src={Tape} class="tape b" alt={alt} />
+  <Image src={Tape} class="tape a" alt="" />
+  <Image src={Tape} class="tape b" alt="" />
 </div>
 
 <style>
@@ -18,22 +18,6 @@ const { src, variant, alt } = Astro.props;
     max-width: var(--content-min);
     position: relative;
   }
-
-  /* VARIANTS */
-
-  .taped .tape {
-    display: block;
-  }
-
-  .inactive {
-    opacity: 0.75;
-  }
-
-  .default .tape, .inactive .tape {
-    display: none;
-  }
-
-  /* TAPE */
 
   .tape {
     aspect-ratio: 1 / 1;

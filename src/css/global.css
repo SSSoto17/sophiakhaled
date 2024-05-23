@@ -31,7 +31,7 @@ main > * {
   grid-column: 1 / 4;
 }
 
-/* TEXT STYLES */
+/*  TEXT STYLES | HEADINGS */
 
 .heading_1,
 .heading_2 {
@@ -64,6 +64,14 @@ main > * {
   line-height: var(--h3-line);
 }
 
+/* if anything needs to be uppercase, add this class */
+
+.caps {
+  text-transform: uppercase;
+}
+
+/* TEXT STYLES | SUBHEADINGS */
+
 .subheading {
   font-size: var(--sub-size);
   font-weight: 400;
@@ -78,9 +86,7 @@ main > * {
   letter-spacing: 0.05;
 }
 
-.caps {
-  text-transform: uppercase;
-}
+/* TEXT STYLES | BODY */
 
 p {
   font-size: var(--body-size);
@@ -99,11 +105,7 @@ p.lead {
   line-height: var(--lead-body-line);
 }
 
-p.filter {
-  font-family: var(--scribble-font);
-  font-size: var(--filter-label-size);
-  line-height: var(--filter-label-line);
-}
+/* TEXT STYLES | BUTTONS */
 
 p.button {
   font-size: var(--btn-size);
@@ -114,4 +116,27 @@ p.button {
 p.button_scribble {
   font-size: var(--btn-scribble-size);
   line-height: var(--btn-scribble-line);
+}
+
+/* TEXT STYLES | LABELS */
+
+p.filter,
+p.item,
+p.polaroid {
+  font-family: var(--scribble-font);
+}
+
+p.filter {
+  font-size: var(--filter-label-size);
+  line-height: var(--filter-label-line);
+}
+
+p.item {
+  font-size: var(--item-label-size);
+  line-height: var(--item-label-line);
+}
+
+p.polaroid {
+  font-size: var(--polaroid-label-size);
+  line-height: var(--polaroid-label-line);
 }

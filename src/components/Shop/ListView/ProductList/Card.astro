@@ -2,13 +2,13 @@
 
 import { Image } from "astro:assets";
 
-const { data } = Astro.props;
+const { data, page, text_align } = Astro.props;
 
 ---
 <a href={`/shop/${data.slug}`}>
-  <article class="card">
-      <Image src={data.image} alt="" inferSize />
-    <header>
+  <article>
+      <Image src={data.image} alt="" inferSize class={page} />
+    <header class={text_align}>
       <h1 class="heading_3 caps">{data.name}</h1>
       <p>€{data.price}</p>
     </header>
@@ -16,23 +16,33 @@ const { data } = Astro.props;
 </a>
 
 <style>
-  .card {
+  article {
     display: grid;
     flex-direction: column;
     gap: var(--medium);
-    
   }
 
   img {
     background-color: var(--box-color);
-    aspect-ratio: 1/1.25;
     object-fit: scale-down;
     object-position: ;
+  }
+
+  img.shop {
+    aspect-ratio: 1/1.25;
+  }
+
+  img.collections {
+    aspect-ratio: 1/1;
   }
 
   .product_info {
     display: flex;
     flex-direction: column;
     gap: var(--x-small);
+  }
+
+  header.center {
+    text-align: center;
   }
 </style>

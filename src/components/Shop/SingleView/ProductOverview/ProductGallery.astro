@@ -4,21 +4,41 @@ import { Image } from "astro:assets";
 
 import Placeholder from "../../../../img/regular/model.jpeg"
 
-const {img} = Astro.props
+const {img, active} = Astro.props
 
 ---
 
 <ul>
+    <li><Image src={img} alt="" class="active" inferSize /></li>
     <li><Image src={img} alt="" inferSize /></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li><Image src={img} alt="" inferSize /></li>
+    <li><Image src={img} alt="" inferSize /></li>
 </ul>
 
 <style>
 
     ul {
         height: 120px;
+        display: flex;
+        gap: var(--xx-small);
+    }
+
+    img {
+        background-color: var(--box-color);
+        padding: var(--small);
+        object-fit: scale-down;
+        height: 100%;
+        opacity: .5;
+        cursor: pointer;
+        transition: opacity .15s ease-in-out;
+    }
+
+    img.active {
+        opacity: 1;
+    }
+
+    img:hover {
+        opacity: 1;
     }
 
 </style>

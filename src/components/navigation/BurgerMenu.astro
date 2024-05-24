@@ -72,13 +72,19 @@
     ul.nav {
         display: none;
         position: absolute;
-        top: 1.25rem;
+        top: 2rem;
         right: -1.5rem;
         width: 200px;
         padding: var(--side);
         background-color: var(--box-color);
         filter: var(--dropshadow);
         z-index: 10;
+    }
+
+    @media (min-width: 630px) {
+        ul.nav {
+        top: 1.25rem;
+        }
     }
 
     ul.nav.active {

@@ -3,6 +3,7 @@
 import MainLayout from "../../layouts/MainLayout.astro"
 import ProductOverview from "../../components/Shop/SingleView/ProductOverview.astro";
 import OrderInformation from "../../components/Shop/SingleView/OrderInformation.astro";
+import CollectionShowcase from "../../components/Collections/CollectionShowcase.astro";
 
 export async function getStaticPaths() {
   const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products",{
@@ -27,4 +28,5 @@ const { item } = Astro.props
 <MainLayout>
 	<ProductOverview item={item} />
   <OrderInformation />
+  <CollectionShowcase ColNo={item.collection} SetNo={item.set} RecNo={item.recommendation} RanNo="2" />
 </MainLayout>

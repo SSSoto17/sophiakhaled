@@ -1,4 +1,27 @@
 ---
-
+const { label, direction } = Astro.props;
 ---
 
+<div class={direction}>
+  <div class="rotate">
+    <img src="/svg/arrow.svg" alt="">
+  </div>
+  <p class="item">{label}</p>
+</div>
+
+<style>
+  div {
+    display: flex;
+    align-items: center;
+  }
+  .above {
+    flex-direction: column;
+  }
+  .above .rotate {
+    rotate: 180deg;
+  }
+
+  .below {
+    flex-direction: column-reverse;
+  }
+</style>

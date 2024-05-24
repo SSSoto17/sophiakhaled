@@ -1,3 +1,30 @@
 ---
+import { Image } from "astro:assets";
+import ItemName from "./ItemName.astro";
 
+const { alt, variant, label, src, direction } = Astro.props;
 ---
+
+<div id="flex" class={variant}>
+  <ItemName direction={direction} label={label} />
+
+  <Image src={src} alt={alt} />
+</div>
+
+<style>
+  #flex {
+    max-width: fit-content;
+    display: flex;
+  }
+  img {
+    max-width: 200px;
+  }
+
+ .a {
+    flex-direction: column;
+  }
+
+  .b {
+    flex-direction: column-reverse;
+  }
+</style>

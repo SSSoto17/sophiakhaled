@@ -5,7 +5,8 @@ import ScribbleButton from "../Basics/buttons/ScribbleButton.astro"
 
 import Mem01 from "../../img/collection_01/mem_01.jpg"
 import Mem02 from "../../img/collection_01/mem_02.jpg"
-import Mem03 from "../../img/collection_01/mem_03.jpg"
+
+const {img} = Astro.props
 
 ---
 
@@ -17,7 +18,6 @@ import Mem03 from "../../img/collection_01/mem_03.jpg"
     <div class="img_container">
         <TapedImage src={Mem01} alt="" style="transform: rotate(-4deg)"/>
         <Image src={Mem02} alt=""/>
-        <!-- <TapedImage src={Mem03} alt=""/> -->
     </div><ScribbleButton label="View gallery" />
     <div class="link">
         
@@ -42,11 +42,28 @@ import Mem03 from "../../img/collection_01/mem_03.jpg"
 
     .img_container {
         width: 256px;
-        padding: var(--top_btm) var(--none);
+        padding: var(--top_btm) var(--large);
+        display: flex;
     }
 
-    .img_container > * {
+    .img_container > img {
         display: none;
+    }
+
+    @media (min-width: 630px) {
+        .img_container {
+            width: 100%;
+            position: relative;
+            padding: var(--top_btm) 25%;
+        }
+        .img_container img {
+            display: block;
+            position: absolute;
+            width: 35%;
+            bottom: 0;
+            right: 4rem;
+            transform: rotate(8deg);
+        }
     }
 
 </style>

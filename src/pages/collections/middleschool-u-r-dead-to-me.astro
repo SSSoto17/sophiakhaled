@@ -7,11 +7,21 @@ import GetTheLook from "../../components/Collections/GetTheLook.astro"
 import CollectionShowcase from "../../components/Collections/CollectionShowcase.astro"
 import Memories from "../../components/Collections/Memories.astro"
 
+import Mem01 from "../../img/collection_01/mem_01.jpg"
+import Mem02 from "../../img/collection_01/mem_02.jpg"
+
+const collection = 
+	{
+		no: "01",
+		name: "Middleschool u r dead to me...",
+		memories: [Mem01, Mem02]
+	}
+
 ---
 
 <MainLayout>
-	<CollectionHero />
+	<CollectionHero header={collection.name} />
 	<GetTheLook />
-	<CollectionShowcase ColNo="1" RanNo="5" />
-	<Memories />
+	<CollectionShowcase ColNo={collection.no} RanNo="5" />
+	<Memories img={collection.memories} />
 </MainLayout>

@@ -2,11 +2,16 @@
 
 import MainLayout from "../../layouts/MainLayout.astro"
 
+import CollectionHero from "../../components/Collections/CollectionHero.astro"
+import GetTheLook from "../../components/Collections/GetTheLook.astro"
 import CollectionShowcase from "../../components/Collections/CollectionShowcase.astro"
+import Memories from "../../components/Collections/Memories.astro"
 
 ---
 
 <MainLayout>
-	<h1>Sophia Khaled</h1>
-	<CollectionShowcase ColNo="1" />
+	<CollectionHero />
+	<GetTheLook />
+	<CollectionShowcase ColNo="1" RanNo="5" />
+	<Memories />
 </MainLayout>

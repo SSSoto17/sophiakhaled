@@ -17,6 +17,13 @@ const {name, size, material, price} = Astro.props
 </section>
 
 <style>
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--small);
+        padding-bottom: var(--top_btm);
+    }
+
     article{
         min-width: 283px;
         max-width: 448px;

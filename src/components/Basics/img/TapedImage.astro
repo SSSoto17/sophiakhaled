@@ -3,19 +3,19 @@ import { Image } from "astro:assets";
 
 import Tape from "../../../img/regular/Tape.png";
 
-const { src, alt } = Astro.props;
+const { src, alt, style } = Astro.props;
 
 ---
 
 <div class="container">
-  <Image src={src} alt={alt} />
+  <Image src={src} alt={alt} style={style} />
   <Image src={Tape} class="tape a" alt="" />
   <Image src={Tape} class="tape b" alt="" />
 </div>
 
 <style>
   .container {
-    max-width: var(--content-min);
+    max-width: var(--content-max);
     position: relative;
   }
 
@@ -34,4 +34,6 @@ const { src, alt } = Astro.props;
     bottom: -45px;
     left: -35px;
   }
+
+
 </style>

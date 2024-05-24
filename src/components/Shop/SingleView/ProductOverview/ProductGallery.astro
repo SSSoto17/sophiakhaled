@@ -1,3 +1,24 @@
 ---
 
+import { Image } from "astro:assets";
+
+import Placeholder from "../../../../img/regular/model.jpeg"
+
+const {img} = Astro.props
+
 ---
+
+<ul>
+    <li><Image src={Placeholder} alt="" /></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<style>
+
+    ul {
+        height: 120px;
+    }
+
+</style>

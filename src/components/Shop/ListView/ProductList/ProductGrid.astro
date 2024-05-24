@@ -16,7 +16,7 @@ const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/p
 <section>
     <div class="container">
         {products.map(item=>{
-            return <Card data={item} />
+            return <Card data={item} page="shop" />
         })}
     </div>    
     <div class="btn_container">

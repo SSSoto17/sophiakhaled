@@ -3,13 +3,11 @@ const { label, variant, link} =Astro.props
 
 ---
 
-<a href={link}>
     <button>
         <p class="button">{label}</p>
         <div class="icon side"></div>
         <img class={variant} src="/buttons/btn_arrow.svg" alt="">
     </button>
-</a>
 
 <style>
 

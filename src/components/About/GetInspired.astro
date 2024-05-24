@@ -1,3 +1,117 @@
 ---
 
+    const articles = [
+    {
+        title: "DARK FAIRY PRINCESS",
+        img: "../../../public/dark_fairy_princess.png"
+
+    },
+    {
+        title: "MAGICAL CAT LADY",
+        img:"../../../public/magical_cat_lady.png"
+      
+    },
+    {
+        title: "PINK DEMON PRINCESS",
+        img:"../../../public/pink_demon_princess.png"
+    }
+];
 ---
+
+<article class="container break_main">
+    <div class="textbox">
+        <h2 class="caps">get inspired</h2>
+        <p class="subheading">Delve into our universe and get inspiration on how to style our pieces.</p>
+        <div class="flexbox">
+            {articles.map((article) => (
+                <div class="flex_item">
+                    <img class="article_img" src={article.img} alt={article.title} />
+                    <h3>{article.title}</h3>
+                </div>
+            ))}
+        </div>
+    </div>
+</article>
+
+<style>
+
+
+.subheading{
+    font-size: var( --sub-size);
+
+}
+
+    h2{
+        font-size: var(--h2-size);
+    
+    }
+
+    h3{
+        font-size: 1.2rem ;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .textbox{
+        max-width: 996px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
+    }
+
+
+
+    .flexbox{
+        display: flex;
+        flex-wrap: wrap;
+        gap:3rem; 
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin:0;
+
+    }
+
+     .container{
+        background: url(../../img/regular/board_background.svg);
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    } 
+
+    .flex_item{
+        display: flex;
+        flex-direction: column;
+        gap:1.2rem;
+        min-width: 300px;
+        flex-grow: 1;
+        height: 100%;
+        width: 100%;
+        max-width: 20px;
+        background-color: aliceblue;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-bottom: 25px;
+        padding-top: 20px;
+    }
+
+    @media (min-width: 640px){
+        .textbox{
+            align-items: start;
+        }
+
+
+    }
+   
+
+</style>
+<script>
+
+</script>

@@ -1,3 +1,71 @@
 ---
 
+import Card from "../Shop/ListView/ProductList/Card.astro";
+import ScribbleButton from "../Basics/buttons/ScribbleButton.astro";
+
+const {ColNo} = Astro.props
+
+const products = await fetch(`https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products?collection=eq.${ColNo}&select=*`,{
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqZWNrb2RlbGpoemFtaHdsaHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1MDI3ODIsImV4cCI6MjAzMTA3ODc4Mn0.qKKBr9i_Jy2NzTfbu_jinScWs6PmGaBMoeK-1WHbmcU",
+        Range: "0-5"
+    }
+}).then((res) => res.json());
+
 ---
+
+
+<section class="break_main">
+    <article>
+        <header>
+            <h1 class="heading_1 caps">Shop Collection</h1>
+            <h2 class="subheading_scribble">Shop pieces from the collection</h2>
+        </header>
+        <ul>
+            {products.map(item=>{
+            return <li><Card data={item} page="collections" text_align="center"/></li>
+        })}
+        </ul>
+        <div class="link"><ScribbleButton label="See more" href="/shop" /></div>
+        
+    </article>
+</section>
+
+<style>
+
+    section {
+        display: grid;
+        grid-template-columns:
+            minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
+            minmax(var(--side), 1fr);
+        background-color: var(--box-color);
+        padding: var(--top_btm) var(--none);
+    }
+    
+    article {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--small);
+        padding: var(--medium) var(--none);
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: var(--small) var(--medium);
+    }
+
+    .link {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+</style>

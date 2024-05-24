@@ -1,0 +1,96 @@
+---
+
+import { Image } from "astro:assets";
+import Tape from "../../../img/polaroid/Tape.png";
+import Pin from "../../../img/polaroid/Pin.png";
+
+// import {Placeholder} from "../../../img/regular/model.jpeg";
+
+
+const { src, alt, title, label, variant, fixture } = Astro.props
+
+---
+
+<article class="pinned">    
+    <Image src={Tape} class="tape a" alt="" />
+    <Image src={Tape} class="tape b" alt="" />
+    <Image src={Pin} class="pin" alt="" />
+    <Image src={src} alt={alt} class={variant} />
+    <header>
+        <h1 class="heading_3">{title}</h1>
+        <p class="polaroid">{label}</p>
+    </header>
+</article>
+
+<style>
+
+    article {
+        position: relative;
+        max-width: 544px;
+        padding: var(--small);
+        background-color: var(--white-smoke);
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: var(--x-small) var(--none);
+    }
+
+    img {
+        aspect-ratio: 1/1;
+        object-position: 0% 50%;
+        object-fit: cover;
+    }
+
+    img.tall {
+        aspect-ratio: 1/1.25;
+    }
+
+    img.top {
+        object-position: 0% 0%;
+    }
+
+    img.bottom {
+        object-position: 0% 100%;
+    }
+
+    
+    .tape {
+    aspect-ratio: 1 / 1;
+    width: 150px;
+    position: absolute;
+    display: none;
+  }
+
+  .tape.a {
+    top: -45px;
+    right: -35px;
+  }
+
+  .tape.b {
+    bottom: -45px;
+    left: -35px;
+  }
+
+  .pin {
+    aspect-ratio: 1 / 1.5;
+    width: var(--medium);
+    position: absolute;
+    display: none;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  article.taped .tape {
+        display: block;
+    }
+
+    article.pinned .pin {
+        display: block;
+    }
+
+</style>

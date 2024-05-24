@@ -53,13 +53,14 @@
     }
 
     .textbox{
-        max-width: 1120px;
+        max-width: 996px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-content: center;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
     
     }
@@ -67,7 +68,7 @@
 
 
     .flexbox{
-         display: flex;
+        display: flex;
         flex-wrap: wrap;
         gap:3rem; 
         text-align: center;
@@ -83,10 +84,7 @@
         padding-bottom: 5rem;
         margin-top: 5rem;
         margin-bottom: 5rem;
-
     } 
-
-    
 
     .flex_item{
         display: flex;
@@ -104,6 +102,13 @@
         padding-top: 20px;
     }
 
+    @media (min-width: 640px){
+        .textbox{
+            align-items: start;
+        }
+
+
+    }
    
 
 </style>

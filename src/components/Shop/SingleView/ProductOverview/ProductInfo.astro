@@ -1,7 +1,26 @@
 ---
-
+import ArrowButton from "../../../Basics/buttons/ArrowButton.astro";
 ---
 
 <div>
-    
+  <div class="flex">
+    <h1 class="heading_2e caps"></h1>
+    <p class="lead">Size S - M</p>
+    <div>
+      <p>Model wears size small</p>
+      <p>100% Cotton & Glitter Polyester</p>
+      <p>Made to order</p>
+    </div>
+
+    <h2 class="subheading">€420,00</h2>
+  </div>
+  <ArrowButton />
 </div>
+
+<style>
+    .flex{
+        display: flex;
+        flex-direction: column;
+        gap: var(--medium);
+    }
+</style>

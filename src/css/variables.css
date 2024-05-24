@@ -111,7 +111,7 @@
     --polaroid-label-line: 2rem;
   }
 }
-@media (min-width: 1168px) {
+@media (min-width: 960px) {
   :root {
     /* HEADINGS */
     --display: 5.5rem;

@@ -1,0 +1,59 @@
+---
+
+import MainLayout from "../../layouts/MainLayout.astro"
+
+import CollectionHero from "../../components/Collections/CollectionHero.astro"
+import GetTheLook from "../../components/Collections/GetTheLook.astro"
+import CollectionShowcase from "../../components/Collections/CollectionShowcase.astro"
+import Memories from "../../components/Collections/Memories.astro"
+
+import Look_A from "../../img/collection_01/look_01.jpg"
+import Look_B from "../../img/collection_01/look_02.JPEG"
+import Mem01 from "../../img/collection_01/mem_01.jpg"
+import Mem02 from "../../img/collection_01/mem_02.jpg"
+import Mem03 from "../../img/collection_01/mem_03.JPEG"
+import Mem04 from "../../img/collection_01/mem_04.JPG"
+
+
+export async function getStaticPaths() {
+
+	const collections = [
+		{
+			no: "01",
+			name: "Middleschool u r dead to me...",
+			look: Look_A,
+			memory1: Mem01,
+			memory2: Mem02,
+			item: "88",
+			slug: "middleschool-u-r-dead-to-me"
+		},
+		{
+			no: "02",
+			name: "If i dont see the prince, im going to die...",
+			look: Look_B,
+			memory1: Mem03,
+			memory2: Mem04,
+			item: "76",
+			slug: "if-i-dont-see-the-prince"
+		}
+	]
+
+
+return collections.map((col) => {
+    return {
+      params: { slug: col.slug },
+      props: { col },
+    };
+  });
+}
+
+const {col} = Astro.props
+
+---
+
+<MainLayout>
+	<!-- <CollectionHero data={col} /> -->
+	<GetTheLook data={col} />
+	<CollectionShowcase ColNo={col.no} RanNo="5" />
+	<Memories data={col} />
+</MainLayout>

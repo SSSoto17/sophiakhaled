@@ -3,10 +3,7 @@ import { Image } from "astro:assets";
 import TapedImage from "../Basics/img/TapedImage.astro"
 import ScribbleButton from "../Basics/buttons/ScribbleButton.astro"
 
-import Mem01 from "../../img/collection_01/mem_01.jpg"
-import Mem02 from "../../img/collection_01/mem_02.jpg"
-
-const {img} = Astro.props
+const {data} = Astro.props
 
 ---
 
@@ -16,8 +13,8 @@ const {img} = Astro.props
         <h2 class="subheading_scribble">Explore selected memories from the collection</h2>
     </header>
     <div class="img_container">
-        <TapedImage src={Mem01} alt="" style="transform: rotate(-4deg)"/>
-        <Image src={Mem02} alt=""/>
+        <TapedImage src={data.memory1} alt="" style="transform: rotate(-4deg)"/>
+        <Image src={data.memory2} alt=""/>
     </div><ScribbleButton label="View gallery" />
     <div class="link">
         

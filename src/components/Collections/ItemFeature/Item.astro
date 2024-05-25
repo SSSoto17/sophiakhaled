@@ -2,13 +2,13 @@
 import { Image } from "astro:assets";
 import ItemName from "./ItemName.astro";
 
-const { alt, variant, label, src, direction } = Astro.props;
+const { data, alt, variant, label, src, direction } = Astro.props;
 ---
 
 <div id="flex" class={variant}>
   <ItemName direction={direction} label={label} />
 
-  <Image src={src} alt={alt} />
+  <Image src={data.image} alt={alt} inferSize />
 </div>
 
 <style>

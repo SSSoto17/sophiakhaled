@@ -56,5 +56,33 @@ let orderCount = 0;
         transform: rotate(16deg);
     }
 
+    @media (min-width: 630px) {
+        .stroke_a {
+            top: 22rem;
+        }
+        .stroke_b {
+            bottom: 22rem;
+        }
+    }
+
+    @media (min-width: 960px) {
+        section {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .stroke_a {
+            transform: rotate(-90deg);
+            top: 8rem;
+            left: -10rem;
+        }
+
+        .stroke_b {
+            transform: rotate(90deg);
+            top: 10rem;
+            left: 9rem;
+        }
+    }
+
 
 </style>

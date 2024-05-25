@@ -1,7 +1,51 @@
 ---
+import ItemShowcase from "../components/Home/Feature/ItemShowcase.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import ItemShowcase from "../components/Home/Feature/ItemShowcase.astro";
+import TapedImage from "../components/Basics/img/TapedImage.astro";
+import Model from "../img/regular/models.png"
+import ScribbleButton from "../components/Basics/buttons/ScribbleButton.astro";
+
 ---
 
 <MainLayout>
-  <h1>Sophia Khaled</h1>
+	<section class="container">
+		<div class="flex_item" id="model_img">
+			<TapedImage
+			src={Model} alt="Models"
+			/>
+		</div>
+		<div class="flex_item">
+			<ItemShowcase/>
+		</div>
+	</section>
+	<section class="center_section">
+		<p>Explore Sophia Khaled's fashion universe between light and darkness, good and evil or dream and reality</p>
+		<ScribbleButton/>
+	</section>
 </MainLayout>
+<style>
+	.container{
+		margin-top: 5rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		gap:5rem
+		
+	}
+
+	.flex_item{
+		flex-grow: 1;
+	}
+
+#model_img{
+	max-width: 450px;
+}
+
+.center_section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+</style>
+

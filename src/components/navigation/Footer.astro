@@ -1,6 +1,6 @@
  ---
 ---
-<footer>
+<section>
     <div class="container">
         <div>
             <h1 class="heading_3 caps">Studio & Showroom</h1>
@@ -16,7 +16,7 @@
                 <a href="https://www.instagram.com/sophia_khaled/"><li><img src="/icons/icon_IG.svg" alt=""></li></a>
                 <a href=""><li><img src="/icons/icon_TikTok.svg" alt=""></li></a>
             </ul>
-            <p class="copyright">© Sophia Khaled, Copenhagen 2024</p>
+            <p class="copyright mobile">© Sophia Khaled, Copenhagen 2024</p>
             <ul class="legal">
                 <a href=""><li>Return & Refund</li></a>
                 <a href=""><li>Privacy Policy</li></a>
@@ -24,20 +24,19 @@
             </ul>
         </div>
     </div>
-</footer>
+</section>
 
 <style>
 
-footer {
+section {
         display: grid;
         grid-template-columns:
     minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
     minmax(var(--side), 1fr);
-        height: 120px;
-        padding: var(--small) var(--none);
+        padding: var(--large) var(--none);
     }
 
-    footer > * {
+    section > * {
         grid-column: 2;
     }
 
@@ -85,11 +84,19 @@ footer {
         text-align: right;
     }
 
+    p.copyright.mobile {
+        text-align: center;
+    }
+
     .container > p.copyright {
         display: none;
     }
 
     @media (min-width: 630px) {
+        section {
+            padding: var(--medium) var(--none);
+        }
+
         .container {
             justify-content: space-between;
         }

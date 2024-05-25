@@ -8,19 +8,14 @@
 :root {
   /* BRAND */
   --lavender: #e2d9e5;
-  --thistle: #d8bfe0;
-
-  /* NEUTRALS */
-  --white-smoke: #f5f3f2;
-  --magnolia: #eae7ed;
-  --raisin-black: #2b2433;
+  --cyclamen: #eb74a3;
 
   /* ACCENTS */
-  --baby-blue: #99c8e2;
-  --blue-green: #1498c4;
-  --blue-violet: #854cd0;
+  --white-smoke: #f5f3f2;
+  --magnolia: #eae7ed;
+  --thistle: #d8bfe0;
+  --raisin-black: #2b2433;
   --mantis: #5ebc4e;
-  --cyclamen: #eb74a3;
 
   /* BASIC */
   --background-color: var(--magnolia);
@@ -116,7 +111,7 @@
     --polaroid-label-line: 2rem;
   }
 }
-@media (min-width: 1168px) {
+@media (min-width: 960px) {
   :root {
     /* HEADINGS */
     --display: 5.5rem;

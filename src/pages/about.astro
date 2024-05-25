@@ -6,27 +6,30 @@ import AboutCard from "../components/About/AboutCard.astro"
 ---
 
 <MainLayout>
-	<section class="break_main main-flex">
+	<section>
 		<AboutCard
-		h2="Sophia Khaled is a Copenhagen based fashion brand" text="Known for its playful, yet sinister aesthetic. The universe is built out of creating duality between childhood melancholy and an undertone of darkness." text2="Our spirit of the time is about using this duality in our prints and patterns as including and developing elements for people in our society. To create an outlet that talks to those feeling left alone, comforting them and supplying them with a place to belong with no shame of any emotions." text3="Sophia Khaled works in a cross field between art and fashion. Through craftsmanship, they strive to create an original way of wearing treasures with the kind of magic that makes people hold on to them forever."
-		img="../../../public/Sophia.svg" alt="Sophia"
-		side="left"
+			h2="Sophia Khaled is a Copenhagen based fashion brand" text="Known for its playful, yet sinister aesthetic. The universe is built out of creating duality between childhood melancholy and an undertone of darkness." text2="Our spirit of the time is about using this duality in our prints and patterns as including and developing elements for people in our society. To create an outlet that talks to those feeling left alone, comforting them and supplying them with a place to belong with no shame of any emotions." text3="Sophia Khaled works in a cross field between art and fashion. Through craftsmanship, they strive to create an original way of wearing treasures with the kind of magic that makes people hold on to them forever."
+			img="../../../public/Sophia.svg" alt="Sophia"
+			side="left"
 		/>
-	 <AboutCard 
-		h2="Between light and darkness, good and evil or dream and reality"
-		text="Everything is handmade in Denmark, and we wish to create an inclusive and colorful world of wearables where our customers can be a part of our fairytale with all its twists and turns." text2="Sophia Khaled is inspired by everything from pop cultural phenomena, old gothic objects, childhood memorabilia, and abandoned teddy bears." text3="We build every collection around the figurative hand knitted pieces that we are well known for, while adding new materials to compliment the knit and create the duality that we find important in our storytelling." 
-		img="../../../public/Katrine.svg" alt="Katrine"
-		side="right"/> 
+	</section>
+	<section>
+		<AboutCard 
+			h2="Between light and darkness, good and evil or dream and reality"
+			text="Everything is handmade in Denmark, and we wish to create an inclusive and colorful world of wearables where our customers can be a part of our fairytale with all its twists and turns." text2="Sophia Khaled is inspired by everything from pop cultural phenomena, old gothic objects, childhood memorabilia, and abandoned teddy bears." text3="We build every collection around the figurative hand knitted pieces that we are well known for, while adding new materials to compliment the knit and create the duality that we find important in our storytelling." 
+			img="../../../public/Katrine.svg" alt="Katrine"
+			side="right"
+		/> 
+	</section>
+	<section class="break_main">
 		<GetInspired/>
 	</section>
 </MainLayout>
 
 <style>
-	.main-flex{
+	main{
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
-		
-
 	}
 </style>

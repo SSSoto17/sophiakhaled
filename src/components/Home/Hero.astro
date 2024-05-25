@@ -1,0 +1,21 @@
+---
+import Polaroid from "../Basics/img/Polaroid.astro"
+import Model from "../../img/regular/frontpage_hero_img1.png"
+import Haha from "../../img/polaroid/Tape.png"
+---
+
+
+
+<article class="container">
+    <div class="flexbox">
+        <h1 class="display">SOPHIA KHALED</h1>
+        <h2>Copenhagen based fashion brand</h2>
+        <Polaroid src={Model} alt="A picture of a woman model" variant="tall" showPin={false} showTape={true}/>
+    </div>
+</article>
+
+<style>
+    .container{
+        background-image: url(../../img/regular/Hero.png);
+    }
+</style>

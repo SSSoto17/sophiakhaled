@@ -7,14 +7,21 @@ import Pin from "../../../img/polaroid/Pin.png";
 // import {Placeholder} from "../../../img/regular/model.jpeg";
 
 
-const { src, alt, title, label, variant, fixture } = Astro.props
+const { src, alt, title, label, variant, showPin, showTape } = Astro.props
 
 ---
 
-<article class="pinned">    
-    <Image src={Tape} class="tape a" alt="" />
-    <Image src={Tape} class="tape b" alt="" />
-    <Image src={Pin} class="pin" alt="" />
+<article class="pinned">
+    {
+        showTape &&
+        <Image src={Tape} class="tape a" alt="" />
+        <Image src={Tape} class="tape b" alt="" /> 
+    }
+    {
+        showPin &&
+        <Image src={Pin} class="pin" alt="" />
+    }
+
     <Image src={src} alt={alt} class={variant} />
     <header>
         <h1 class="heading_3">{title}</h1>
@@ -62,8 +69,7 @@ const { src, alt, title, label, variant, fixture } = Astro.props
     aspect-ratio: 1 / 1;
     width: 150px;
     position: absolute;
-    display: none;
-  }
+    }
 
   .tape.a {
     top: -45px;

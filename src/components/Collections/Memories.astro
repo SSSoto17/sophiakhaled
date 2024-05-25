@@ -13,8 +13,8 @@ const {data} = Astro.props
         <h2 class="subheading_scribble">Explore selected memories from the collection</h2>
     </header>
     <div class="img_container">
-        <TapedImage src={data.memory1} alt="" style="transform: rotate(-4deg)"/>
-        <Image src={data.memory2} alt=""/>
+        <TapedImage src={data.memories[0]} alt="" style="transform: rotate(-4deg)"/>
+        <Image src={data.memories[1]} alt=""/>
     </div><ScribbleButton label="View gallery" />
     <div class="link">
         

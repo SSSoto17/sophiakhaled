@@ -1,44 +1,29 @@
 ---
 
-import TapedImage from "../Basics/img/TapedImage.astro";
-
+import TapedImage from "../Basics/img/TapedImage.astro"
 import Item from "./ItemFeature/Item.astro"
 
-// const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products?id=eq.88&select=*",{
-//     method: "GET",
-//     headers: {
-//         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqZWNrb2RlbGpoemFtaHdsaHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1MDI3ODIsImV4cCI6MjAzMTA3ODc4Mn0.qKKBr9i_Jy2NzTfbu_jinScWs6PmGaBMoeK-1WHbmcU",
-//     }
-// }).then((res) => res.json());
-
-const { data } = Astro.props
-
-// const products = await fetch(`https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products?id=eq.88&products?select=*`,{
-//     method: "GET",
-//     headers: {
-//         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqZWNrb2RlbGpoemFtaHdsaHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1MDI3ODIsImV4cCI6MjAzMTA3ODc4Mn0.qKKBr9i_Jy2NzTfbu_jinScWs6PmGaBMoeK-1WHbmcU",
-        
-//     }
-// }).then((res) => res.json());
-
-
-const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products?id=eq.88",{
+const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products?select=*",{
     method: "GET",
     headers: {
         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqZWNrb2RlbGpoemFtaHdsaHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1MDI3ODIsImV4cCI6MjAzMTA3ODc4Mn0.qKKBr9i_Jy2NzTfbu_jinScWs6PmGaBMoeK-1WHbmcU",
     }
 }).then((res) => res.json());
 
+const { data } = Astro.props;
+let orderCount = 0;
+
 ---
 
 <section>
-    {products.map(item =>{
-        return <Item data={item} alt="" />
+    {products.map(item =>{   
+        if (item.id == data.items[0] || item.id == data.items[1]) {
+            let thisItem =<Item data={item} alt={item.name} order={orderCount} />
+            orderCount++;
+            return thisItem;
+        }      
     })}
-    
     <TapedImage src={data.look} alt="" size="max-width: 352px" />
-    
-    
 </section>
 
 <style>
@@ -49,5 +34,7 @@ const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/p
         gap: var(--medium);
         align-items: center;
     }
+
+
 
 </style>

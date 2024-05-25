@@ -1,17 +1,31 @@
 ---
 import BurgerMenu from "./BurgerMenu.astro"
+
+
+const collections = [
+	{
+		no: "01",
+		slug: "middleschool-u-r-dead-to-me"
+	},
+	{
+		no: "02",
+		slug: "if-i-dont-see-the-prince"
+	}
+]
+
 ---
 <nav>
     <article class="mobile">
-        <BurgerMenu/>
+        <BurgerMenu data={collections}/>
     </article>
     <article class="desktop">
         <ul>
             <li class="caps"><a href="/about">About</a></li>
             <li class="dropdown_trigger caps">Collections
                 <ul class="dropdown">
-                    <li><a href="/collections/middleschool-u-r-dead-to-me">Collection 01</a></li>
-                    <li><a href="/collections/if-i-dont-see-the-prince-im-going-to-die">Collection 02</a></li>
+                    {collections.map((col)=>{
+                        return <li><a href=`/collections/${col.slug}` >Collection {col.no}</a></li>
+                    })}
                 </ul>
             </li>
         </ul>

@@ -2,31 +2,40 @@
 import { Image } from "astro:assets";
 import ItemName from "./ItemName.astro";
 
-const { data, alt, variant, label, src, direction, order } = Astro.props;
+const { data, order, variant } = Astro.props;
 ---
 
 <a href=`/shop/${data.slug}` style=`order: ${order}`>
-<div id="flex" class={variant} >
-  <ItemName direction={direction} label={label} />
-
-  <Image src={data.image} alt={alt} inferSize />
-</div>
+  <article class={variant[order]} >
+    <ItemName position={variant[order]} label={data.name} />
+    <div class="img_container">
+      <Image src={data.image} alt={data.name} inferSize />
+    </div>    
+  </article>
 </a>
 
 <style>
-  #flex {
+  article {
     max-width: fit-content;
     display: flex;
-  }
-  img {
-    max-width: 200px;
-  }
-
- .a {
     flex-direction: column;
   }
-
-  .b {
-    flex-direction: column-reverse;
+  .img_container {
+    max-width: 200px;
+    padding: var(--medium);
   }
+
+  .above img {
+    transform: rotate(24deg);
+  }
+
+  .below .img_container {
+    order: -1;
+  }
+
+  .below img {
+    transform: rotate(-40deg);
+    
+  }
+
 </style>

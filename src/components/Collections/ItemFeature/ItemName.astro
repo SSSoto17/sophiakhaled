@@ -1,27 +1,28 @@
 ---
-const { label, direction } = Astro.props;
+const { label, position } = Astro.props;
 ---
 
-<div class={direction}>
-  <div class="rotate">
-    <img src="/svg/arrow.svg" alt="">
-  </div>
+<div class={position}>
   <p class="item">{label}</p>
+  <img src="/strokes/item_arrow.svg" alt="">
+  
 </div>
 
 <style>
   div {
     display: flex;
     align-items: center;
-  }
-  .above {
     flex-direction: column;
-  }
-  .above .rotate {
-    rotate: 180deg;
+    gap: var(--x-small);
   }
 
-  .below {
-    flex-direction: column-reverse;
+  img {
+    max-height: 4rem;
   }
+
+  .below img {
+    order: -1;
+    transform: rotate(180deg);
+  }
+
 </style>

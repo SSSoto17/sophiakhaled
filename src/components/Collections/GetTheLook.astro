@@ -16,14 +16,16 @@ let orderCount = 0;
 ---
 
 <section>
-    {products.map(item =>{   
+    {products.map(item =>{
         if (item.id == data.items[0] || item.id == data.items[1]) {
-            let thisItem =<Item data={item} alt={item.name} order={orderCount} />
+            let thisItem =<Item data={item} order={orderCount} variant={data.class} />
             orderCount++;
             return thisItem;
         }      
     })}
+    <img src="/strokes/gtl_01.svg" alt="" class="stroke_a">
     <TapedImage src={data.look} alt="" size="max-width: 352px" />
+    <img src="/strokes/gtl_02.svg" alt="" class="stroke_b">
 </section>
 
 <style>
@@ -33,8 +35,26 @@ let orderCount = 0;
         flex-direction: column;
         gap: var(--medium);
         align-items: center;
+        position: relative;
+        padding: var(--top_btm) var(--none);
     }
 
+    img {
+        max-height: 10rem;
+        position: absolute;
+        z-index: 10;
+    }
+
+    .stroke_a {
+        top: 17rem;
+        left: 4rem;
+    }
+
+    .stroke_b {
+        bottom: 17rem;
+        left: 4rem;
+        transform: rotate(16deg);
+    }
 
 
 </style>

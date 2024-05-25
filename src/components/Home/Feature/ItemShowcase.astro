@@ -4,6 +4,9 @@ import Item from "../../Collections/ItemFeature/Item.astro"
 import bat from '../../../img/regular/flagermus.png';
 import blouse from '../../../img/regular/blue_blouse.png'
 import socks from '../../../img/regular/socks.png'
+import Image from "astro/components/Image.astro";
+import Rectangle from "../../../img/regular/pink_rectangle.png"
+
 ---
 <article class="container">
     <div>
@@ -30,6 +33,7 @@ import socks from '../../../img/regular/socks.png'
         variant="b"
         />
     </div>
+    <div class="pink_bagground"> <Image src={Rectangle} alt="pink rectangle"/></div>
 </article>
 
 <style>
@@ -49,12 +53,23 @@ import socks from '../../../img/regular/socks.png'
      .container>:nth-child(2){
         grid-column: 1;
         grid-row: 3/7;
+        justify-self: center;
+        align-items: center;
+
     }
       .container>:nth-child(3){
         grid-column: 2;
         grid-row: 6/9;
     }
 
+    .pink_bagground{
+        grid-area: 1/5;
+          z-index: -1;
+          position: absolute;
+          justify-self: center;
+          align-self: center
+
+    }
 
    /*  .container{
         display: flex;

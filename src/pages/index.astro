@@ -5,32 +5,61 @@ import ItemShowcase from "../components/Home/Feature/ItemShowcase.astro";
 import TapedImage from "../components/Basics/img/TapedImage.astro";
 import Model from "../img/regular/models.png"
 import ScribbleButton from "../components/Basics/buttons/ScribbleButton.astro";
+import CollectionCard from "../components/Home/Collections/CollectionCard.astro";
+import Collection2 from "../img/regular/collection_img_2.png"
+import Collection1 from "../img/regular/collection_img_1.jpg"
+import Ballerina from "../img/illustrations/ballerina.png"
+import Castle from "../img/illustrations/castle.png"
 
 ---
 
 <MainLayout>
-	<section class="container">
-		<div class="flex_item" id="model_img">
-			<TapedImage
-			src={Model} alt="Models"
+	<section class="main_section">
+		<div class="container break_main">
+			<div class="flex_item" id="model_img">
+				<TapedImage
+				src={Model} alt="Models"
+				/>
+			</div>
+			<div class="flex_item">
+				<ItemShowcase/>
+			</div>
+		</div>
+		<div class="center_section">
+			<p>Explore Sophia Khaled's fashion universe between light and darkness, good and evil or dream and reality</p>
+			<ScribbleButton label="Go to shop" href="/shop"/>
+		</div>
+		<div>
+			<CollectionCard
+			src={Collection1} alt="hejsa"
+			collectionNumber="Collection 01" collectionName="Middleschool u r dead to me..."
+			backgroundColor="green"
+			illustration={Ballerina} illustrationAlt="illustration of a castle"
+			href="/collections/if-i-dont-see-the-prince-im-going-to-die"
+			/>
+			<CollectionCard
+			src={Collection2} alt="hejsa" 
+			collectionNumber="Collection 02" collectionName="If i dont see the prince, im going to die..."
+			backgroundColor="grey"
+			illustration={Castle} illustrationAlt="illustration of a castle"
+			href="/collections/middleschool-u-r-dead-to-me"
 			/>
 		</div>
-		<div class="flex_item">
-			<ItemShowcase/>
-		</div>
-	</section>
-	<section class="center_section">
-		<p>Explore Sophia Khaled's fashion universe between light and darkness, good and evil or dream and reality</p>
-		<ScribbleButton/>
+		
 	</section>
 </MainLayout>
 <style>
+	.main_section{
+		display: flex;
+		flex-direction: column;
+		gap: 5rem;
+	}
 	.container{
 		margin-top: 5rem;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		gap:5rem
+		gap:2rem
 		
 	}
 
@@ -40,6 +69,7 @@ import ScribbleButton from "../components/Basics/buttons/ScribbleButton.astro";
 
 #model_img{
 	max-width: 450px;
+	display: none;
 }
 
 .center_section{
@@ -47,5 +77,12 @@ import ScribbleButton from "../components/Basics/buttons/ScribbleButton.astro";
 	flex-direction: column;
 	align-items: center;
 }
+@media (min-width: 630px){
+
+	#model_img{
+display: block;}
+
+}
+
 </style>
 

@@ -1,13 +1,14 @@
 ---
-const { label, variant } =Astro.props
+const { label, variant, href } =Astro.props
 
 ---
-
+<a href={href}>
     <button>
         <p class="button">{label}</p>
         <div class="icon side"></div>
         <img class={variant} src="/buttons/btn_arrow.svg" alt="">
     </button>
+</a>
 
 <style>
 

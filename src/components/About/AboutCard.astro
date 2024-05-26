@@ -66,10 +66,9 @@ const { data } = Astro.props
         }
 
         .primary img {
-            height: 600px;
-            max-height: 120%;
+            height: 544px;
             left: 8rem;
-            bottom: 0
+            bottom: 0;
         }
 
         .secondary .img_container {
@@ -80,7 +79,19 @@ const { data } = Astro.props
             height: 480px;
             right: 10rem;
         }
+    }
+    
+    @media (min-width: 960px) {
+        .img_container {
+            min-height: 312px;
+        }
 
+        img {
+            bottom: -4rem;
+        }
 
-    }    
+        .primary img {
+            bottom: -6rem;
+        }
+    }
 </style>  

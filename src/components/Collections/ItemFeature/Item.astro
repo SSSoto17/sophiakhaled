@@ -5,7 +5,7 @@ import ItemName from "./ItemName.astro";
 const { data, order, variant } = Astro.props;
 ---
 
-<a href=`/shop/${data.slug}` style=`order: ${order}`>
+<a href=`/shop/${data.slug}` style=`order: ${order};`>
   <article class={variant[order]} >
     <ItemName position={variant[order]} label={data.name} />
     <div class="img_container">
@@ -15,6 +15,18 @@ const { data, order, variant } = Astro.props;
 </a>
 
 <style>
+
+  a {
+    transform: translateY(275px) rotate(15deg);
+    opacity: 0;
+    filter: blur(5px);
+    transition: all .5s ease-out;
+  }
+
+  a:nth-child(2) {
+    transition-delay: .15s;
+  }
+
   article {
     max-width: fit-content;
     display: flex;
@@ -38,6 +50,12 @@ const { data, order, variant } = Astro.props;
     
   }
 
+  .pop {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+}
+
   @media (min-width: 630px) {
     .img_container {
     max-width: 248px;
@@ -50,3 +68,6 @@ const { data, order, variant } = Astro.props;
   }
 
 </style>
+
+
+

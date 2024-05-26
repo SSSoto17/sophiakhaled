@@ -68,3 +68,19 @@ const {col} = Astro.props
 	<CollectionShowcase ColNo={col.no} RanNo="5" />
 	<Memories data={col} />
 </MainLayout>
+
+<script>
+    const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("pop");
+                }
+            })
+        })
+    
+    const Item = document.querySelectorAll("section > a");        
+    
+    Item.forEach(element => {
+        observer.observe(element)
+    })
+    </script>

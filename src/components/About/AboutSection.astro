@@ -1,0 +1,22 @@
+---
+
+import AboutCard from "./AboutCard.astro";
+
+const { data } = Astro.props
+---
+
+<section>
+    {data.map(about =>{
+        return <AboutCard data={about} />
+    })}
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--medium);
+        padding: var(--top_btm) var(--none);
+    }
+</style>
+

@@ -1,5 +1,4 @@
 ---
-import ItemShowcase from "../components/Home/Feature/ItemShowcase.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import ItemShowcase from "../components/Home/Feature/ItemShowcase.astro";
 import TapedImage from "../components/Basics/img/TapedImage.astro";
@@ -10,80 +9,87 @@ import Collection2 from "../img/regular/collection_img_2.png"
 import Collection1 from "../img/regular/collection_img_1.jpg"
 import Ballerina from "../img/illustrations/ballerina.png"
 import Castle from "../img/illustrations/castle.png"
-import Hero from "../components/Home/Hero.astro";
+import Hero from "../components/Home/Hero.astro"
+import blackLines from "../img/illustrations/black_lines.png"
+import blackDoodle from "../img/illustrations/black_doodle.png"
 
 ---
 
 <MainLayout>
-	<section class="hero break_main">
-		<Hero/>
-	</section>
-	<section class="container">
-		<div class="flex_item" id="model_img">
-			<TapedImage
-			src={Model} alt="Models"
-			/>
-		</div>
-		<div class="flex_item">
-			<ItemShowcase/>
-		</div>
-	</section>
-	<section class="center_section">
-		<p>Explore Sophia Khaled's fashion universe between light and darkness, good and evil or dream and reality</p>
-		<ScribbleButton label="Go to shop" href="/shop"/>
-	</section>
-	<section>
-		<CollectionCard
-		src={Collection1} alt="hejsa"
-		collectionNumber="Collection 01" collectionName="Middleschool u r dead to me..."
-		backgroundColor="green"
-		illustration={Ballerina} illustrationAlt="illustration of a castle"
-		href="/collections/if-i-dont-see-the-prince-im-going-to-die"
-		/>
-		<CollectionCard
-		src={Collection2} alt="hejsa" 
-		collectionNumber="Collection 02" collectionName="If i dont see the prince, im going to die..."
-		backgroundColor="grey"
-		illustration={Castle} illustrationAlt="illustration of a castle"
-		href="/collections/middleschool-u-r-dead-to-me"
-		/>
-	</section>
+		<section class="break_main">
+			<Hero/>
+		</section>
+		<section class="container">
+			<section class="item_showcase">
+				<div class="flex_item" id="model_img">
+					<TapedImage
+					src={Model} alt="Models"
+					/>
+				</div>
+				<div class="flex_item">
+					<ItemShowcase/>
+				</div>
+			</section>
+			<section class="center_section">
+				<p>Explore Sophia Khaled's fashion universe between light and darkness, good and evil or dream and reality</p>
+				<ScribbleButton label="Go to shop" href="/shop"/>
+			</section>
+			<section>
+				<CollectionCard
+				src={Collection1} alt="hejsa"
+				collectionNumber="Collection 01" collectionName="Middleschool u r dead to me..."
+				backgroundColor="green"
+				illustration={Ballerina} illustrationAlt="illustration of a castle"
+				href="/collections/if-i-dont-see-the-prince-im-going-to-die"
+				side="left"
+				doddleIllustration={blackLines} doddleAlt="black lines" illustrationPlacement="lines"
+				/>
+				<CollectionCard
+				src={Collection2} alt="hejsa" 
+				collectionNumber="Collection 02" collectionName="If i dont see the prince, im going to die..."
+				backgroundColor="grey"
+				illustration={Castle} illustrationAlt="illustration of a castle"
+				href="/collections/middleschool-u-r-dead-to-me"
+				side="right"
+				doddleIllustration={blackDoodle} doddleAlt="black doodle" illustrationPlacement="doodle"
+				/>
+			</section>
+		</section>
 </MainLayout>
 <style>
-	main{
+	.container{
 		display: flex;
 		flex-direction: column;
-		gap: 5rem;
+		gap:3rem;
 	}
-	.container{
+
+	.item_showcase{
 		margin-top: 5rem;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		gap:2rem
-		
+		gap:2rem	
 	}
 
 	.flex_item{
 		flex-grow: 1;
 	}
 
-#model_img{
-	max-width: 450px;
-	display: none;
-}
-
-.center_section{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-@media (min-width: 630px){
-
 	#model_img{
-display: block;}
+		max-width: 450px;
+		display: none;
+	}
 
-}
+	.center_section{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	@media (min-width: 630px){
 
+		#model_img{
+			display: block;}
+
+	}
 </style>
 

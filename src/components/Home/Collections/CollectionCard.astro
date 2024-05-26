@@ -1,14 +1,16 @@
 ---
-const {collectionNumber, collectionName, src, alt, backgroundColor, illustration, illustrationAlt, href} = Astro.props
+const {collectionNumber, collectionName, src, alt, backgroundColor, illustration, illustrationAlt, href, side, doddleIllustration, doddleAlt, illustrationPlacement} = Astro.props
 import ArrowButton from "../../Basics/buttons/ArrowButton.astro"
 import TapedImage from "../../Basics/img/TapedImage.astro"
 import Image from "astro/components/Image.astro"
 
 ---
-
-<article class={`container break_main ${backgroundColor}`}>
-    <div class="flex_column">
+<article class={`${backgroundColor}`}>
+    <div class={`flex_column ${side}`}>
         <div class="collection_img">
+            <div class={illustrationPlacement}>
+                <Image src={doddleIllustration} alt={doddleAlt}/>
+            </div>
             <TapedImage src={src} alt={alt} />
         </div>
         <div class="grid">
@@ -28,10 +30,11 @@ import Image from "astro/components/Image.astro"
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        padding: 1.5rem;
+        padding: 2rem;
         align-items: center;
     }
 
+   
     .grid{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -57,26 +60,27 @@ import Image from "astro/components/Image.astro"
     }
     .collection_img{
         width: 100%;
-        max-width: 500px
-
+        max-width: 500px;
+        position: relative;
     }
 
     .green{
         background-image: url(../../../img/regular/selection1.png);
-
     }
 
     .grey{
         background-image: url(../../../img/regular/selection2.png);
-
     }
 
-  
-  
+    .doodle{
+        width:150px
+    }
+
     .illustration_img{
         width: 60%;
         align-self: center;
     }
+    
    
    @media (min-width: 630px){
     .grid{
@@ -85,7 +89,8 @@ import Image from "astro/components/Image.astro"
       .flex_column{
         display: flex;
         flex-direction: row;
-      
+        padding: 3.5rem;
+        margin-top: 3rem;
     }
 
     .grid>:nth-child(3){
@@ -100,7 +105,6 @@ import Image from "astro/components/Image.astro"
         grid-column: 1;
         justify-self: center;
         align-self: center
-
     }
      .illustration_img{
         width: 40%;
@@ -108,6 +112,27 @@ import Image from "astro/components/Image.astro"
      .collection_img{
         width: 73%;
     }
-   
+    .left{
+        flex-direction: row;
+    }
+    .right{
+    flex-direction: row-reverse;
+
+    }  
+    .doodle{
+    transform: translateX(-40px);
+    transform: translateY(20px);
+    width: 150px;
+
+    }
+    .lines{
+        transform: translatey(50px);
+        z-index: 2;
+        position: relative;  
+    }
+    .collection_img{
+        transform: translateY(-180px);
+        z-index: 1;
+    }
    }
 </style>

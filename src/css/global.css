@@ -107,7 +107,6 @@ p {
   font-weight: 400;
   line-height: var(--body-line);
   letter-spacing: 0.05;
-  max-width: 70ch;
 }
 
 p:not(:last-of-type) {

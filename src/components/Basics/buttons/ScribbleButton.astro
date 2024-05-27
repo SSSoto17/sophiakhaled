@@ -16,6 +16,10 @@ const {label, href} = Astro.props
 
 <style>
 
+    a {
+        width: max-content;
+    }
+
     a:hover {
         opacity: 1;
     }
@@ -25,6 +29,9 @@ const {label, href} = Astro.props
         aspect-ratio: 2/1;
         max-width: 283px;
         min-width: 256px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .btn {
@@ -32,17 +39,22 @@ const {label, href} = Astro.props
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        width: 100%;
     }
 
     img {
         position: absolute;
-        height: 100%;
+        height: auto;
     }
 
     img.sparkle {
-        width: 100%;
+        width: 90%;
         opacity: 0;
+        transition: all .15s ease-in;
+        animation-name: sparkle;
+        animation-duration: .75s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
     }
 
     img.scribble {
@@ -52,6 +64,19 @@ const {label, href} = Astro.props
 
     .container:hover img.sparkle {
         opacity: 1;
+        width: 100%;
+    }
+
+    @keyframes sparkle {
+        from {
+            width: 100%;
+        }
+        50% {
+            width: 95%;
+        }
+        to {
+            width: 100%;
+        }
     }
 
 

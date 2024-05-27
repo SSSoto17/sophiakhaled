@@ -15,13 +15,17 @@ const { src, alt, style, size } = Astro.props;
 
 <style>
   .container {
-    max-width: var(--content-max);
     position: relative;
     justify-content: center;
-    /* overflow-x: clip; */
-    /* padding: auto 1rem; */
   }
 
+  img {
+    object-fit: cover;
+  }
+
+  img:nth-child(1) {
+    max-height: inherit;
+  }
 
   .tape {
     aspect-ratio: 1 / 1;

@@ -37,9 +37,12 @@ let orderCount = 0;
         align-items: center;
         position: relative;
         padding: var(--top_btm) var(--none);
+        overflow-x: clip;
+        overflow-clip-margin: 1rem;
     }
 
     img {
+        width: 4rem;
         max-height: 10rem;
         position: absolute;
         z-index: 10;
@@ -47,12 +50,12 @@ let orderCount = 0;
 
     .stroke_a {
         top: 17rem;
-        left: 4rem;
+        right: 3rem;
     }
 
     .stroke_b {
         bottom: 17rem;
-        left: 4rem;
+        right: 3rem;
         transform: rotate(16deg);
     }
 

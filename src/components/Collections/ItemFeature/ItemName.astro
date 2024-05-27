@@ -17,12 +17,27 @@ const { label, position } = Astro.props;
   }
 
   img {
-    max-height: 4rem;
+    max-height: 2.5rem;
   }
 
-  .below img {
+  .below img, .below_2 img {
     order: -1;
     transform: rotate(180deg);
+  }
+
+  p {
+    max-width: 15ch;
+    text-align: center;
+  }
+
+  @media (min-width: 630px) {
+
+    img {
+    max-height: 4rem;
+  }
+    p {
+      max-width: 65ch;
+    }
   }
 
 </style>

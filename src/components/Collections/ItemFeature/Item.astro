@@ -26,6 +26,9 @@ const { data, order, variant } = Astro.props;
   a:nth-child(2) {
     transition-delay: .15s;
   }
+  a:nth-child(3) {
+    transition-delay: .25s;
+  }
 
   a:hover {
     opacity: 0.5;
@@ -37,7 +40,7 @@ const { data, order, variant } = Astro.props;
     flex-direction: column;
   }
   .img_container {
-    max-width: 200px;
+    max-width: 180px;
     padding: var(--medium);
   }
 
@@ -45,13 +48,30 @@ const { data, order, variant } = Astro.props;
     transform: rotate(24deg);
   }
 
-  .below .img_container {
+  .above_2 img {
+    transform: rotate(-24deg);
+  }
+
+  .below .img_container, .below_2 .img_container {
     order: -1;
   }
 
   .below img {
     transform: rotate(-40deg);
     
+  }
+  .below_2 img {
+    transform: rotate(20deg);
+    
+  }
+
+  .side .img_container {
+    padding: 0;
+    width: 7rem;
+  }
+
+  .side img {
+    transform: rotate(60deg);
   }
 
   .pop {

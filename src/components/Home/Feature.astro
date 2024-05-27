@@ -5,13 +5,15 @@ import Models from "../../img/regular/models.png"
 
 import ItemShowcase from "./Feature/ItemShowcase.astro";
 
+const {data} = Astro.props
+
 ---
 
 <section>
     <article>
         <TapedImage src={Models} alt="" />
-    </article>    
-    <ItemShowcase />
+    </article>
+    <ItemShowcase data={data} />
 </section>
 
 <style>

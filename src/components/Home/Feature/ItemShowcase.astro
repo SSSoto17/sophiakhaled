@@ -6,9 +6,28 @@ import socks from '../../../img/regular/socks.png'
 import Image from "astro/components/Image.astro";
 import Rectangle from "../../../img/regular/pink_rectangle.png"
 
+const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products?select=*",{
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqZWNrb2RlbGpoemFtaHdsaHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1MDI3ODIsImV4cCI6MjAzMTA3ODc4Mn0.qKKBr9i_Jy2NzTfbu_jinScWs6PmGaBMoeK-1WHbmcU",
+    }
+}).then((res) => res.json());
+
+const { data } = Astro.props;
+let orderCount = 0;
+
 ---
-<article class="container">
-    <div>
+<article>
+    {products.map(item =>{
+        if (item.id == data.items[0] || item.id == data.items[1] || item.id == data.items[2] ) {
+            let thisItem = <div class="item"><Item data={item} order={orderCount} variant={data.class} /></div>
+            orderCount++;
+            return thisItem;
+        }      
+    })}
+    
+    <div class="box"></div>
+    <!-- <div>
         <Item
         src={blouse} alt="BLUE PRINCESS BLOUSE"
         direction="above"
@@ -31,43 +50,53 @@ import Rectangle from "../../../img/regular/pink_rectangle.png"
         label="BAT BAG"
         variant="b"
         />
-    </div>
-    <div class="pink_bagground"> <Image src={Rectangle} alt="pink rectangle"/></div>
+    </div> -->
 </article>
 
 <style>
 
-    .container{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        min-width: 150px;
-        margin-bottom: 1rem;
-    }
-    .container>:first-child{
-        grid-column: 2;
-        grid-row: 1/4;
-    }
-    .container>:nth-child(2){
-        grid-column: 1;
-        grid-row: 3/7;
-        justify-self: center;
+    article {
+        display: flex;
+        justify-content: center;
         align-items: center;
-
-    }
-    .container>:nth-child(3){
-        grid-column: 2;
-        grid-row: 6/9;
-    }
-
-    .pink_bagground{
-        grid-area: 1/5;
-          z-index: -1;
-          position: absolute;
-          justify-self: center;
-          align-self: center;
+        width: 100%;
+        min-width: 283px;
+        max-width: 544px;
+        position: relative;
+        /* display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr); */
     }
 
-    @media (min-width: 630px){
+    .box {
+        background-color: var(--box-color);
+        width: 100%;
+        height: 752px;
+    }
+
+    .item {
+        position: absolute;
+    }
+
+    .item:nth-child(1) {
+        left: 2rem;
+        top: -4rem;
+        transform: rotate(16deg);
+    }
+
+    .item:nth-child(2) {
+        top: 55%;
+        right: 2rem;
+        transform: translateY(-50%) rotate(-36deg);
+    }
+
+    .item:nth-child(3) {
+        left: -1rem;
+        bottom: -2rem;
+        transform: rotate(-16deg);
+    }
+
+    /* @media (min-width: 630px){
         .container{
             margin-bottom: 6rem
         }
@@ -84,6 +113,6 @@ import Rectangle from "../../../img/regular/pink_rectangle.png"
             scale: 1;
         }
 
-    }
+    } */
 
 </style>

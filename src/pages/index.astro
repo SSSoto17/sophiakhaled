@@ -19,11 +19,22 @@ import Castle from "../img/illustrations/castle.png"
 import blackLines from "../img/illustrations/black_lines.png"
 import blackDoodle from "../img/illustrations/black_doodle.png"
 
+const feature = 
+		{
+			no: "01",
+			name: "Middleschool u r dead to me...",
+			// hero: [Hero01, Hero02, Hero03],
+			caption: "A tale about the afterlife of childhood imaginings",
+			items: ["2", "12", "26"],
+			class: ["below","side", "below"],
+			slug: "middleschool-u-r-dead-to-me"
+		}
+
 ---
 
 <MainLayout>
 	<!-- <Hero /> -->
-	<Feature />
+	<Feature data={feature} />
 	<!-- <Collections /> -->
 		<!-- <section class="break_main">
 			<Hero/>
@@ -103,3 +114,18 @@ import blackDoodle from "../img/illustrations/black_doodle.png"
 	}
 </style>
 
+<script>
+    const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("pop");
+                }
+            })
+        })
+    
+    const Item = document.querySelectorAll("section > article > .item > a");        
+    
+    Item.forEach(element => {
+        observer.observe(element)
+    })
+    </script>

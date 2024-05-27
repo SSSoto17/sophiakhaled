@@ -1,3 +1,129 @@
 ---
 
+import { Image } from "astro:assets";
+
+import Polaroid from "../Basics/img/Polaroid.astro"
+
+const { data } = Astro.props
+
 ---
+
+<section class="break_main">
+    <article>
+        <header>
+            <h1 class="subheading">Collection {data.no}</h1>
+            <h2 class="heading_1">{data.name}</h2>
+        </header>
+        <div class="img_container">
+            <Image src={data.hero[1]} alt="" class="hide img_a" />
+            <Image src={data.hero[2]} alt="" class="hide img_b" />
+            <Polaroid src={data.hero[0]} alt="" label={data.caption} variant="tall" fixture="taped" style="transform: rotate(4deg)" />
+            <img src="/strokes/hero_01.svg" alt="" class="strokes stroke_a">
+            <img src="/strokes/hero_02.svg" alt="" class="hide stroke_b">
+            <img src="/strokes/hero_03.svg" alt="" class="hide stroke_c">
+        </div>        
+    </article>
+    
+</section>
+
+<style>
+
+    section {
+        display: grid;
+        grid-template-columns:
+        minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
+        minmax(var(--side), 1fr);
+        background-image: url("/bg.svg");
+        padding: var(--top_btm) var(--none);
+    }
+
+    article {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        gap: var(--medium);
+        width: 100%;
+    }
+
+    .img_container {
+        padding: var(--top_btm) var(--large);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        /* width: 100%; */
+    }
+
+    img {
+        position: absolute;
+    }
+
+    .stroke_a {
+        width: 194px;
+        height: auto;
+        top: 0;
+        left: 2rem;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    @media (min-width: 630px) {
+        .stroke_a {
+            width: 224px;
+            top: 6rem;
+            left: 6rem;
+        }
+    }
+
+    @media (min-width: 960px) {
+
+        .img_container {
+            height: 750px;
+        }
+
+        .hide {
+            display: block;
+        }
+
+        .stroke_a {
+            width: 336px;
+            left: 0;
+            top: 1rem;
+        }
+
+        .stroke_b {
+            width: 120px;
+            height: auto;
+            right: 6rem;
+            top: 7rem;
+        }
+
+        .stroke_c {
+            width: 272px;
+            height: auto;
+            right: 6rem;
+            bottom: 2rem;
+        }
+
+        .img_a {
+            width: 280px;
+            height: 416px;
+            object-fit: cover;
+            left: 4rem;
+            bottom: 6rem;
+            transform: rotate(-8deg);
+        }
+
+        .img_b {
+            width: 304px;
+            height: 448px;
+            object-fit: cover;
+            right: 2rem;
+            bottom: 10rem;
+            transform: rotate(8deg);
+        }
+    }
+
+
+</style>

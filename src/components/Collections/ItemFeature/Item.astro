@@ -2,31 +2,76 @@
 import { Image } from "astro:assets";
 import ItemName from "./ItemName.astro";
 
-const { alt, variant, label, src, direction } = Astro.props;
+const { data, order, variant } = Astro.props;
 ---
 
-<div id="flex" class={variant}>
-  <ItemName direction={direction} label={label} />
-
-  <Image src={src} alt={alt} />
-</div>
+<a href=`/shop/${data.slug}` style=`order: ${order};`>
+  <article class={variant[order]} >
+    <ItemName position={variant[order]} label={data.name} />
+    <div class="img_container">
+      <Image src={data.image} alt={data.name} inferSize />
+    </div>    
+  </article>
+</a>
 
 <style>
-  #flex {
+
+  a {
+    transform: translateY(275px) rotate(15deg);
+    opacity: 0;
+    filter: blur(5px);
+    transition: all .5s ease-out;
+  }
+
+  a:nth-child(2) {
+    transition-delay: .15s;
+  }
+
+  a:hover {
+    opacity: 0.5;
+  }
+
+  article {
     max-width: fit-content;
     display: flex;
-  }
-  img {
-    max-width: 200px;
-  }
-
- .a {
     flex-direction: column;
   }
-
-  .b {
-    flex-direction: column-reverse;
+  .img_container {
+    max-width: 200px;
+    padding: var(--medium);
   }
 
-  
+  .above img {
+    transform: rotate(24deg);
+  }
+
+  .below .img_container {
+    order: -1;
+  }
+
+  .below img {
+    transform: rotate(-40deg);
+    
+  }
+
+  .pop {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+}
+
+  @media (min-width: 630px) {
+    .img_container {
+    max-width: 248px;
+  }
+  }
+  @media (min-width: 960px) {
+    .img_container {
+    max-width: 283px;
+  }
+  }
+
 </style>
+
+
+

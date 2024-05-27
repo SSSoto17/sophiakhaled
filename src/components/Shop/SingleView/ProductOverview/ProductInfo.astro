@@ -1,3 +1,39 @@
 ---
+import ArrowButton from "../../../Basics/buttons/ArrowButton.astro";
 
+const {name, size, material, price} = Astro.props
 ---
+
+<section>
+  <article>
+        <h1 class="heading_2 caps">{name}</h1>
+        <p class="lead">Size {size}</p>
+        <div>
+            <p>{material}</br>Made to order</p>
+        </div>      
+        <h2 class="subheading">€{price},00</h2>
+</article>
+  <ArrowButton label="Add to Basket" />
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--small);
+        padding-bottom: var(--top_btm);
+    }
+
+    article{
+        min-width: 283px;
+        max-width: 448px;
+        display: flex;
+        flex-direction: column;
+        gap: var(--small);
+        justify-content: space-evenly;
+    }
+
+    article > div {
+        padding: var(--x-small) var(--none);
+    }
+</style>

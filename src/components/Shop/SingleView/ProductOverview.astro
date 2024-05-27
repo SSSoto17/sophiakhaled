@@ -1,3 +1,28 @@
 ---
 
+import ProductImage from "./ProductOverview/ProductImage.astro";
+import ProductInfo from "./ProductOverview/ProductInfo.astro";
+
+const {item} = Astro.props
+
 ---
+
+<section>
+    <ProductImage img={item.image} />
+    <ProductInfo name={item.name} size={item.size} material={item.material} price={item.price} />
+</section>
+
+
+<style>
+    section {
+        display: grid;
+        gap: var(--medium);
+    }
+
+    @media (min-width: 960px) {
+        section {
+            grid-template-columns: 7fr 5fr;
+        }
+    }
+
+</style>

@@ -1,0 +1,86 @@
+---
+
+import MainLayout from "../../layouts/MainLayout.astro"
+
+import CollectionHero from "../../components/Collections/CollectionHero.astro"
+import GetTheLook from "../../components/Collections/GetTheLook.astro"
+import CollectionShowcase from "../../components/Collections/CollectionShowcase.astro"
+import Memories from "../../components/Collections/Memories.astro"
+
+
+import Hero01 from "../../img/collections/col01_hero01.jpg"
+import Hero02 from "../../img/collections/col01_hero02.png"
+import Hero03 from "../../img/collections/col01_hero03.jpg"
+import Hero04 from "../../img/collections/col02_hero01.jpg"
+import Hero05 from "../../img/collections/col02_hero02.jpg"
+import Hero06 from "../../img/collections/col02_hero03.jpg"
+import Look_A from "../../img/collections/look_01.jpg"
+import Look_B from "../../img/collections/look_02.JPEG"
+import Mem01 from "../../img/collections/mem_01.jpg"
+import Mem02 from "../../img/collections/mem_02.jpg"
+import Mem03 from "../../img/collections/mem_03.JPEG"
+import Mem04 from "../../img/collections/mem_04.JPG"
+
+
+export async function getStaticPaths() {
+
+	const collections = [
+		{
+			no: "01",
+			name: "Middleschool u r dead to me...",
+			hero: [Hero01, Hero02, Hero03],
+			caption: "A tale about the afterlife of childhood imaginings",
+			look: Look_A,
+			memories: [Mem01, Mem02],
+			items: ["88", "79"],
+			class: ["above", "below"],
+			slug: "middleschool-u-r-dead-to-me"
+		},
+		{
+			no: "02",
+			name: "If i dont see the prince, im going to die...",
+			hero: [Hero04, Hero05, Hero06],
+			caption: "The neverending romance of hating and loving yourself",
+			look: Look_B,
+			memories: [Mem03, Mem04],
+			items: ["23", "24"],
+			class: ["above", "below"],
+			slug: "if-i-dont-see-the-prince"
+		}
+	]
+
+
+return collections.map((col) => {
+    return {
+      params: { slug: col.slug },
+      props: { col },
+    };
+  });
+}
+
+const {col} = Astro.props
+
+---
+
+<MainLayout>
+	<CollectionHero data={col} />
+	<GetTheLook data={col} />
+	<CollectionShowcase ColNo={col.no} RanNo="5" />
+	<Memories data={col} />
+</MainLayout>
+
+<script>
+    const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("pop");
+                }
+            })
+        })
+    
+    const Item = document.querySelectorAll("section > a");        
+    
+    Item.forEach(element => {
+        observer.observe(element)
+    })
+    </script>

@@ -1,0 +1,30 @@
+---
+
+import Filter from "./ProductList/Filter.astro"
+import ProductGrid from "./ProductList/ProductGrid.astro"
+
+---
+
+<div class="container">
+    <Filter />
+    <ProductGrid />
+</div>
+
+<style>
+
+    .container {
+        grid-column: 1 / 4;
+    }
+
+    @media (min-width: 960px) {
+        .container {
+            grid-column: 2;
+            display: flex;
+            justify-content: space-between;
+            gap: var(--medium);
+        }
+    }
+
+
+
+</style>

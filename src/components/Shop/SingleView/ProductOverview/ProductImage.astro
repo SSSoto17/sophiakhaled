@@ -1,3 +1,33 @@
 ---
+
+import { Image } from "astro:assets";
+
+import ProductGallery from "./ProductGallery.astro";
+
+const {img} = Astro.props
  
 ---
+
+<div class="container">
+    <Image src={img} alt="" inferSize />
+    <ProductGallery img={img} />
+</div>
+
+<style>
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--small);
+        max-height: 448px;
+    }
+
+    img {
+        aspect-ratio: 1 / .75;
+        object-fit: scale-down;
+        background-color: var(--box-color);
+        padding: var(--small);
+        height: 100%;
+    }
+
+</style>

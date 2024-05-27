@@ -1,3 +1,88 @@
 ---
 
+import TapedImage from "../Basics/img/TapedImage.astro"
+import Item from "./ItemFeature/Item.astro"
+
+const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products?select=*",{
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqZWNrb2RlbGpoemFtaHdsaHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1MDI3ODIsImV4cCI6MjAzMTA3ODc4Mn0.qKKBr9i_Jy2NzTfbu_jinScWs6PmGaBMoeK-1WHbmcU",
+    }
+}).then((res) => res.json());
+
+const { data } = Astro.props;
+let orderCount = 0;
+
 ---
+
+<section>
+    {products.map(item =>{
+        if (item.id == data.items[0] || item.id == data.items[1]) {
+            let thisItem =<Item data={item} order={orderCount} variant={data.class} />
+            orderCount++;
+            return thisItem;
+        }      
+    })}
+    <img src="/strokes/gtl_01.svg" alt="" class="stroke_a">
+    <TapedImage src={data.look} alt="" size="max-width: 352px" />
+    <img src="/strokes/gtl_02.svg" alt="" class="stroke_b">
+</section>
+
+<style>
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--medium);
+        align-items: center;
+        position: relative;
+        padding: var(--top_btm) var(--none);
+    }
+
+    img {
+        max-height: 10rem;
+        position: absolute;
+        z-index: 10;
+    }
+
+    .stroke_a {
+        top: 17rem;
+        left: 4rem;
+    }
+
+    .stroke_b {
+        bottom: 17rem;
+        left: 4rem;
+        transform: rotate(16deg);
+    }
+
+    @media (min-width: 630px) {
+        .stroke_a {
+            top: 22rem;
+        }
+        .stroke_b {
+            bottom: 22rem;
+        }
+    }
+
+    @media (min-width: 960px) {
+        section {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .stroke_a {
+            transform: rotate(-90deg);
+            top: 8rem;
+            left: -10rem;
+        }
+
+        .stroke_b {
+            transform: rotate(90deg);
+            top: 10rem;
+            left: 9rem;
+        }
+    }
+
+
+</style>

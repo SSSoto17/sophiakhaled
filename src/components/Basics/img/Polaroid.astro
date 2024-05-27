@@ -4,24 +4,14 @@ import { Image } from "astro:assets";
 import Tape from "../../../img/polaroid/Tape.png";
 import Pin from "../../../img/polaroid/Pin.png";
 
-// import {Placeholder} from "../../../img/regular/model.jpeg";
-
-
-const { src, alt, title, label, variant, showPin, showTape } = Astro.props
+const { src, alt, title, label, variant, fixture, style } = Astro.props
 
 ---
 
-<article class="pinned">
-    {
-        showTape &&
-        <Image src={Tape} class="tape a" alt="" />
-        <Image src={Tape} class="tape b" alt="" /> 
-    }
-    {
-        showPin &&
-        <Image src={Pin} class="pin" alt="" />
-    }
-
+<article class={fixture} style={style}>    
+    <Image src={Tape} class="tape a" alt="" />
+    <Image src={Tape} class="tape b" alt="" />
+    <Image src={Pin} class="pin" alt="" />
     <Image src={src} alt={alt} class={variant} />
     <header>
         <h1 class="heading_3">{title}</h1>
@@ -33,8 +23,9 @@ const { src, alt, title, label, variant, showPin, showTape } = Astro.props
 
     article {
         position: relative;
-        max-width: 544px;
-        padding: var(--small);
+        min-width: 204px;
+        max-width: 264px;
+        padding: 1rem;
         background-color: var(--white-smoke);
     }
 
@@ -91,12 +82,28 @@ const { src, alt, title, label, variant, showPin, showTape } = Astro.props
     transform: translateX(-50%);
   }
 
+  p.polaroid {
+    text-align: center;
+  }
+
   article.taped .tape {
         display: block;
     }
 
     article.pinned .pin {
         display: block;
+    }
+
+    @media (min-width: 630px) {
+        article {
+            max-width: 360px;
+        }
+    }
+
+    @media (min-width:960px) {
+        article {
+            max-width: 440px;
+        }
     }
 
 </style>

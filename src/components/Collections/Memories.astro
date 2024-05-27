@@ -1,3 +1,66 @@
 ---
+import { Image } from "astro:assets";
+import TapedImage from "../Basics/img/TapedImage.astro"
+import ScribbleButton from "../Basics/buttons/ScribbleButton.astro"
+
+const {data} = Astro.props
 
 ---
+
+<section>
+    <header>
+        <h1 class="heading_1">Memories</h1>
+        <h2 class="subheading_scribble">Explore selected memories from the collection</h2>
+    </header>
+    <div class="img_container">
+        <TapedImage src={data.memories[0]} alt="" style="transform: rotate(-4deg)"/>
+        <Image src={data.memories[1]} alt=""/>
+    </div><ScribbleButton label="View gallery" />
+    <div class="link">
+        
+    </div>    
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--medium);
+        padding: var(--top_btm) var(--none);
+        align-items: center;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--small);
+        width: 100%;
+    }
+
+    .img_container {
+        width: 256px;
+        padding: var(--top_btm) var(--large);
+        display: flex;
+    }
+
+    .img_container > img {
+        display: none;
+    }
+
+    @media (min-width: 630px) {
+        .img_container {
+            width: 100%;
+            position: relative;
+            padding: var(--top_btm) 25%;
+        }
+        .img_container img {
+            display: block;
+            position: absolute;
+            width: 35%;
+            bottom: 0;
+            right: 4rem;
+            transform: rotate(8deg);
+        }
+    }
+
+</style>

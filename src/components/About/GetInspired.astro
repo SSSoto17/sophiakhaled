@@ -1,19 +1,29 @@
 ---
 
+import Polaroid from "../Basics/img/Polaroid.astro";
+
+import DarkFairy from "../../img/articles/dark_fairy_princess.png"
+import CatLady from "../../img/articles/magical_cat_lady.png"
+import PinkDemon from "../../img/articles/pink_demon_princess.png"
+
+
     const articles = [
     {
-        title: "DARK FAIRY PRINCESS",
-        img: "../../../public/dark_fairy_princess.png"
+        title: "How to dress like a Dark Fairy Princess",
+        img: DarkFairy,
+        style: "max-width: 280px; transform: rotate(-4deg)"
 
     },
     {
-        title: "MAGICAL CAT LADY",
-        img:"../../../public/magical_cat_lady.png"
+        title: "Discover your inner Magical Cat Lady",
+        img: CatLady,
+        style: "max-width: 280px; transform: rotate(6deg)"
       
     },
     {
-        title: "PINK DEMON PRINCESS",
-        img:"../../../public/pink_demon_princess.png"
+        title: "Become a Pink Demon Princess",
+        img: PinkDemon,
+        style: "max-width: 280px; transform: rotate(-8deg)"
     }
 
 ]
@@ -21,100 +31,49 @@
 ;
 ---
 
-<article class="container">
-    <div class="textbox">
-        <h2 class="caps">get inspired</h2>
-        <p class="subheading">Delve into our universe and get inspiration on how to style our pieces.</p>
-        <div class="flexbox">
-            {articles.map((article) => (
-                <div class="flex_item">
-                    <img class="article_img" src={article.img} alt={article.title} />
-                    <h3>{article.title}</h3>
-                </div>
-            ))}
+<section class="break_main">
+    <article>
+        <header>
+            <h2 class="heading_2 caps">Get Inspired</h2>
+            <p class="subheading">Delve into our universe and get inspiration on how to style our pieces.</p>
+        </header>
+        <div class="article_container">
+            {articles.map(article =>{
+            return <Polaroid src={article.img} alt={article.title} title={article.title} variant="tall" fixture="pinned" style={article.style} />
+            })}
         </div>
-    </div>
-</article>
+    </article>
+</section>
 
 <style>
-
-
-.subheading{
-    font-size: var( --sub-size);
-
-}
-
-    h2{
-        font-size: var(--h2-size);
-    
-    }
-
-    h3{
-        font-size: 1.2rem ;
-        justify-self: center;
-        align-self: center;
-    }
-
-    .textbox{
-        max-width: 996px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    
-    }
-
-
-
-    .flexbox{
-        display: flex;
-        flex-wrap: wrap;
-        gap:3rem; 
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        margin:0;
-
-    }
-
-     .container{
-        background: url(../../../public/svg/board_background.svg);
-        padding-top: 2rem;
-        padding-bottom: 5rem;
-        margin-top: 5rem;
-        margin-bottom: 5rem;
-    } 
-
-    .flex_item{
+    section {
+        display: grid;
+        grid-template-columns:
+            minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
+            minmax(var(--side), 1fr);
+        background: url(/pinboard.svg);
+        padding: var(--top_btm) var(--side);
+        }
+        
+    article, header {
         display: flex;
         flex-direction: column;
-        gap:1.2rem;
-        min-width: 300px;
-        flex-grow: 1;
-        height: 100%;
-        width: 100%;
-        max-width: 20px;
-        background-color: aliceblue;
-        padding-left: 24px;
-        padding-right: 24px;
-        padding-bottom: 25px;
-        padding-top: 20px;
     }
 
-    @media (min-width: 640px){
-        .textbox{
-            align-items: start;
+    article {
+        grid-column: 2;
+        gap: var(--medium);
         }
-
-
+    
+    header {
+        gap: var(--x-small);
     }
-   
 
+    .article_container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--medium);
+        justify-content: space-evenly;
+        padding: var(--small);
+    }
 </style>
-<script>
-
-</script>

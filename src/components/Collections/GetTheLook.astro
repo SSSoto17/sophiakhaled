@@ -16,16 +16,19 @@ let orderCount = 0;
 ---
 
 <section>
-    {products.map(item =>{
-        if (item.id == data.items[0] || item.id == data.items[1]) {
-            let thisItem =<Item data={item} order={orderCount} variant={data.class} />
-            orderCount++;
-            return thisItem;
-        }      
-    })}
-    <img src="/strokes/gtl_01.svg" alt="" class="stroke_a">
-    <TapedImage src={data.look} alt="" size="max-width: 352px" />
-    <img src="/strokes/gtl_02.svg" alt="" class="stroke_b">
+        {products.map(item =>{
+            if (item.id == data.items[0] || item.id == data.items[1]) {
+                let thisItem =<Item data={item} order={orderCount} variant={data.class} />
+                orderCount++;
+                return thisItem;
+            }      
+        })}
+        <article>
+            <img src="/strokes/gtl_01.svg" alt="" class="stroke_a">
+            <TapedImage src={data.look} alt="" size="max-width: 352px" />
+            <img src="/strokes/gtl_02.svg" alt="" class="stroke_b">
+        </article>
+        
 </section>
 
 <style>
@@ -41,30 +44,40 @@ let orderCount = 0;
         overflow-clip-margin: 1rem;
     }
 
+    article {
+        max-width: fit-content;
+        position: relative;
+    }
+
     img {
         width: 4rem;
-        max-height: 10rem;
+        max-height: 12rem;
         position: absolute;
         z-index: 10;
     }
 
     .stroke_a {
-        top: 17rem;
-        right: 3rem;
+        top: -4rem;
+        right: 2rem;
     }
 
     .stroke_b {
-        bottom: 17rem;
+        bottom: -4rem;
         right: 3rem;
         transform: rotate(16deg);
     }
 
     @media (min-width: 630px) {
+        img {
+            width: 8rem;
+            height: 15rem;
+        }
         .stroke_a {
-            top: 22rem;
+            top: -5rem;
         }
         .stroke_b {
-            bottom: 22rem;
+            bottom: -5rem;
+            right: 2rem;
         }
     }
 
@@ -76,14 +89,16 @@ let orderCount = 0;
 
         .stroke_a {
             transform: rotate(-90deg);
-            top: 8rem;
-            left: -10rem;
+            top: 4rem;
+            left: -4rem;
         }
 
         .stroke_b {
             transform: rotate(90deg);
-            top: 10rem;
-            left: 9rem;
+            bottom: 6rem;
+            right: -3rem;
+            /* top: 10rem; */
+            /* left: 9rem; */
         }
     }
 

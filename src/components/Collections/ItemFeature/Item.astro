@@ -82,12 +82,16 @@ const { data, order, variant } = Astro.props;
 
   @media (min-width: 630px) {
     .img_container {
-    max-width: 248px;
+      max-width: 204px;
   }
   }
   @media (min-width: 960px) {
     .img_container {
     max-width: 283px;
+  }
+
+  .side .img_container {
+    width: 8rem;
   }
   }
 

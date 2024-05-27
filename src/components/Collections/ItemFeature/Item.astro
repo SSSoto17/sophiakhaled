@@ -48,12 +48,20 @@ const { data, order, variant } = Astro.props;
     transform: rotate(24deg);
   }
 
-  .below .img_container {
+  .above_2 img {
+    transform: rotate(-24deg);
+  }
+
+  .below .img_container, .below_2 .img_container {
     order: -1;
   }
 
   .below img {
     transform: rotate(-40deg);
+    
+  }
+  .below_2 img {
+    transform: rotate(20deg);
     
   }
 

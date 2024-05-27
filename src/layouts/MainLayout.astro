@@ -2,6 +2,7 @@
 import "../css/global.css";
 import "../css/global.css";
 
+import Header from "../components/Nav/Header.astro";
 import Footer from "../components/Nav/Footer.astro";
 
 ---
@@ -15,6 +16,9 @@ import Footer from "../components/Nav/Footer.astro";
     <title>Sophia Khaled</title>
   </head>
   <body>
+    <header>
+      <Header />
+    </header>
     <main>
       <slot />
     </main>

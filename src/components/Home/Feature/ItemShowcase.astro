@@ -1,10 +1,5 @@
 ---
 import Item from "../../Collections/ItemFeature/Item.astro"
-import bat from '../../../img/regular/flagermus.png';
-import blouse from '../../../img/regular/blue_blouse.png'
-import socks from '../../../img/regular/socks.png'
-import Image from "astro/components/Image.astro";
-import Rectangle from "../../../img/regular/pink_rectangle.png"
 
 const products = await fetch("https://ujeckodeljhzamhwlhsj.supabase.co/rest/v1/products?select=*",{
     method: "GET",
@@ -25,32 +20,7 @@ let orderCount = 0;
             return thisItem;
         }      
     })}
-    
     <div class="box"></div>
-    <!-- <div>
-        <Item
-        src={blouse} alt="BLUE PRINCESS BLOUSE"
-        direction="above"
-        label="BLUE PRINCESS BLOUSE"
-        variant="b"
-        />
-    </div>
-    <div>
-        <Item
-        src={socks} alt="CHESS SOCKS"
-        direction="below"
-        label="CHESS SOCKS"
-        variant="a"
-        />
-    </div>
-      <div>
-        <Item
-        src={bat} alt="BAT BAG"
-        direction="above"
-        label="BAT BAG"
-        variant="b"
-        />
-    </div> -->
 </article>
 
 <style>
@@ -59,13 +29,12 @@ let orderCount = 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
         min-width: 283px;
         max-width: 544px;
         position: relative;
-        /* display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr); */
+        overflow-x: clip;
+        overflow-clip-margin: var(--side);
+        padding: var(--medium);
     }
 
     .box {
@@ -80,7 +49,7 @@ let orderCount = 0;
 
     .item:nth-child(1) {
         left: 2rem;
-        top: -4rem;
+        top: -3rem;
         transform: rotate(16deg);
     }
 
@@ -96,23 +65,39 @@ let orderCount = 0;
         transform: rotate(-16deg);
     }
 
-    /* @media (min-width: 630px){
-        .container{
-            margin-bottom: 6rem
+    @media (min-width: 630px) {
+        .box {
+            height: 100%;
         }
 
-        .pink_bagground{
-            scale: 0.8;
-        }
+        .item:nth-child(1) {
+        left: 0;
+        top: -6rem;
     }
 
-    @media (min-width: 900px){
-       
+    .item:nth-child(2) {
+        right: 1.5rem;
+    }
 
-        .pink_bagground{
-            scale: 1;
-        }
+    .item:nth-child(3) {
+        left: -1rem;
+        bottom: -5rem;
+    }
+    }
 
-    } */
+    @media (min-width: 960px) {
+        .item:nth-child(1) {
+            top: -4rem;
+            left: 1rem;
+    }
+
+    .item:nth-child(2) {
+        right: 2rem;
+    }
+
+    .item:nth-child(3) {
+        left: 3rem;
+    }
+    }
 
 </style>

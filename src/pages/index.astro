@@ -1,5 +1,11 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+
+import Hero from "../components/Home/Hero.astro"
+import Feature from "../components/Home/Feature.astro";
+import Collections from "../components/Home/Collections.astro";
+
+
 import ItemShowcase from "../components/Home/Feature/ItemShowcase.astro";
 import TapedImage from "../components/Basics/img/TapedImage.astro";
 import Model from "../img/regular/models.png"
@@ -9,17 +15,20 @@ import Collection2 from "../img/regular/collection_img_2.png"
 import Collection1 from "../img/regular/collection_img_1.jpg"
 import Ballerina from "../img/illustrations/ballerina.png"
 import Castle from "../img/illustrations/castle.png"
-import Hero from "../components/Home/Hero.astro"
+
 import blackLines from "../img/illustrations/black_lines.png"
 import blackDoodle from "../img/illustrations/black_doodle.png"
 
 ---
 
 <MainLayout>
-		<section class="break_main">
+	<!-- <Hero /> -->
+	<Feature />
+	<!-- <Collections /> -->
+		<!-- <section class="break_main">
 			<Hero/>
-		</section>
-		<section class="container">
+		</section> -->
+		<!-- <section class="container">
 			<section class="item_showcase">
 				<div class="flex_item" id="model_img">
 					<TapedImage
@@ -54,7 +63,7 @@ import blackDoodle from "../img/illustrations/black_doodle.png"
 				doddleIllustration={blackDoodle} doddleAlt="black doodle" illustrationPlacement="doodle"
 				/>
 			</section>
-		</section>
+		</section> -->
 </MainLayout>
 <style>
 	.container{

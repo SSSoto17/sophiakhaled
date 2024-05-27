@@ -1,0 +1,34 @@
+---
+
+import TapedImage from "../Basics/img/TapedImage.astro";
+import Models from "../../img/regular/models.png"
+
+import ItemShowcase from "./Feature/ItemShowcase.astro";
+
+---
+
+<section>
+    <article>
+        <TapedImage src={Models} alt="" />
+    </article>    
+    <ItemShowcase />
+</section>
+
+<style>
+    article {
+        display: none;
+    }
+
+    @media (min-width: 630px) {
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--medium) 5rem;
+        }
+
+        article {
+            display: block;
+        }
+    }
+
+</style>

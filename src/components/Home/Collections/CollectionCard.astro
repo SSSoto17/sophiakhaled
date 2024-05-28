@@ -11,11 +11,11 @@ const { data } = Astro.props
 
 <article class={data.variant}>
     <div class="container">
+        <img src="/strokes/col01_thread.svg" alt="" class="thread">
         <div class="img_container">
-            <img src="/strokes/col01_sparkle.svg" alt="">
-            <img src="/strokes/col01_thread.svg" alt="">
-            <img src="/strokes/col02_scratch.svg" alt="">
-            <TapedImage src={data.hero} alt="Model wearing Sophia Khaled's collection" />
+            <img src="/strokes/col01_sparkle.svg" alt="" class="sparkle">            
+            <img src="/strokes/col02_scratch.svg" alt="" class="scratch">
+            <TapedImage src={data.hero} alt="Model wearing Sophia Khaled's collection" size="max-width:448px;"   />
         </div>
         <CollectionCTA data={data} />
     </div>    
@@ -56,17 +56,23 @@ const { data } = Astro.props
     article > * {
         grid-column: 2;
     }
+    
+    article:nth-child(even) .img_container {
+        order: 1;
+    }
+    .container, .img_container {
+        display: grid;
+        justify-items: center;
+        position: relative;
+    }
 
     .container {
-        display: grid;
         gap: 2rem;
-        justify-content: center;
     }
 
     .img_container {
-        position: relative;
-        padding: var(--none) 3rem;
         transform: var(--rotate);
+        padding: var(--none) var(--large);
     }
 
     img {
@@ -74,27 +80,55 @@ const { data } = Astro.props
         z-index: 50;
     }
 
-    .col_01 img:nth-child(1), .col_01 img:nth-child(2) {
-        display: block;
-    }
-    .col_02 img:nth-child(3) {
+    .col_01 .sparkle, .col_01 .thread {
         display: block;
     }
 
-    img:nth-child(2), img:nth-child(3) {
+    .col_02 .scratch {
+        display: block;
+    }
+
+    .thread, .scratch {
         position: absolute;
     }
 
-    img:nth-child(2) {
-        top: -2rem;
+    .sparkle {
+            max-width: 75%;
+    }
+
+    .thread {
+        top: -3rem;
         right: -2rem;
         width: 240px;
     }
 
-    img:nth-child(3) {
+    .scratch {
         top: -5rem;
-        left: -3rem;
-        width: 200px;
+        left: -1.5rem;
+        width: 160px;
+    }
+
+    @media (min-width: 630px) {
+        .container {
+            grid-template-columns: repeat(auto-fit, minmax(352px, 1fr));
+            gap: var(--medium)
+        }
+
+        .img_container {
+            padding: var(--none);
+        }        
+
+        .thread {
+            top: -4rem;
+            right: -4rem;
+            width: 400px;
+        }
+
+        .scratch {
+            width: 200px;
+            left: -4rem;
+            top: -4rem;
+        }
     }
 
     /* .flex_column{

@@ -10,11 +10,15 @@ const { data, ColNo, ColName, ColSrc } = Astro.props
 
     <article>
         <header>
-            <h1 class="subheading_scribble">Collection {data.no}</h1>
-            <h2 class="heading_2">{data.name}</h2>
+            <div>
+                <h1 class="subheading_scribble">Collection {data.no}</h1>
+                <h2 class="heading_2">{data.name}</h2>
+            </div>                
+            <img src={data.img} alt="" class="desktop">
             <ArrowButton label="See collection" href=`/collections/${data.slug}` />
         </header>
-        <img src={data.img} alt="">
+            
+        <img src={data.img} alt="" class="mobile">
     </article>
 
 
@@ -22,19 +26,38 @@ const { data, ColNo, ColName, ColSrc } = Astro.props
 <style>
     article {
         min-width: 288px;
-        max-width: 488px;
+        max-width: 352px;
         display: flex;
         justify-content: space-between;
         gap: var(--medium);
-        /* padding: var(--none) var(--side); */
+        justify-self: center;
+        align-items: center;
     }
 
     header {
+        display: grid;
+        align-content: start;
+        justify-items: center;
         min-width: 160px;
     }
 
     img {
         width: auto;
         max-height: 160px;
+    }
+
+    img.desktop {
+        display: none;
+    }
+
+    @media (min-width: 630px) {
+        img.mobile {
+            display: none;
+        }
+
+        img.desktop {
+            display: block;
+            max-height: 240px;
+        }
     }
 </style>

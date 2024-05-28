@@ -17,10 +17,12 @@ const { data } = Astro.props
         <div class="img_container">
             <Image src={data.hero[1]} alt="" class="hide img_a" />
             <Image src={data.hero[2]} alt="" class="hide img_b" />
-            <Polaroid src={data.hero[0]} alt="" label={data.caption} variant="tall" fixture="taped" style="transform: rotate(4deg)" />
+            <div class="img_c">
+                <Polaroid src={data.hero[0]} alt="" label={data.caption} variant="tall" fixture="taped" style="transform: rotate(4deg)" />
+            </div>            
             <img src="/strokes/hero_01.svg" alt="" class="strokes stroke_a">
-            <img src="/strokes/hero_02.svg" alt="" class="hide stroke_b">
-            <img src="/strokes/hero_03.svg" alt="" class="hide stroke_c">
+            <img src="/strokes/hero_02.svg" alt="" class="strokes hide stroke_b">
+            <img src="/strokes/hero_03.svg" alt="" class="strokes hide stroke_c">
         </div>        
     </article>
     
@@ -52,11 +54,33 @@ const { data } = Astro.props
         position: relative;
         display: flex;
         justify-content: center;
-        /* width: 100%; */
     }
 
     img {
-        position: absolute;
+        position: absolute;   
+    }
+
+    .img_a, .img_b, .img_c {
+        opacity: 0;
+        scale: 1.1;
+        transition: all .15s ease-in;
+    }
+    img.strokes {
+        opacity: 0;
+        transition: all .25s ease-in;
+        transition-delay: 1s;
+    }
+
+    .img_a {
+        transition-delay: 2.5s;
+    }
+
+    .img_b {
+        transition-delay: 1s;
+    }
+
+    .img_c {
+        transition-delay: .5s;
     }
 
     .stroke_a {
@@ -66,8 +90,35 @@ const { data } = Astro.props
         left: 2rem;
     }
 
+    .stroke_b {
+        animation-name: pulse;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+    }
+
     .hide {
         display: none;
+    }
+
+    .pop {
+        opacity: 1;
+        scale: 1;
+    }
+
+    img.strokes.pop {
+        opacity: 1;
+    }
+
+    @keyframes pulse {
+        from {
+            scale: 1;
+        } 50% {
+            scale: 1.1;
+        } to {
+            scale: 1;
+        }
+        
     }
 
     @media (min-width: 630px) {
@@ -76,6 +127,8 @@ const { data } = Astro.props
             top: 6rem;
             left: 6rem;
         }
+
+        
     }
 
     @media (min-width: 960px) {
@@ -86,6 +139,10 @@ const { data } = Astro.props
 
         .hide {
             display: block;
+        }
+
+        img.strokes {
+            transition-delay: 5s;
         }
 
         .stroke_a {
@@ -125,6 +182,10 @@ const { data } = Astro.props
             bottom: 10rem;
             transform: rotate(8deg);
         }
+
+        .img_c {
+        transition-delay: 4s;
+    }
     }
 
 

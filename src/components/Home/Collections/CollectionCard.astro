@@ -70,6 +70,10 @@ const { data } = Astro.props
 
     .sparkle {
             max-width: 75%;
+            animation-name: sparkle;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
     }
 
     .thread {
@@ -82,6 +86,22 @@ const { data } = Astro.props
         top: -5rem;
         left: -1.5rem;
         width: 160px;
+    }
+
+    @keyframes sparkle {
+        from {
+            transform: rotate(0deg);
+        } 25% {
+            transform: rotate(-2deg);
+        } 50% {
+            transform: rotate(0deg);
+            scale: 1.05;
+        } 75% {
+            transform: rotate(2deg);
+        } to {
+            transform: rotate(0deg);
+            scale: 1;
+        }
     }
     @media (min-width: 630px) {
         .container {

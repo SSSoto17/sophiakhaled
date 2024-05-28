@@ -1,6 +1,6 @@
 ---
 
-import Photo from "../../Basics/img/Photo.astro"
+import Photobooth from "../../Basics/img/Photobooth.astro"
 import TapedImage from "../../Basics/img/TapedImage.astro"
 import CollectionCTA from "./CollectionCTA.astro"
 
@@ -16,7 +16,7 @@ const { data } = Astro.props
             <img src="/strokes/col02_scratch.svg" alt="" class="scratch">
             <TapedImage src={data.hero} alt="Model wearing Sophia Khaled's collection" size="max-width:448px;"/>
             <div class="photobooth">
-                <Photo data={data} />
+                <Photobooth data={data} />
             </div>            
         </div>
         <CollectionCTA data={data} />

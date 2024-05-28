@@ -1,15 +1,8 @@
 ---
 
 import Polaroid from "../Basics/img/Polaroid.astro"
-import ImgOutline from "./Hero/ImgOutline.astro"
-
-import Model from "../../img/regular/frontpage_hero_img1.png"
-import Haha from "../../img/polaroid/Tape.png"
-import Image from "astro/components/Image.astro"
-import Princess from "../../img/regular/frontpage_hero_img4.png"
 import TapedImage from "../Basics/img/TapedImage.astro"
-import HeroImg2 from "../../img/regular/frontpage_hero_img2.png"
-import Model2 from "../../img/regular/frontpage_hero_img3.png"
+import ImgOutline from "./Hero/ImgOutline.astro"
 
 const {data} = Astro.props
 ---
@@ -32,7 +25,7 @@ const {data} = Astro.props
     </article>   
 </section>
 
-<style define:vars={{ image: `url("/checkeredbg.svg")` }}>
+<style define:vars={{ image: `url("/backgrounds/checkeredbg.svg")` }}>
     section {
         display: grid;
         grid-template-columns:

@@ -51,8 +51,10 @@ import PinkDemon from "../../img/articles/pink_demon_princess.png"
         grid-template-columns:
             minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
             minmax(var(--side), 1fr);
-        background: url(/pinboard.svg);
+        background: url("/backgrounds/col02.svg");
         padding: var(--top_btm) var(--side);
+        overflow-x: clip;
+        overflow-clip-margin: var(--side);
         }
         
     article, header {

@@ -1,30 +1,46 @@
 ---
 
+import Hero01 from "../../img/index/col_01.jpg"
+import Hero02 from "../../img/index/col_02.jpg"
+
 import CollectionCard from "./Collections/CollectionCard.astro";
 
 const collections = [
     {
-        no: "Collection 01",
+        no: "01",
         name: "Middleschool u r dead to me...",
-        img: "/src/img/illustrations/ballerina.png"
+        img: "/src/img/illustrations/ballerina.png",
+        slug: "middleschool-u-r-dead-to-me",
+        bg: "/backgrounds/col01.svg",
+        hero: Hero01,
+        style: "rotate(4deg)",
+        variant: "col_01"
     },
     {
-        no: "Collection 02",
+        no: "02",
         name: "If i dont see the prince, im going to die...",
-        img: "/src/img/illustrations/castle.png"
+        img: "/src/img/illustrations/castle.png",
+        slug: "if-i-dont-see-the-prince",
+        bg: "/backgrounds/col02.svg",
+        hero: Hero02,
+        style: "rotate(-4deg)",
+        variant: "col_02"
     }
 ]
 
 ---
 
-<div class="container break_main">
+<section class="break_main">
+        {collections.map((col) =>
+        <CollectionCard data={col} />
+    )}
+</section>
+
+
+
+
+<!-- <div class="container break_main">
     {collections.map(collection=>{
         return <CollectionCard ColNo={collection.no} ColName={collection.name} ColImg={collection.img} />
     })}
-</div>
-
-
-
-<style>
-
-</style>
+</div> -->

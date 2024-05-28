@@ -29,19 +29,33 @@ const { src, alt, style, size } = Astro.props;
 
   .tape {
     aspect-ratio: 1 / 1;
-    width: 150px;
+    width: 80px;
     position: absolute;
   }
 
   .tape.a {
-    top: -45px;
-    right: -35px;
+    top: -2rem;
+    right: -2rem;
   }
 
   .tape.b {
-    bottom: -45px;
-    left: -35px;
+    bottom: -2rem;
+    left: -2rem;
   }
 
+  @media (min-width: 630px) {
+    .tape {
+      width: 150px;
+    }
 
+    .tape.a {
+    top: -3rem;
+    right: -3rem;
+  }
+
+  .tape.b {
+    bottom: -3rem;
+    left: -3rem;
+  }
+  }
 </style>

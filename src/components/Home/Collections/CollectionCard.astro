@@ -1,11 +1,28 @@
 ---
-const {collectionNumber, collectionName, src, alt, backgroundColor, illustration, illustrationAlt, href, side, doddleIllustration, doddleAlt, illustrationPlacement} = Astro.props
-import ArrowButton from "../../Basics/buttons/ArrowButton.astro"
+
+import { Image } from "astro:assets"
+
 import TapedImage from "../../Basics/img/TapedImage.astro"
-import Image from "astro/components/Image.astro"
+import CollectionCTA from "./CollectionCTA.astro"
+
+const { data } = Astro.props
 
 ---
-<article class={`${backgroundColor}`}>
+
+<article class={data.variant}>
+    <div class="container">
+        <div class="img_container">
+            <img src="/strokes/col01_sparkle.svg" alt="">
+            <img src="/strokes/col01_thread.svg" alt="">
+            <img src="/strokes/col02_scratch.svg" alt="">
+            <TapedImage src={data.hero} alt="Model wearing Sophia Khaled's collection" />
+        </div>
+        <CollectionCTA data={data} />
+    </div>    
+</article>
+
+
+<!-- <article class={`${backgroundColor}`}>
     <div class={`flex_column ${side}`}>
         <div class="collection_img">
             <div class={illustrationPlacement}>
@@ -24,9 +41,63 @@ import Image from "astro/components/Image.astro"
             </div>
         </div>
     </div>
-</article>
-<style>
-    .flex_column{
+</article> -->
+<style define:vars={{ image: `url(${data.bg})`, rotate: `${data.style}` }}>
+
+    article {
+        display: grid;
+        grid-template-columns:
+        minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
+        minmax(var(--side), 1fr);
+        background-image: var(--image);
+        padding: var(--top_btm) var(--none);
+    }
+
+    article > * {
+        grid-column: 2;
+    }
+
+    .container {
+        display: grid;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .img_container {
+        position: relative;
+        padding: var(--none) 3rem;
+        transform: var(--rotate);
+    }
+
+    img {
+        display: none;
+        z-index: 50;
+    }
+
+    .col_01 img:nth-child(1), .col_01 img:nth-child(2) {
+        display: block;
+    }
+    .col_02 img:nth-child(3) {
+        display: block;
+    }
+
+    img:nth-child(2), img:nth-child(3) {
+        position: absolute;
+    }
+
+    img:nth-child(2) {
+        top: -2rem;
+        right: -2rem;
+        width: 240px;
+    }
+
+    img:nth-child(3) {
+        top: -5rem;
+        left: -3rem;
+        width: 200px;
+    }
+
+    /* .flex_column{
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -134,5 +205,5 @@ import Image from "astro/components/Image.astro"
         transform: translateY(-180px);
         z-index: 1;
     }
-   }
+   } */
 </style>

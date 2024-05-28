@@ -35,28 +35,9 @@ const feature =
 <MainLayout>
 	<Hero data={feature} />
 	<Feature data={feature} />
-	<!-- <Collections /> -->
-		<!-- <section class="break_main">
-			<Hero/>
-		</section> -->
-		<!-- <section class="container">
-			<section class="item_showcase">
-				<div class="flex_item" id="model_img">
-					<TapedImage
-					src={Model} alt="Models"
-					/>
-				</div>
-				<div class="flex_item">
-					<ItemShowcase/>
-				</div>
-			</section>
-			<section class="center_section">
-				<p>Explore Sophia Khaled's fashion universe between light and darkness, good and evil or dream and reality</p>
-				<ScribbleButton label="Go to shop" href="/shop"/>
-			</section>
-			<section>
-				<CollectionCard
-				src={Collection1} alt="hejsa"
+	<Collections />
+	<!-- <section>
+				<CollectionCard src={Collection1} alt="hejsa"
 				collectionNumber="Collection 01" collectionName="Middleschool u r dead to me..."
 				backgroundColor="green"
 				illustration={Ballerina} illustrationAlt="illustration of a castle"
@@ -123,7 +104,7 @@ const feature =
             })
         })
     
-    const Item = document.querySelectorAll("section > article > .item > a, section > article > .img_container > .hero_img");        
+    const Item = document.querySelectorAll("section > article > .item > a, section > article > .item, section > article > .img_container > .hero_img");        
     
     Item.forEach(element => {
         observer.observe(element)

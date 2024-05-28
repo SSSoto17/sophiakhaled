@@ -45,25 +45,41 @@ let orderCount = 0;
 
     .item {
         position: absolute;
+        transform: translateY(275px) rotate(15deg);
+        opacity: 0;
+        filter: blur(5px);
+        transition: all .75s ease-out;
     }
 
-    .item:nth-child(1) {
+    .pop {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+}
+
+    .item:nth-child(1).pop {
         left: 2rem;
         top: -3rem;
         transform: rotate(16deg);
+        transition-delay: .25s;
     }
 
-    .item:nth-child(2) {
+    .item:nth-child(2).pop {
         top: 55%;
         right: 2rem;
         transform: translateY(-50%) rotate(-36deg);
+        transition-delay: .5s;
     }
 
-    .item:nth-child(3) {
+    .item:nth-child(3).pop {
         left: -1rem;
         bottom: -2rem;
         transform: rotate(-16deg);
+        transition-delay: 1s;
     }
+
+    
+
 
     @media (min-width: 630px) {
         .box {

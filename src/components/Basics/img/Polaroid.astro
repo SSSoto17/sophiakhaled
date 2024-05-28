@@ -1,8 +1,8 @@
 ---
 
 import { Image } from "astro:assets";
-import Tape from "../../../img/polaroid/Tape.png";
-import Pin from "../../../img/polaroid/Pin.png";
+import Tape from "../../../img/img_assets/Tape.png";
+import Pin from "../../../img/img_assets/Pin.png";
 
 const { src, alt, title, label, variant, fixture, style } = Astro.props
 
@@ -27,7 +27,6 @@ const { src, alt, title, label, variant, fixture, style } = Astro.props
         max-width: 264px;
         padding: 1rem;
         background-color: var(--white-smoke);
-        /* overflow-x: clip; */
     }
 
     header {
@@ -36,6 +35,7 @@ const { src, alt, title, label, variant, fixture, style } = Astro.props
         justify-content: center;
         align-items: center;
         padding: var(--x-small) var(--none);
+        min-height: 2rem;
     }
 
     img {

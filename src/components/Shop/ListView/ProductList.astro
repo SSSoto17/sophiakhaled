@@ -6,7 +6,9 @@ import ProductGrid from "./ProductList/ProductGrid.astro"
 ---
 
 <div class="container">
-    <Filter />
+    <aside>
+        <Filter />
+    </aside>
     <ProductGrid />
 </div>
 
@@ -16,12 +18,23 @@ import ProductGrid from "./ProductList/ProductGrid.astro"
         grid-column: 1 / 4;
     }
 
+    aside {
+        position: sticky;
+        top: 0;
+        z-index: 10000;
+    }
+
     @media (min-width: 960px) {
         .container {
             grid-column: 2;
             display: flex;
             justify-content: space-between;
             gap: var(--medium);
+        }
+
+        aside {
+            border-right: 1px solid var(--stroke-color);
+            position: relative;
         }
     }
 

@@ -15,8 +15,8 @@ const { option } = Astro.props
         display: flex;
         align-items: center;
         gap: var(--x-small);
-        cursor: pointer;
         max-width: 220px;
+        transition: scale .15s ease-in;
     }
 
     .icon {
@@ -31,6 +31,10 @@ const { option } = Astro.props
 
     .icon.active {
         background-image: url("/icons/icon_Checked.svg");
+    }
+
+    .container:hover {
+        scale: 1.05;
     }
 
 </style>

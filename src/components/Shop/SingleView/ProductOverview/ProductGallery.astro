@@ -6,7 +6,7 @@ const {img} = Astro.props
 
 ---
 
-<ul>
+<ul class="gallery">
     <li><Image src={img} alt="" class="active" inferSize /></li>
     <li><Image src={img} alt="" inferSize /></li>
     <li><Image src={img} alt="" inferSize /></li>
@@ -27,7 +27,6 @@ const {img} = Astro.props
         object-fit: scale-down;
         height: 100%;
         opacity: .5;
-        cursor: pointer;
         transition: opacity .15s ease-in-out;
     }
 

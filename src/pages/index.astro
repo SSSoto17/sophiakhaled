@@ -9,18 +9,6 @@ import Hero01 from "../img/index/hero_01.JPEG"
 import Hero02 from "../img/index/hero_02.jpeg"
 import Hero03 from "../img/index/hero_03.png"
 
-
-// import TapedImage from "../components/Basics/img/TapedImage.astro";
-// import ScribbleButton from "../components/Basics/buttons/ScribbleButton.astro";
-// import CollectionCard from "../components/Home/Collections/CollectionCard.astro";
-// import Collection2 from "../img/regular/collection_img_2.png"
-// import Collection1 from "../img/regular/collection_img_1.jpg"
-// import Ballerina from "../img/illustrations/ballerina.png"
-// import Castle from "../img/illustrations/castle.png"
-
-// import blackLines from "../img/illustrations/black_lines.png"
-// import blackDoodle from "../img/illustrations/black_doodle.png"
-
 const feature = 
 		{
 			title: "Sophia Khaled",
@@ -36,64 +24,7 @@ const feature =
 	<Hero data={feature} />
 	<Feature data={feature} />
 	<Collections />
-	<!-- <section>
-				<CollectionCard src={Collection1} alt="hejsa"
-				collectionNumber="Collection 01" collectionName="Middleschool u r dead to me..."
-				backgroundColor="green"
-				illustration={Ballerina} illustrationAlt="illustration of a castle"
-				href="/collections/if-i-dont-see-the-prince-im-going-to-die"
-				side="left"
-				doddleIllustration={blackLines} doddleAlt="black lines" illustrationPlacement="lines"
-				/>
-				<CollectionCard
-				src={Collection2} alt="hejsa" 
-				collectionNumber="Collection 02" collectionName="If i dont see the prince, im going to die..."
-				backgroundColor="grey"
-				illustration={Castle} illustrationAlt="illustration of a castle"
-				href="/collections/middleschool-u-r-dead-to-me"
-				side="right"
-				doddleIllustration={blackDoodle} doddleAlt="black doodle" illustrationPlacement="doodle"
-				/>
-			</section>
-		</section> -->
 </MainLayout>
-<!-- <style>
-	.container{
-		display: flex;
-		flex-direction: column;
-		gap:3rem;
-	}
-
-	.item_showcase{
-		margin-top: 5rem;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		gap:2rem	
-	}
-
-	.flex_item{
-		flex-grow: 1;
-	}
-
-	#model_img{
-		max-width: 450px;
-		display: none;
-	}
-
-	.center_section{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-	}
-	@media (min-width: 630px){
-
-		#model_img{
-			display: block;}
-
-	}
-</style> -->
 
 <script>
     const observer = new IntersectionObserver(entries => {

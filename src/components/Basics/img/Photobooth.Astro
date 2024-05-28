@@ -2,36 +2,50 @@
 
 import { Image } from "astro:assets";
 
-const { Img01, Img02, Img03 } = Astro.props
+import Pin from "../../../img/img_assets/SafetyPin.png"
+
+const { data } = Astro.props
 
 ---
 
-<div class="container">
-    <div class="single">
-        <Image src={Img01} alt="" />
-    </div>
-    <div class="single">
-        <Image src={Img02} alt="" />
-    </div>
-    <div class="single">
-        <Image src={Img03} alt="" />
-    </div>
-    </div>
+<div class=`container ${data.variant}`>
+    <Image src={Pin} alt="" class="pin" />
+    {data.photobooth.map((photo) => (
+        <Image src={photo} alt="" class="photo" />
+    ))}
+</div>
     
 <style>
 
     .container {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: var(--x-small);
         padding: var(--none) var(--xx-small);
-        width: 183px;
-        background-color: var(--white-smpke);
+        background-color: var(--white-smoke);
+        filter: var(--dropshadow);
     }
 
-    .single {
+    img.photo {
         aspect-ratio: 1 / 1.25;
-        overflow: hidden;
+        overflow: clip;
+    }
+
+    img.pin {
+        position: absolute;
+        width: 25%;
+    }
+
+    .col_01 .pin {
+        transform: rotate(25deg);
+        left: -.5rem;
+    }
+
+    .col_02 .pin {
+        transform: rotate(-45deg);
+        top: 2rem;
+        right: -.5rem;
     }
 
 </style>

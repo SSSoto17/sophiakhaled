@@ -25,23 +25,28 @@ const cat = [
     <div class="filter_bar">
         <FilterMobileBar />
     </div>    
-<div class="options">
-    {cat.map(cat=>{
-        return <FilterCatList heading={cat.name} options={cat.options} />
-    })}
-    <ArrowButton label="Filter" />
-</div>
+    <div class="options">
+        {cat.map(cat=>{
+            return <FilterCatList heading={cat.name} options={cat.options} />
+        })}
+        <ArrowButton label="Filter" />
+    </div>
 </div>
 
 
 <style>
+
+    .break_main {
+        position: sticky;
+        top: var(--top_btm);
+    }
 
     .options {
         display: none;
         padding: var(--side);
         border-bottom: 1px solid var(--stroke-color);
         filter: var(--dropshadow);
-        height: 100%;
+        background-color: var(--background-color);        
     }
 
     .active {
@@ -57,7 +62,6 @@ const cat = [
         min-width: 283px;
         max-width: 352px;
         border-bottom: none;
-        border-right: 1px solid var(--stroke-color);
         padding: 0 var(--small) 0 0;
         filter: none;
         }

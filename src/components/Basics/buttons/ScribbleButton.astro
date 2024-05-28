@@ -59,7 +59,6 @@ const {label, href} = Astro.props
 
     img.scribble {
         width: 65%;
-        cursor: pointer;
     }
 
     .container:hover img.sparkle {
@@ -69,13 +68,13 @@ const {label, href} = Astro.props
 
     @keyframes sparkle {
         from {
-            width: 100%;
+            scale: 1;
         }
         50% {
-            width: 95%;
+            scale: 1.1;
         }
         to {
-            width: 100%;
+            scale: 1;
         }
     }
 

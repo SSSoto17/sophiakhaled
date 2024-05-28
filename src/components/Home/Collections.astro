@@ -3,6 +3,13 @@
 import Hero01 from "../../img/index/col_01.jpg"
 import Hero02 from "../../img/index/col_02.jpg"
 
+import PB01 from "../../img/photobooth/col01_01.jpg"
+import PB02 from "../../img/photobooth/col01_02.jpg"
+import PB03 from "../../img/photobooth/col01_03.jpg"
+import PB04 from "../../img/photobooth/col02_01.jpg"
+import PB05 from "../../img/photobooth/col02_02.jpg"
+import PB06 from "../../img/photobooth/col02_03.jpg"
+
 import CollectionCard from "./Collections/CollectionCard.astro";
 
 const collections = [
@@ -14,7 +21,8 @@ const collections = [
         bg: "/backgrounds/col01.svg",
         hero: Hero01,
         style: "rotate(4deg)",
-        variant: "col_01"
+        variant: "col_01",
+        photobooth: [PB01, PB02, PB03],
     },
     {
         no: "02",
@@ -24,7 +32,8 @@ const collections = [
         bg: "/backgrounds/col02.svg",
         hero: Hero02,
         style: "rotate(-4deg)",
-        variant: "col_02"
+        variant: "col_02",
+        photobooth: [PB04, PB05, PB06]
     }
 ]
 
@@ -35,12 +44,3 @@ const collections = [
         <CollectionCard data={col} />
     )}
 </section>
-
-
-
-
-<!-- <div class="container break_main">
-    {collections.map(collection=>{
-        return <CollectionCard ColNo={collection.no} ColName={collection.name} ColImg={collection.img} />
-    })}
-</div> -->

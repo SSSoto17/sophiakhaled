@@ -1,5 +1,8 @@
 ---
+
 import Polaroid from "../Basics/img/Polaroid.astro"
+import ImgOutline from "./Hero/ImgOutline.astro"
+
 import Model from "../../img/regular/frontpage_hero_img1.png"
 import Haha from "../../img/polaroid/Tape.png"
 import Image from "astro/components/Image.astro"
@@ -7,121 +10,164 @@ import Princess from "../../img/regular/frontpage_hero_img4.png"
 import TapedImage from "../Basics/img/TapedImage.astro"
 import HeroImg2 from "../../img/regular/frontpage_hero_img2.png"
 import Model2 from "../../img/regular/frontpage_hero_img3.png"
+
+const {data} = Astro.props
 ---
 
-<article class="break_main main_container">
-    <div class="container">
-        <div class="flexbox">
-            <div class="flex_row">
-                <div class="img img1">
-                    <Image src={Princess} alt="princess with lines around her"/>
-                </div>
-                <div class="img img2">
-                    <Polaroid src={Model2} alt="A picture of a woman model" variant="tall" showPin={false} showTape={true}/>
-                </div>
-                <div class="img img3">
-                    <TapedImage src={HeroImg2} alt="model"/>
-                </div>
-                <div class="img img4">
-                    <Polaroid src={Model} alt="A picture of a woman model" variant="tall" showPin={false} showTape={true}/>
-                </div>
-            </div>
-            <div class="text">
-                <h1 class="display">SOPHIA KHALED</h1>
-                <h2 class="subheading" >Copenhagen based fashion brand</h2>
-            </div>
-        </div>
+<section class="break_main">
+    <article>
+        <div class="img_container">
+            <div class="hero_img"><Polaroid src={data.hero[1]} alt="" variant="tall top" /></div>
+            <div class="hero_img"><TapedImage src={data.hero[2]} alt="" /></div>
+            <div class="hero_img"><Polaroid src={data.hero[0]} alt="" variant="tall top" /></div>
     </div>
-</article>
+    <img src="/strokes/hero_path.svg" alt="" class="stroke">
+    <div class="outline">
+        <ImgOutline />
+    </div>
+    <header>
+        <h1 class="display">{data.title}</h1>
+        <h2 class="subheading">{data.caption}</h2>
+    </header>
+    </article>   
+</section>
 
-<style>
-
-    .main_container{
+<style define:vars={{ image: `url("/checkeredbg.svg")` }}>
+    section {
         display: grid;
-        grid-template-columns: 1fr min(90%, 1200px) 1fr;
-        background-image: url(../../img/regular/Hero.png);
-        padding: 2rem 0;
-
+        grid-template-columns:
+            minmax(var(--side), 1fr) minmax(var(--content-min), var(--content-max))
+            minmax(var(--side), 1fr);
+        background-image: linear-gradient(rgba(245, 243, 242, .4), rgba(245, 243, 242, .6)), var(--image);
+        background-size:cover;
+        background-repeat: repeat-x;
+        overflow-x: clip;
+        margin-bottom: 6rem;
     }
-    .break_main {
-        grid-column: 1 / 4;
 
-    }
-    .container {
+    article {
         grid-column: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: grid;
+        gap: var(--large);
+        padding: var(--top_btm) var(--none);
+        position: relative;
+    }
+
+    header {
+        display: grid;
+        gap: var(--small);
+        padding: var(--small) var(--none);
+        justify-content: end;
+    }
+
+    .img_container {
+        display: grid;
         justify-content: center;
-        text-align: center;
-        background-image: url(../../img/regular/Hero.png);
-    }
-    .flexbox{
-        display: flex;
-        flex-direction: column;
         align-items: center;
-    }
-    .flexbox:last-child{
-       align-items: end;
+        padding: var(--top_btm) var(--none);
     }
 
-    .text{
-        text-align: right; 
-    }
-    .flex_row{
-        display: flex;
-        flex-direction: row;
-       align-items: center;
-    }
-    .img{
-        max-width: 500px;
+    .outline, .stroke {
+        position: absolute;
     }
 
-    /* Styling af de individuelle billeder i hero */
-    .img1{
+    .outline {
         display: none;
-        z-index: 1;
+        z-index: 50;
+    }    
+
+    .stroke {
+        width: 251px;
+        left: -2rem;
+        bottom: -3rem;
+        z-index: 50;
     }
 
-    .img2{ display: none;
-    transform: rotate(15deg);
+    /* HERO IMAGES + ANIMATION */
 
-    }
-    .img3{ display: none;
-    }
-    .img4{ display: block;
-        max-width: 300px ;
-        transform: rotate(-5deg);
-        transform: translateX(-50);
+    .hero_img {
+        opacity: 0;
+        scale: 1.1;
+        transition: all .15s ease-in;
     }
 
-    @media (min-width: 630px){
-        .img2{ 
+    .hero_img:nth-child(1) {
+        transition-delay: 2s;
+    }
+
+    .hero_img:nth-child(2) {
+        transition-delay: 5.5s;
+    }
+
+    .hero_img:nth-child(1), .hero_img:nth-child(2) {
+        display: none;
+    }
+    
+    .pop {
+        opacity: 1;
+        scale: 1;
+    }
+
+    .hero_img:nth-child(1).pop {
+        transform: rotate(6deg);
+    }
+
+    .hero_img:nth-child(3).pop {
+        transform:rotate(-8deg)
+    }
+
+    @media (min-width: 630px) {
+
+        section {
+            background-size: contain;
+        }
+
+        .hero_img:nth-child(1), .hero_img:nth-child(2) {
+        display: block;
+    }
+
+    .hero_img:nth-child(2) {
+        width: 80%;
+    }
+
+        .hero_img:nth-child(1), .hero_img:nth-child(3) {
+        position: absolute;
+        min-width: 200px;
+        max-width: 352px;
+        width: 40%;
+    }
+
+        .hero_img:nth-child(3) {
+        right: 0;
+        transition-delay: 4s;
+    }
+
+    .stroke {
+        width: 400px;
+        bottom: -4.25rem;
+    }
+    }
+
+    @media (min-width: 960px) {
+
+        article {
+            padding-left: 200px;
+        }
+        .outline {
             display: block;
+            width: 336px;
+            left: -2rem;
+            bottom: 12rem;
         }
-        .img3{ 
-            display: block;
-        }
-  
-        .flexbox{
-            max-width: 600px;
-        }
-    }
-    @media (min-width: 930px){
-    .img1{ display: block;
-        width: 60%;   
-     }
-    .img2{ display: block;
-        width: 50%;   
 
-    }
-    .img3{ display: block;
-        width: 60%;
-    }
-    .img4{ display: block;
-    }
-       .flexbox{
-        max-width: 1200px;
+        .stroke {
+            width: 636px;
+            left: -4rem;
+            bottom: -1.5rem;
+        }
+
+        .hero_img:nth-child(1), .hero_img:nth-child(3) {
+        width: 30%;
     }
     }
     

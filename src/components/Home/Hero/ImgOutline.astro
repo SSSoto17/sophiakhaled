@@ -1,0 +1,26 @@
+---
+
+import {Image} from "astro:assets";
+import Princess from "../../../img/index/hero_outline.png"
+
+---
+
+<div class="container">
+    <Image src={Princess} alt="Sailor moon princess dress" />
+    <img src="/strokes/outline.svg" alt="" class="outline">
+</div>
+
+<style>
+
+    .container {
+        position: relative;
+    }
+    img.outline {
+        position: absolute;
+        width: 105%;
+        top: 51%;
+        left: 49%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+</style>

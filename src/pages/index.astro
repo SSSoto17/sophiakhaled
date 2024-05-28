@@ -5,10 +5,12 @@ import Hero from "../components/Home/Hero.astro"
 import Feature from "../components/Home/Feature.astro";
 import Collections from "../components/Home/Collections.astro";
 
+import Hero01 from "../img/index/hero_01.JPEG"
+import Hero02 from "../img/index/hero_02.jpeg"
+import Hero03 from "../img/index/hero_03.png"
 
-import ItemShowcase from "../components/Home/Feature/ItemShowcase.astro";
+
 import TapedImage from "../components/Basics/img/TapedImage.astro";
-import Model from "../img/regular/models.png"
 import ScribbleButton from "../components/Basics/buttons/ScribbleButton.astro";
 import CollectionCard from "../components/Home/Collections/CollectionCard.astro";
 import Collection2 from "../img/regular/collection_img_2.png"
@@ -21,19 +23,17 @@ import blackDoodle from "../img/illustrations/black_doodle.png"
 
 const feature = 
 		{
-			no: "01",
-			name: "Middleschool u r dead to me...",
-			// hero: [Hero01, Hero02, Hero03],
-			caption: "A tale about the afterlife of childhood imaginings",
+			title: "Sophia Khaled",
+			caption: "Copenhagen based fashion brand",
+			hero: [Hero01, Hero02, Hero03],
 			items: ["2", "12", "26"],
 			class: ["below","side", "below"],
-			slug: "middleschool-u-r-dead-to-me"
 		}
 
 ---
 
 <MainLayout>
-	<!-- <Hero /> -->
+	<Hero data={feature} />
 	<Feature data={feature} />
 	<!-- <Collections /> -->
 		<!-- <section class="break_main">
@@ -123,7 +123,7 @@ const feature =
             })
         })
     
-    const Item = document.querySelectorAll("section > article > .item > a");        
+    const Item = document.querySelectorAll("section > article > .item > a, section > article > .img_container > .hero_img");        
     
     Item.forEach(element => {
         observer.observe(element)

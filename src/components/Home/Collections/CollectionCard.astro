@@ -31,6 +31,8 @@ const { data } = Astro.props
         minmax(var(--side), 1fr);
         background-image: var(--image);
         padding: var(--top_btm) var(--none);
+        overflow-x: clip;
+        overflow-clip-margin: var(--side);
     }
 
     article > * {

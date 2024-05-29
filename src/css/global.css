@@ -28,6 +28,10 @@ button {
   background-color: transparent;
 }
 
+.cursor {
+  display: none;
+}
+
 @media (min-width: 960px) {
   body,
   a:hover,

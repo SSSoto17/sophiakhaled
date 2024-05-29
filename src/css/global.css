@@ -35,7 +35,7 @@ button {
   --size: 6rem;
   width: var(--size);
   height: var(--size);
-  background-image: url("/illustrations/cursor.svg");
+  background-image: url("/illustrations/wand_cursor.svg");
   background-size: 100%;
   position: absolute;
   z-index: 1000000;

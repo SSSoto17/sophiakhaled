@@ -8,7 +8,6 @@
 
 body {
   background-color: var(--background-color);
-  cursor: none;
 }
 
 li {
@@ -22,43 +21,49 @@ a {
 
 a:hover {
   opacity: 0.5;
-  cursor: none;
 }
 
 button {
   border: none;
   background-color: transparent;
-  cursor: none;
 }
 
-.cursor {
-  --size: 6rem;
-  width: var(--size);
-  height: var(--size);
-  background-image: url("/illustrations/wand_cursor.svg");
-  background-size: 100%;
-  position: absolute;
-  z-index: 1000000;
-  pointer-events: none;
-  transition: scale 0.15s ease-in;
-}
-
-.cursor_hover {
-  animation-name: pulse;
-  animation-duration: 0.75s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-@keyframes pulse {
-  from {
-    scale: 1.1;
+@media (min-width: 960px) {
+  body,
+  a:hover,
+  button {
+    cursor: none;
   }
-  50% {
-    scale: 1;
+
+  .cursor {
+    --size: 6rem;
+    width: var(--size);
+    height: var(--size);
+    background-image: url("/illustrations/wand_cursor.svg");
+    background-size: 100%;
+    position: absolute;
+    z-index: 1000000;
+    pointer-events: none;
+    transition: scale 0.15s ease-in;
   }
-  to {
-    scale: 1.1;
+
+  .cursor_hover {
+    animation-name: pulse;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+
+  @keyframes pulse {
+    from {
+      scale: 1.1;
+    }
+    50% {
+      scale: 1;
+    }
+    to {
+      scale: 1.1;
+    }
   }
 }
 

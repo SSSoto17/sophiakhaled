@@ -40,6 +40,7 @@ button {
   }
 
   .cursor {
+    display: block;
     --size: 6rem;
     width: var(--size);
     height: var(--size);
